@@ -2,6 +2,7 @@
 dist/
 .output/
 .astro
+package-lock.json
 
 # dependencies
 node_modules/
@@ -19,3 +20,4 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+.gitignore
