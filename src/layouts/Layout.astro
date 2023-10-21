@@ -19,7 +19,7 @@ const { title } = Astro.props;
 
 const makeTitle = title
   ? title + " | " + "Wisec.ia"
-  : "Wisec - Starter Template for Astro with Tailwind CSS";
+  : "Wisec - Gestor de proyectos";
 ---
 
 <!DOCTYPE html>
@@ -33,26 +33,27 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Wisec is a starter website template for Astro built with TailwindCSS."
+      description="Impulsamos el diseño y construcción con IA"
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
+        creator: "@wisecia",
+        site: "@wisecia",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `Wisec.ai - Gestor de proyectos`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "Banner de Wisec.ia",
         },
       }}
     />
   </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
   <body>
     <Navbar />
     <slot />

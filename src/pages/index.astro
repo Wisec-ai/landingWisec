@@ -19,6 +19,7 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 
 const pricing = [
   {
+    id: "plan-free",
     name: "Plan Free",
     price: "$0/mes",
     popular: false,
@@ -36,6 +37,7 @@ const pricing = [
     },
   },
   {
+    id: "plan-basic",
     name: "Plan Basic",
     price: {
       monthly: "$80/mes",
@@ -59,6 +61,7 @@ const pricing = [
     },
   },
   {
+    id: "plan-power",
     name: "Plan Power",
     price: "$300/mes",
     popular: false,
@@ -77,6 +80,7 @@ const pricing = [
     },
   },
   {
+    id: "plan-enterprise",
     name: "Plan Enterprise",
     price: "$?/mes",
     popular: false,
@@ -101,7 +105,7 @@ const pricing = [
   <Container>
     <Hero />
     <Features />
-    <Logos />
+    <!-- <Logos /> -->
   </Container> 
   <Container id="pricing">
     <Sectionhead>
@@ -123,17 +127,15 @@ const pricing = [
   <Container>
     <Sectionhead>
       <Fragment slot="title">Sobre Nosotros</Fragment>
-      <Fragment slot="desc">Nuestro equipos esta conformado por grandes lideres.</Fragment>
+      <Fragment slot="desc">Nuestro equipos esta conformado por grandes líderes.</Fragment>
     </Sectionhead>
   
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        Cambiaremos el mundo con Wisec.
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        Venimos de diversos orígenes, aportando diferentes personalidades, experiencias y habilidades a el trabajo. Esto es lo que hace que nuestro equipo sea tan especial.
       </p>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
@@ -167,27 +169,27 @@ const pricing = [
       }
     </div>
   </Container>
-  <Container id="contact">
+  <Container id="contactanos">
     <Sectionhead>
-      <Fragment slot="title">Contactanos</Fragment>
-      <Fragment slot="desc">Estamos aqui para ayudar.</Fragment>
+      <Fragment slot="title">Contáctanos</Fragment>
+      <Fragment slot="desc">Estamos aquí para ayudar.</Fragment>
     </Sectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Wisec.ia</h2>
+        <h2 class="font-medium text-2xl text-gray-800">Contacta a Wisec.ia</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? We are here to help. Fill up the form or send
-          email or call phone.
+          ¿Tienes algo qué decir? Estamos aquí para ayudar. Rellena el formulario o envía
+          correo electrónico o llamar al teléfono.
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span>
+            <!-- <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
+            <span>1734 Sanfransico, CA 93063</span> -->
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
               href="mailto:hello@astroshipstarter.com"
-              >hello@astroshipstarter.com</a
+              >contacto@wisec.ai</a
             >
           </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
             <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a

@@ -1,30 +1,30 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import heroImage from "assets/hero.png";
+import heroImage from "assets/infografia.svg";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 ---
 
 <main
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
+  <div class="py-6 md:order-1 hidden md:block mt-5 lg:mt-0">
     <Picture
       src={heroImage}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
+      alt="Inteligencia Artificial"
+      widths={[200, 400, 1200]}
       aspectRatio="4:3"
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
-      format="avif"
+      format="svg"
     />
   </div>
   <div>
     <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Somos WISEC
+      class="text-indigo-950 text-5xl lg:text-6xl xl:text-7xl lg:tracking-tight xl:tracking-tighter">
+      <span class="font-light">Somos </span><span class="font-bold">Wisec.ai</span> 
     </h1>
     <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Un software basado en ChatGPT para la identificacion de documentos de diferentes
+      Mejoramos la productividad de las empresas de ambos sectores mediante la sistematización y automatización, en base a IA, de sus procesos principales.
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
@@ -43,7 +43,7 @@ import { Icon } from "astro-icon";
         href="#"
         class="flex gap-1 items-center justify-center"
         target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
+        <Icon class="text-indigo-950 w-4 h-4" name="bx:bxl-github" />
         GitHub Repo
       </Link>
     </div>
