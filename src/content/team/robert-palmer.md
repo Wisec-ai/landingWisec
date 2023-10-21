@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "Robert Palmer"
-title: "Marketing Engineer"
+name: "Juan Acostupa"
+title: "COO & Sr. Data Scientist"
 avatar: {
-    src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?&fit=crop&w=280",
-    alt: "Robert Palmer"
+    src: "./src/assets/COO_Juan.png",
+    alt: "Juan Acostupa"
 }
-publishDate: "2022-11-09 15:39"
+publishDate: "2023-10-09 15:39"
 ---
