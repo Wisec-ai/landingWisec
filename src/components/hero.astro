@@ -1,6 +1,6 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import heroImage from "assets/infografia.svg";
+import heroImage from "assets/infografia2.svg";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
 ---
@@ -20,13 +20,17 @@ import { Icon } from "astro-icon";
   </div>
   <div>
     <h1
-      class="text-indigo-950 text-5xl lg:text-6xl xl:text-7xl lg:tracking-tight xl:tracking-tighter">
-      <span class="font-light">Somos </span><span class="font-bold">Wisec.ai</span> 
+      class="text-primary text-5xl lg:text-6xl xl:text-7xl lg:tracking-tight xl:tracking-tighter">
+      <span class="font-light">Somos </span><span class="font-bold">Wisec<span class="text-secondary">.ai</span></span> 
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Mejoramos la productividad de las empresas de ambos sectores mediante la sistematización y automatización, en base a IA, de sus procesos principales.
+    <h3
+      class="text-primary text-3xl lg:text-3xl xl:text-4xl  mt-2">
+      <span class="font-light">¡el ChatGPT de la  </span><span class="font-bold">Ingeniería y Construcción!</span> 
+    </h3>
+    <p class="text-lg mt-4 text-primary max-w-xl">
+      Mejoramos la productividad mediante la sistematización y automatización de procesos con IA.
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+    <!-- <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
         href="#"
         target="_blank"
@@ -43,9 +47,9 @@ import { Icon } from "astro-icon";
         href="#"
         class="flex gap-1 items-center justify-center"
         target="_blank">
-        <Icon class="text-indigo-950 w-4 h-4" name="bx:bxl-github" />
+        <Icon class="text-primary w-4 h-4" name="bx:bxl-github" />
         GitHub Repo
       </Link>
-    </div>
+    </div> -->
   </div>
 </main>

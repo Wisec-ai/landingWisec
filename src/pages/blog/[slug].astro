@@ -28,16 +28,16 @@ const { Content } = await entry.render();
         {entry.data.title}
       </h1>
       <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
-        <span class="text-gray-400">
+        <span class="text-primary">
           {entry.data.author}
         </span>
-        <span class="text-gray-400">•</span>
+        <span class="text-primary">•</span>
         <time
-          class="text-gray-400"
+          class="text-primary"
           datetime={entry.data.publishDate.toISOString()}>
           {entry.data.publishDate.toDateString()}
         </time>
-        <span class="text-gray-400 hidden md:block">•</span>
+        <span class="text-primary hidden md:block">•</span>
         <div class="w-full md:w-auto flex flex-wrap gap-3">
           {
             entry.data.tags.map((tag) => (

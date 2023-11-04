@@ -21,12 +21,17 @@ const pricing = [
   {
     id: "plan-free",
     name: "Plan Free",
-    price: "$0/mes",
+    price: {
+      monthly: "$0/mes",
+      annual: "",
+      discount: "10%",
+      original: "$24",
+    },
     popular: false,
     features: [
-      "Plataforma Wisec.ai",
+      "Plataforma Wisec.ai + Wichat",
       "1 millón de tokens con GPT-3.5 ",
-      "500MB de almacenamiento",
+      "200MB de almacenamiento",
       "Integraciones disponibles ",
       "Seguridad de datos y privacidad",
       "1 usuario",
@@ -40,17 +45,17 @@ const pricing = [
     id: "plan-basic",
     name: "Plan Basic",
     price: {
-      monthly: "$80/mes",
-      annual: "$16",
+      monthly: "$70/mes",
+      annual: "$700/anual",
       discount: "10%",
       original: "$24",
     },
     popular: true,
     features: [
       "1 mes gratis",
-      "Plataforma Wisec.ai",
+      "Plataforma Wisec.ai + Wichat",
       "5 millones de tokens con GPT-3.5",
-      "2.5GB almacenamiento",
+      "4GB almacenamiento",
       "Integraciones disponibles",
       "Seguridad de datos y privacidad",
       "1-5 usuarios",
@@ -63,13 +68,18 @@ const pricing = [
   {
     id: "plan-power",
     name: "Plan Power",
-    price: "$300/mes",
+    price: {
+      monthly: "$250/mes",
+      annual: "$2,5K/anual",
+      discount: "10%",
+      original: "$24",
+    },
     popular: false,
     features: [
       "1 mes gratis",
-      "Plataforma Wisec.ai",
+      "Plataforma Wisec.ai + Wichat + Witrack + VeriWi",
       "15 millones de tokens con GPT-3.5",
-      "10GB almacenamiento",
+      "12GB almacenamiento",
       "Integraciones disponibles",
       "Seguridad de datos y privacidad",
       "Usuarios ilimitados",
@@ -82,11 +92,16 @@ const pricing = [
   {
     id: "plan-enterprise",
     name: "Plan Enterprise",
-    price: "$?/mes",
+    price: {
+      monthly: "$?/mes",
+      annual: "",
+      discount: "10%",
+      original: "$24",
+    },
     popular: false,
     features: [
       "1 mes gratis",
-      "Plataforma Wisec.ai",
+      "Plataforma Wisec.ai + Wichat + Witrack + VeriWi",
       "Tokens personalizados",
       "Almacenamiento personalizado",
       "Integraciones disponibles",
@@ -105,37 +120,37 @@ const pricing = [
   <Container>
     <Hero />
     <Features />
-    <!-- <Logos /> -->
+    <Logos />
   </Container> 
   <Container id="pricing">
     <Sectionhead>
-      <Fragment slot="title">Precios</Fragment>
+      <Fragment slot="title">Nuestros <span class="text-secondary">planes</span></Fragment>
       <Fragment slot="desc">
         Precios simples y predecibles. Sin sorpresas.
       </Fragment>
     </Sectionhead>
-    <div class="grid md:grid-cols-4 gap-2 mx-auto max-w-screen-lg mt-12">
+    <div class="grid md:grid-cols-4 gap-2 mx-auto mt-12">
       {pricing.map((item) => <PricingCard plan={item} />)}
     </div>
-    <div class="mx-auto max-w-screen-lg mt-5 text-left">
+    <!-- <div class="mx-auto max-w-screen-lg mt-5 text-left">
       *(chatbot Wi, Witrack, Wiorg)
-    </div>
+    </div> -->
   </Container>
   <Container>
     <Cta />
   </Container>
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Sobre Nosotros</Fragment>
+      <Fragment slot="title">Nuestro <span class="text-secondary">Dream Team</span></Fragment>
       <Fragment slot="desc">Nuestro equipos esta conformado por grandes líderes.</Fragment>
     </Sectionhead>
   
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Cambiaremos el mundo con Wisec.
-      </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
-        Venimos de diversos orígenes, aportando diferentes personalidades, experiencias y habilidades a el trabajo. Esto es lo que hace que nuestro equipo sea tan especial.
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-8">
+      <blockquote class="font-700 italic text-2xl text-primary text-center lg:tracking-tight xl:tracking-tighter">
+        "Los grandes logros de cualquier persona generalmente dependen de muchas manos, corazones y mentes"
+      </blockquote>
+      <p class="text-lg italic leading-relaxed text-primary text-right">
+         -- Walt Disney
       </p>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
@@ -177,22 +192,22 @@ const pricing = [
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contacta a Wisec.ia</h2>
+        <h2 class="font-medium text-2xl text-secondary">Contacta a Wisec.ia</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
           ¿Tienes algo qué decir? Estamos aquí para ayudar. Rellena el formulario o envía
           correo electrónico o llamar al teléfono.
         </p>
         <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <!-- <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
+          <div class="flex items-center mt-2 space-x-2 text-primary">
+            <!-- <Icon class="text-primary w-4 h-4" name="uil:map-marker" />
             <span>1734 Sanfransico, CA 93063</span> -->
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
+          </div><div class="flex items-center mt-2 space-x-2 text-primary">
+            <Icon class="text-primary w-4 h-4" name="uil:envelope" /><a
               href="mailto:hello@astroshipstarter.com"
               >contacto@wisec.ai</a
             >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
+          </div><div class="flex items-center mt-2 space-x-2 text-primary">
+            <Icon class="text-primary w-4 h-4" name="uil:phone" /><a
               href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
             >
           </div>

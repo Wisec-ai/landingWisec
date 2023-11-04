@@ -1,16 +1,35 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import scale from "assets/scale_logo.png";
+import mezcladora from "assets/mezcladora_logo.png";
 ---
 
 <div class="mt-24">
-  <h2 class="text-center text-slate-500">Works with your technologies</h2>
+  <h2 class="text-center text-slate-500">Respaldados por</h2>
   <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-    <Icon class="h-8 md:h-12" name="simple-icons:react" />
+    <!-- <Icon class="h-8 md:h-12" name="simple-icons:react" />
     <Icon class="h-8 md:h-12" name="simple-icons:svelte" />
     <Icon class="h-8 md:h-14" name="simple-icons:tailwindcss" />
     <Icon class="h-8 md:h-16" name="simple-icons:alpinedotjs" />
     <Icon class="h-8 md:h-12" name="simple-icons:vercel" />
-    <Icon class="h-8 md:h-12" name="simple-icons:astro" />
+    <Icon class="h-8 md:h-12" name="simple-icons:astro" /> -->
+    <Picture
+      src={scale}
+      alt="Logo de Scale"
+      widths={[1200]}
+      sizes="(max-width: 120px) 100vw, 120px"
+      loading="eager"
+      format="png"
+    />
+    <Picture
+      src={mezcladora}
+      alt="Logo de Mezcladora"
+      widths={[1200]}
+      sizes="(max-width: 120px) 100vw, 150px"
+      loading="eager"
+      format="png"
+    />
   </div>
 </div>

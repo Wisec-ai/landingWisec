@@ -1,13 +1,17 @@
 ---
 import Link from "./ui/link.astro";
+import { getImage } from "astro:assets"
+import backgroundImage from "assets/banner_background_cta.png"
+
+// const optimizedBackgroundImage = await getImage({ src: backgroundImage })
 ---
 
-<div
-  class="p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center 
+<div 
+  class="bg-hero p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center 
   bg-center
   bg-no-repeat
-  bg-cover
-  bg-[url('./src/assets/banner_background_cta.png')]">
+  bg-cover" 
+  }>
   <h2 class="text-white text-4xl md:text-6xl tracking-tight">
     Gestiona tus proyectos de una manera más sencilla con Wisec.ai
   </h2>

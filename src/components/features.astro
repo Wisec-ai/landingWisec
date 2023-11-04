@@ -1,62 +1,132 @@
 ---
 // @ts-ignore
-import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import wisecIcono01 from "assets/wisec_icono_01.svg";
+import wisecIcono02 from "assets/wisec_icono_02.svg";
+import wisecIcono03 from "assets/wisec_icono_03.svg";
+import wisecIcono04 from "assets/wisec_icono_04.svg";
+
+const apps = [
+  {
+    title: "Wichat",
+    description:
+      "Resuelve tus consultas en base a tu información en cuestión de segundos. Desde documentos, imágenes hasta planos, lo procesamos todo",
+    image: wisecIcono01,
+    alt: "",
+  },
+  {
+    title: "Witrack",
+    description:
+      "Haz un seguimiento de tus entregables, resuelve las observaciones de tus clientes eficientemente y monitorea el avance de tus proyectos",
+    image: wisecIcono02,
+    alt: "",
+  },
+  {
+    title: "VeriWi",
+    description:
+      "Verifica el avance de obra sin salir de tu oficina mediante fotos en cuestión de segundos y mantén tu registro actualizado",
+    image: wisecIcono03,
+    alt: "",
+  },
+];
 
 const features = [
   {
-    title: "Información en un solo lugar",
+    title: "Transforma tu información en tu principal activo",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
+      "Conectando tu información desde cualquier repositorio o base de datos, nos das la posibilidad de transformarla en tu principal activo para que tomes las mejores decisiones y empoderes tu negocio.",
+    image: wisecIcono01,
+    alt: "",
   },
   {
-    title: "Mejora de la calidad del proyecto",
+    title: "Mejora de la calidad de tus proyectos",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
+      "Con nuestros features impulsados por IA, tus principales procesos estarán controlados y monitoreados, de esta forma, podrás entregar los mejores resultados a tus clientes en cada uno de tus proyectos.",
+    image: wisecIcono02,
+    alt: "",
   },
   {
-    title: "Capital intelectual aprovechado al 100%",
+    title: "Reduce el riesgo de pérdidas ",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "bx:bxs-data",
+      "Al optimizar tus principales procesos, reducimos el riesgo de pérdidas tanto de tiempo como de dinero en tus proyectos, para que te enfoques en lo que realmente importa: generar valor para tus clientes.",
+    image: wisecIcono03,
+    alt: "",
   },
   {
-    title: "Reducción del riesgo de pérdidas",
+    title: "Genera una cultura de aprendizaje continuo",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
-  },
-  {
-    title: "Mejora de la productividad",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
-  },
-  {
-    title: "Aprendizaje continuo",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
+      "Teniendo tu data como tu principal aliada, impulsamos tu organización al siguiente nivel aprovechando el capital intelectual de tu equipo y generando una cultura de aprendizaje continuo en tu compañía.",
+    image: wisecIcono04,
+    alt: "",
   },
 ];
 ---
 
+<div class="pb-16">
+  <div class="mt-16 md:mt-0">
+    <h2
+      class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-primary">
+      ¿Cómo lo hacemos?
+    </h2>
+    <p class="text-lg mt-4 text-primary">
+      Mediante diversos features integrados a nuestro software
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-3 md:grid-cols-3 mt-16 gap-16">
+    {
+      apps.map((item) => (
+        <div class="flex gap-4 items-start flex-col">
+          <div class="mt-1 bg-primary rounded-full p-3 w-20 h-20 shrink-0">
+            <Picture
+              src={item.image}
+              alt={item.alt}
+              widths={[100, 120]}
+              aspectRatio="1:1"
+              fit="contain"
+              background="rgba(0,0,0,0)"
+              position="center"
+              format="svg"
+              class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+            />
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+            <p class="text-slate-500 mt-2 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
 <div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-indigo-950">
-    Conoce los beneficios que te brindamos
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-primary">
+    ¿Qué <span class="text-secondary">beneficios</span> te brindamos?
   </h2>
-  <p class="text-lg mt-4 text-slate-600">
+  <p class="text-lg mt-4 text-primary">
     Nuestros beneficios aportan dentro de la empresa gestionando los proyectos.
   </p>
 </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+<div class="grid sm:grid-cols-2 md:grid-cols-2 mt-16 gap-16">
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+        <div class="mt-1 bg-primary rounded-full p-3 w-20 h-20 shrink-0">
+          <Picture
+            src={item.image}
+            alt={item.alt}
+            widths={[100, 120]}
+            aspectRatio="1:1"
+            fit="contain"
+            background="rgba(0,0,0,0)"
+            position="center"
+            format="svg"
+            class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+          />
         </div>
         <div>
           <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
