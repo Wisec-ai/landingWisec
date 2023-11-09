@@ -1,7 +1,9 @@
 ---
 import Container from "@components/container.astro";
+import ContainerHeader from "@components/containerheader.astro";
 import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
+import Platforms from "@components/plataformas.astro";
 import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
@@ -117,9 +119,16 @@ const pricing = [
 ---
 
 <Layout title="">
-  <Container>
+  <ContainerHeader>
     <Hero />
+  </ContainerHeader> 
+  <Container>
+    <Platforms />
+  </Container> 
+  <Container>
     <Features />
+  </Container> 
+  <Container>
     <Logos />
   </Container> 
   <Container id="pricing">
@@ -204,11 +213,26 @@ const pricing = [
           </div><div class="flex items-center mt-2 space-x-2 text-primary">
             <Icon class="text-primary w-4 h-4" name="uil:envelope" /><a
               href="mailto:hello@astroshipstarter.com"
-              >contacto@wisec.ai</a
+              >cgomezl@uni.pe</a
             >
           </div><div class="flex items-center mt-2 space-x-2 text-primary">
             <Icon class="text-primary w-4 h-4" name="uil:phone" /><a
               href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
+            >
+          </div>
+        </div>
+        <p class="text-lg leading-relaxed text-slate-500 mt-3">
+          Redes sociales:
+        </p>
+        <div class="mt-1">
+          <div class="flex items-center mt-2 space-x-2 text-primary">
+            <Icon class="text-primary w-5 h-5" name="mdi:instagram" /><a
+              href="https://www.instagram.com/wisec.ai/" target="_blank" rel="nofollow"
+              >Wisec.ia</a
+            >
+          </div><div class="flex items-center mt-2 space-x-2 text-primary">
+            <Icon class="text-primary w-5 h-5" name="mdi:linkedin" /><a
+              href="https://www.linkedin.com/company/wisecai" target="_blank" rel="nofollow">Wisec.ia</a
             >
           </div>
         </div>

@@ -6,30 +6,6 @@ import wisecIcono02 from "assets/wisec_icono_02.svg";
 import wisecIcono03 from "assets/wisec_icono_03.svg";
 import wisecIcono04 from "assets/wisec_icono_04.svg";
 
-const apps = [
-  {
-    title: "Wichat",
-    description:
-      "Resuelve tus consultas en base a tu información en cuestión de segundos. Desde documentos, imágenes hasta planos, lo procesamos todo",
-    image: wisecIcono01,
-    alt: "",
-  },
-  {
-    title: "Witrack",
-    description:
-      "Haz un seguimiento de tus entregables, resuelve las observaciones de tus clientes eficientemente y monitorea el avance de tus proyectos",
-    image: wisecIcono02,
-    alt: "",
-  },
-  {
-    title: "VeriWi",
-    description:
-      "Verifica el avance de obra sin salir de tu oficina mediante fotos en cuestión de segundos y mantén tu registro actualizado",
-    image: wisecIcono03,
-    alt: "",
-  },
-];
-
 const features = [
   {
     title: "Transforma tu información en tu principal activo",
@@ -61,33 +37,6 @@ const features = [
   },
 ];
 ---
-
-<div class="pb-16">
-  <div class="mt-16 md:mt-0">
-    <h2
-      class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-primary">
-      ¿Cómo lo hacemos?
-    </h2>
-    <p class="text-lg mt-4 text-primary">
-      Mediante diversos features integrados a nuestro software
-    </p>
-  </div>
-
-  <div class="grid sm:grid-cols-3 md:grid-cols-3 mt-16 gap-16">
-    {
-      apps.map((item) => (
-        <div class="flex gap-4 items-center shadow-lg shadow-indigo-500/40 flex-col rounded-md border border-[#D8DEE9] py-10 px-12">
-          <div>
-            <h3 class="font-bold text-2xl text-center">{item.title}</h3>{" "}
-            <p class="text-slate-500 mt-2 leading-relaxed text-center">
-              {item.description}
-            </p>
-          </div>
-        </div>
-      ))
-    }
-  </div>
-</div>
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-primary">
