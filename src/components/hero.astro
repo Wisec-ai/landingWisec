@@ -6,13 +6,12 @@ import { Icon } from "astro-icon";
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block mt-5 lg:mt-0">
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 pt-0 md:pt-12 md:pb-24">
+  <div class="pb-10 md:py-6 md:order-1 md:block mt-5 lg:mt-0">
     <Picture
       src={heroImage}
       alt="Inteligencia Artificial"
       widths={[200, 400, 1200]}
-      aspectRatio="4:3"
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
       format="svg"
@@ -20,17 +19,17 @@ import { Icon } from "astro-icon";
   </div>
   <div>
     <h1
-      class="text-primary text-5xl lg:text-6xl xl:text-7xl lg:tracking-tight xl:tracking-tighter">
-      <span class="font-light">Somos</span><span class="font-bold"
+      class="text-primary text-4xl lg:text-6xl xl:text-7xl lg:tracking-tight xl:tracking-tighter">
+      <span class="font-light">Somos </span><span class="font-bold"
         >Wisec<span class="text-secondary">.ai</span></span
       >
     </h1>
-    <h3 class="text-primary text-3xl lg:text-3xl xl:text-4xl mt-2">
+    <h3 class="text-primary text-2xl lg:text-3xl xl:text-4xl mt-2">
       <span class="font-light">¡el ChatGPT de la </span><span class="font-bold"
         >Ingeniería y Construcción!</span
       >
     </h3>
-    <p class="text-lg mt-4 text-primary max-w-xl">
+    <p class="text-md md:text-lg mt-4 text-primary max-w-xl">
       Mejoramos la productividad de tu empresa mediante el aprovechamiento de tu información con IA.
     </p>
     <!-- <div class="mt-6 flex flex-col sm:flex-row gap-3">
