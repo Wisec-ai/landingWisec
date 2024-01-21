@@ -4,6 +4,7 @@ import ContainerHeader from "@components/containerheader.astro";
 import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
 import Platforms from "@components/plataformas.astro";
+import Proposito from "@components/proposito.astro";
 import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
@@ -13,6 +14,8 @@ import { Icon } from "astro-icon";
 import { getCollection } from "astro:content";
 import { Picture } from "@astrojs/image/components";
 import PricingCard from "@components/pricing.astro";
+import Ecosistema from "@components/ecosistema.astro";
+import Maintance from "@components/mantenimiento.astro";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -119,9 +122,21 @@ const pricing = [
 ---
 
 <Layout title="">
+  <div class="h-screen flex flex-col justify-center items-center">
+    <Maintance />
+  </div>
+</Layout>
+
+<!-- <Layout title="">
   <ContainerHeader>
     <Hero />
   </ContainerHeader> 
+  <Container>
+    <Ecosistema />
+  </Container> 
+  <Container>
+    <Proposito />
+  </Container> 
   <Container>
     <Platforms />
   </Container> 
@@ -141,13 +156,7 @@ const pricing = [
     <div class="grid md:grid-cols-4 gap-2 mx-auto mt-12">
       {pricing.map((item) => <PricingCard plan={item} />)}
     </div>
-    <!-- <div class="mx-auto max-w-screen-lg mt-5 text-left">
-      *(chatbot Wi, Witrack, Wiorg)
-    </div> -->
   </Container>
-  <!-- <Container>
-    <Cta />
-  </Container> -->
   <Container>
     <Sectionhead>
       <Fragment slot="title">Nuestro <span class="text-secondary">Dream Team</span></Fragment>
@@ -208,8 +217,6 @@ const pricing = [
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-primary">
-            <!-- <Icon class="text-primary w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span> -->
           </div><div class="flex items-center mt-2 space-x-2 text-primary">
             <Icon class="text-primary w-4 h-4" name="uil:envelope" /><a
               href="mailto:hello@astroshipstarter.com"
@@ -242,4 +249,4 @@ const pricing = [
       </div>
     </div>
   </Container>
-</Layout>
+</Layout> -->

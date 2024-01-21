@@ -1,0 +1,34 @@
+---
+// @ts-ignore
+import { Picture } from "@astrojs/image/components";
+import propositoMap from "assets/wisec_image-propuesta.png";
+
+---
+
+  <div class="mt-16 md:mt-0">
+    <h2
+      class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-primary">
+      Nuestro propósito
+    </h2>
+    <p class="text-lg mt-4 text-primary">
+      Conectar al ecosistema constructor actuando como un orquestador digital que facilita el contacto, compra, gestión y seguimiento de materiales y servicios en los proyectos de construcción.
+    </p>
+  </div>
+
+  <div class="gap-16">
+    <div class="flex gap-4 items-center flex-col">
+      <div class="mt-1 p-3">
+        <Picture
+          src = {propositoMap}
+          alt= "Propuesta"
+          widths={[500,1920]}
+          aspectRatio="2:1"
+          fit="contain"
+          background="rgba(0,0,0,0)"
+          position="center"
+          format="svg"
+          class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+        />
+      </div>
+    </div>
+  </div>
