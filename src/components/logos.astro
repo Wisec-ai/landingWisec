@@ -1,0 +1,111 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import scale from "assets/respaldos/respaldoScale.png";
+import mezcladora from "assets/respaldos/respaldoMezcladora.svg";
+import habitat from "assets/respaldos/respaldoHabitat.svg";
+import startup from "assets/respaldos/respaldoStartup.png";
+
+import digicem from "assets/clientes/clienteDigicem.svg";
+import master from "assets/clientes/clienteMasterBuilders.png";
+import progresol from "assets/clientes/clienteProgresol.svg";
+import sika from "assets/clientes/clienteSika.svg";
+import unacem from "assets/clientes/clienteUnacem.svg";
+
+---
+
+<div
+  class="mt-0 max-w-3xl mx-auto"
+  x-data="{intersect:false}"
+  x-intersect:enter="intersect=true"
+  x-intersect:leave="intersect=false">
+  <h2 class="text-center text-lg text-slate-500">Respaldados por</h2>
+  <div
+    class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-6 brightness-75 contrast-200 dark:brightness-200 dark:contrast-0 my-10 md:my-16 lg:gap-12 items-center"
+    :class="intersect ? 'animate-fade-up animate-duration-[1000ms] grayscale animate-ease-out':'opacity-0'">
+    <Picture
+      src={startup}
+      alt="Logo de Scale"
+      widths={[200]}
+      sizes="(max-width: 120px) 100vw, 150px"
+      loading="eager"
+      format="png"
+    />
+    <Picture
+      src={scale}
+      alt="Logo de Scale"
+      widths={[200]}
+      sizes="(max-width: 120px) 100vw, 150px"
+      loading="eager"
+      format="png"
+    />
+    <Picture
+      src={mezcladora}
+      alt="Logo de Mezcladora"
+      widths={[200]}
+      sizes="(max-width: 120px) 100vw, 150px"
+      loading="eager"
+      format="png"
+    />
+    <Picture
+      src={habitat}
+      alt="Logo de Habitat"
+      widths={[200]}
+      sizes="(max-width: 120px) 100vw, 150px"
+      loading="eager"
+      format="png"
+    />
+  </div>
+</div>
+<div
+  class="pt-20 max-w-5xl mx-auto"
+  x-data="{intersect:false}"
+  x-intersect:enter="intersect=true"
+  x-intersect:leave="intersect=false">
+  <h2 class="text-center text-lg text-slate-500">Quienes confían en nosotros</h2>
+  <div
+    class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-6 brightness-75 contrast-200 dark:brightness-200 dark:contrast-0 my-10 md:my-16 lg:gap-12 items-center"
+    :class="intersect ? 'animate-fade-up animate-duration-[1000ms] grayscale animate-delay-[200ms] animate-ease-out':'opacity-0'">
+    <Picture
+      src={digicem}
+      alt="Logo de Digicem"
+      widths={[200]}
+      sizes="(max-width: 120px) 100vw, 150px"
+      loading="eager"
+      format="png"
+    />
+    <Picture
+      src={master}
+      alt="Logo de Master"
+      widths={[200]}
+      sizes="(max-width: 120px) 100vw, 150px"
+      loading="eager"
+      format="png"
+    />
+    <Picture
+      src={progresol}
+      alt="Logo de Progresol"
+      widths={[200]}
+      sizes="(max-width: 120px) 100vw, 200px"
+      loading="eager"
+      format="png"
+    />
+    <Picture
+      src={sika}
+      alt="Logo de Sika"
+      widths={[200]}
+      sizes="(max-width: 120px) 100vw, 80px"
+      loading="eager"
+      format="png"
+    />
+    <Picture
+      src={unacem}
+      alt="Logo de Unacem"
+      widths={[200]}
+      sizes="(max-width: 120px) 100vw, 80px"
+      loading="eager"
+      format="png"
+    />
+  </div>
+</div>

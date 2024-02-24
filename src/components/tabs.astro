@@ -1,0 +1,76 @@
+---
+import { Picture } from "@astrojs/image/components";
+import SectionBannerImage from "@components/tabs/sectionbannerimage.astro"
+import SectionPasos from "@components/tabs/sectionpasos.astro"
+import iconArrowBottom from "assets/icon-arrow-downward.svg";
+
+
+---
+
+<section class="mt-10" id="tabs">
+  <div
+    x-data="{intersect:false}"
+    x-intersect:enter="intersect=true"
+    x-intersect:leave="intersect=false"
+    class="mx-auto xl:px-0 lg:pb-initial">
+    <div class="text-center lg:pt-28 pb-10 pt-10">
+      <h2
+        class="text-3xl font-bold text-primary dark:text-white xl:text-4xl"
+        :class="intersect ? 'animate-fade-up animate-duration-[500ms] animate-ease-out':'opacity-0'">
+        ¿A qué sector perteneces?
+      </h2>
+      <!-- <p
+          class="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">
+          Elige uno de los dos
+        </p> -->
+
+      <div
+        role="tablist"
+        aria-label="tabs"
+        class="relative mx-auto mt-10 lg:mt-20 grid w-auto grid-cols-2 items-center gap-x-1 rounded-full px-[3px] text-primary sm:w-max">
+        <button
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-0"
+          tabindex="0"
+          title="tab item"
+          class="btn-constructor tab relative block rounded-full py-2.5 px-5 lg:py-5 lg:px-10 hover:text-primary item-active opacity-0"
+          :class="intersect ? 'animate-fade-up animate-ease-out':'opacity-0'">
+          <span
+            class="m-auto block w-max text-lg lg:text-xl font-semibold tracking-normal"
+            >Soy Constructor</span
+          >
+        </button>
+        <button
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-1"
+          tabindex="-1"
+          title="tab item"
+          class="btn-proveedor tab relative block rounded-full py-2.5 px-5 lg:py-5 lg:px-10 hover:text-primary opacity-0"
+          :class="intersect ? 'animate-fade-up animate-delay-[500ms] animate-ease-out':'opacity-0'">
+          <span
+            class="m-auto block w-max text-lg lg:text-xl font-semibold tracking-normal"
+            >Soy Proveedor</span
+          >
+        </button>
+      </div>
+    </div>
+    <SectionBannerImage />
+  </div>
+  <div class="-mb-5 mt-10">
+    <a aria-label="read more" 
+      class="group relative mx-auto flex h-20 w-20 items-center justify-center cursor-pointer" id='btn-steps'>
+      <Picture
+              src={iconArrowBottom}
+              alt="arrow bottom"
+              widths={[80, 30, 30]}
+              aspectRatio="1:1"
+              sizes="(max-width: 1024px) 30px,50px"
+              loading="eager"
+              format="svg"
+              class="animate-bounce animate-duration-[3000ms]"
+        />
+    </a>
+  </div>
+</section>

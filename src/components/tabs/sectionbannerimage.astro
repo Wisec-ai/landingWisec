@@ -1,0 +1,228 @@
+---
+import { Picture } from "@astrojs/image/components";
+import imgConstructor from "assets/img_constructor.png";
+import imgProveedor from "assets/img_proveedor.png";
+import heroImage from "assets/infografia2.svg";
+
+import construction from "assets/infografiaConstruction.png";
+
+
+const { pasos } = Astro.props;
+---
+
+<div
+  class="gap-6 space-y-12 md:flex md:space-y-0 max-md:flex-col-reverse max-md:flex"
+  :class="intersect ? 'animate-fade-up animate-delay-[1000ms] animate-ease-out':'opacity-0'">
+  <div class="relative md:w-1/2">
+    <div
+      class="panel inset-0 flex flex-col justify-center transition duration-500 md:absolute visible opacity-100 scale-100"
+      id="panel-0">
+      <div>
+        <h3
+          class="text-2xl font-bold text-black dark:text-white md:text-3xl lg:text-4xl">
+          A ti, <span class="text-constructor">constructor...</span>
+        </h3>
+        <p class="mt-6 text-black text-lg lg:text-xl font-bold">
+          Te brindamos las mejores ofertas de materiales y
+          servicios para que tu proyecto de vida sea una realidad
+        </p>
+        <p class="mt-6 text-black text-lg lg:text-xl">
+          Regístrate en nuestra lista de espera y vive la experiencia de
+          conectarte con el ecosistema constructor peruano a través de un chat
+          simple como si estuvieses en wtsp...¡Más fácil, imposible!
+        </p>
+        <div class="mt-8 space-y-6">
+          <div class="flex items-center gap-6">
+            <div
+              class="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-4 dark:border-gray-600/60 dark:bg-gray-900/40">
+              <img
+                class="m-auto h-8 w-auto"
+                src="https://cdn-icons-png.flaticon.com/512/4727/4727266.png"
+                alt="icon illustration"
+                loading="lazy"
+                width="512"
+                height="512"
+              />
+            </div>
+            <div class="w-[calc(100%-7.5rem)]">
+              <h4 class="text-base lg:text-lg font-semibold text-black">
+                Together as one
+              </h4>
+              <p class="mt-1 text-black">
+                Accusantium nemo perspiciatis delectus atque autem!
+              </p>
+            </div>
+          </div>
+          <form action="" class="mt-12" :class="intersect ? 'animate-shake animate-delay-[5000ms] animate-ease-out':'opacity-0'">
+            <div
+              class="relative flex items-center rounded-full border border-primary/20 bg-white p-1 px-2 shadow-md focus-within:ring-2 focus-within:ring-primary dark:border-white/10 dark:bg-dark dark:text-white md:p-2 lg:pr-3">
+              <div class="py-3 pl-4 lg:pl-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="m-auto h-6 w-6 fill-gray-500 dark:fill-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path
+                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                  ></path>
+                  <path
+                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                aria-label="your email"
+                autocomplete="email"
+                placeholder="Correo electrónico"
+                class="w-full rounded-full border-none bg-transparent pl-4 placeholder-gray-600 outline-none focus:ring-0 dark:placeholder-white text-lg"
+                type="email"
+              />
+              <div class="md:pr-1.5 lg:pr-0">
+                <button
+                  type="submit"
+                  title="Register"
+                  class="relative ml-auto h-12 w-16 before:absolute before:inset-0 before:rounded-full before:bg-constructor before:transition before:duration-300 active:duration-75 active:before:scale-95 sm:w-auto sm:px-6">
+                  <span
+                    class="relative hidden w-max font-medium text-black md:block text-lg">
+                    Registrarme
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="relative mx-auto h-6 w-6 text-white dark:text-gray-900 md:hidden">
+                    <path
+                      d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      class="panel absolute inset-0 flex flex-col justify-center transition duration-500 invisible opacity-0 scale-90"
+      id="panel-1">
+      <div>
+        <h3
+          class="text-2xl font-bold text-gray-900 dark:text-white md:text-3xl lg:text-4xl">
+          A ti, <span class="text-marked">proveedor/distribuidor...</span>
+        </h3>
+        <p class="mt-8 text-primary text-lg lg:text-xl font-bold">
+          Te brindamos herramientas para que
+          lleves la productividad de tu negocio al siguiente nivel
+        </p>
+        <p class="mt-8 text-primary text-lg lg:text-xl">
+          Regístrate en nuestra lista de espera y mejora la productividad y
+          eficiencia operativa de tu negocio generando más ventas con un solo
+          click
+        </p>
+        <div class="mt-8 space-y-6">
+          <div class="flex items-center gap-6">
+            <div
+              class="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-4 dark:border-gray-600/60 dark:bg-gray-900/40">
+              <img
+                class="m-auto h-8 w-auto"
+                src="https://cdn-icons-png.flaticon.com/512/6106/6106288.png"
+                alt="icon illustration"
+                loading="lazy"
+                width="512"
+                height="512"
+              />
+            </div>
+            <div class="w-[calc(100%-7.5rem)]">
+              <h4 class="text-base lg:text-lg font-semibold text-primary ">
+                Together as one
+              </h4>
+              <p class="mt-1 text-primary ">
+                Accusantium nemo perspiciatis delectus atque autem!
+              </p>
+            </div>
+          </div>
+          <form action="" class="mt-12" :class="intersect ? 'animate-shake animate-delay-[5000ms] animate-ease-out':'opacity-0'">
+            <div
+              class="relative flex items-center rounded-full border border-primary/20 bg-white p-1 px-2 shadow-md focus-within:ring-2 focus-within:ring-primary dark:border-white/10 dark:bg-dark dark:text-white md:p-2 lg:pr-3">
+              <div class="py-3 pl-4 lg:pl-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="m-auto h-6 w-6 fill-gray-500 dark:fill-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path
+                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                  ></path>
+                  <path
+                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                aria-label="your email"
+                autocomplete="email"
+                placeholder="Correo electrónico"
+                class="w-full rounded-full border-none bg-transparent pl-4 placeholder-gray-600 outline-none focus:ring-0 dark:placeholder-white text-lg"
+                type="email"
+              />
+              <div class="md:pr-1.5 lg:pr-0">
+                <button
+                  type="submit"
+                  title="Register"
+                  class="relative ml-auto h-12 w-16 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight sm:w-auto sm:px-6">
+                  <span
+                    class="relative hidden w-max font-medium text-white dark:text-gray-900 md:block text-lg">
+                    Registrarme
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="relative mx-auto h-6 w-6 text-white dark:text-gray-900 md:hidden">
+                    <path
+                      d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="-m-4 overflow-hidden sm:-mx-12 sm:px-12 md:mx-0 md:w-1/2 md:overflow-visible md:px-0">
+    <div
+      class="relative before:absolute before:inset-0 before:scale-x-110 after:absolute after:inset-0">
+      <div class="relative h-[25rem] overflow-clip py-10 sm:h-[32rem] lg:p-20">
+        <div
+          data-target="panel-0"
+          class="justify-center panel-preview absolute inset-0 z-10 flex translate-y-0 scale-100 items-center overflow-hidden px-6 opacity-100 transition duration-500 sm:px-10">
+          <Picture
+            src={construction}
+            alt="Inteligencia Artificial"
+            widths={[200, 400, 1200]}
+            sizes="(max-width: 800px) 100vw, 620px"
+            loading="eager"
+            format="svg"
+          />
+          <!-- <img src="./images/screenshots/tailus-home.webp" class="mx-auto h-80 w-96 rounded-t-3xl border object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="tailus screenshot" loading="lazy" width="850" height="1780"> -->
+        </div>
+        <div
+          data-target="panel-1"
+          class="justify-center panel-preview absolute inset-0 z-0 flex translate-y-[100%] scale-75 items-center overflow-hidden px-6 opacity-50 transition duration-500 sm:px-10">
+          <Picture
+            src={heroImage}
+            alt="Inteligencia Artificial"
+            widths={[200, 400, 1200]}
+            sizes="(max-width: 800px) 100vw, 620px"
+            loading="eager"
+            format="svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,74 @@
+---
+// @ts-ignore
+import { Picture } from "@astrojs/image/components";
+import wisecIcono01 from "assets/wisec_icono_01.svg";
+import wisecIcono02 from "assets/wisec_icono_02.svg";
+import wisecIcono03 from "assets/wisec_icono_03.svg";
+import wisecIcono04 from "assets/wisec_icono_04.svg";
+
+const features = [
+  {
+    title: "Transforma tu información en tu principal activo",
+    description:
+      "Conectando tu información desde cualquier repositorio o base de datos, nos das la posibilidad de transformarla en tu principal activo para que tomes las mejores decisiones y empoderes tu negocio.",
+    image: wisecIcono01,
+    alt: "",
+  },
+  {
+    title: "Mejora de la calidad de tus proyectos",
+    description:
+      "Con nuestros features impulsados por IA, tus principales procesos estarán controlados y monitoreados, de esta forma, podrás entregar los mejores resultados a tus clientes en cada uno de tus proyectos.",
+    image: wisecIcono02,
+    alt: "",
+  },
+  {
+    title: "Reduce el riesgo de pérdidas ",
+    description:
+      "Al optimizar tus principales procesos, reducimos el riesgo de pérdidas tanto de tiempo como de dinero en tus proyectos, para que te enfoques en lo que realmente importa: generar valor para tus clientes.",
+    image: wisecIcono03,
+    alt: "",
+  },
+  {
+    title: "Genera una cultura de aprendizaje continuo",
+    description:
+      "Teniendo tu data como tu principal aliada, impulsamos tu organización al siguiente nivel aprovechando el capital intelectual de tu equipo y generando una cultura de aprendizaje continuo en tu compañía.",
+    image: wisecIcono04,
+    alt: "",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-primary">
+    ¿Qué <span class="text-secondary">beneficios</span> te brindamos?
+  </h2>
+  <p class="text-lg mt-4 text-primary">
+    Nuestros beneficios aportan dentro de la empresa gestionando los proyectos.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-2 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start flex-col md:flex-row">
+        <div class="mt-1 bg-primary rounded-full p-3 w-20 h-20 shrink-0">
+          <Picture
+            src={item.image}
+            alt={item.alt}
+            widths={[100, 120]}
+            aspectRatio="1:1"
+            fit="contain"
+            background="rgba(0,0,0,0)"
+            position="center"
+            format="svg"
+            class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+          />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

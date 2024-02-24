@@ -1,0 +1,238 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+
+export interface Props {
+  title: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.png",
+  Astro.site
+).toString();
+
+const { title } = Astro.props;
+
+const makeTitle = title
+  ? title + " | " + "Wisec.ia"
+  : "Wisec - ChatGPT de la Construcción";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <SEO
+      title={makeTitle}
+      description="Impulsamos el diseño y construcción con IA"
+      canonical={canonicalURL}
+      twitter={{
+        creator: "@wisecia",
+        site: "@wisecia",
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `Wisec.ai - Gestor de proyectos`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "Banner de Wisec.ia",
+        },
+      }}
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"
+    ></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+    ></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script><script>
+      // const tabs = document.querySelectorAll('.tab')
+      // const tabContents = document.querySelectorAll('.tabcontent')
+      // const activateTab = tabnum => {
+
+      //     tabs.forEach( tab => {
+      //       tab.classList.remove('active');
+      //     })
+
+      //     tabContents.forEach( tabContent => {
+      //         tabContent.classList.remove('active');
+      //     })
+
+      //     document.querySelector('#panel-' + tabnum).classList.add('active');
+      //     // document.querySelector('#panel-' + tabnum).classList.add('active');
+
+      // }
+
+      // tabs.forEach(tab => {
+      //     tab.addEventListener('click', () => {
+      //         activateTab(tab.dataset.tab)
+      //     })
+      // })
+      // activateTab(1)
+      let steps = document.getElementById("steps");
+      let btnStep = document.getElementById("btn-steps");
+      let btnMores = document.querySelectorAll('.btn-more');
+
+      let tabs = document.getElementById("tabs");
+      let more = document.getElementById("more");
+      
+      let sections1 = document.querySelectorAll('[data-target="panel-0"]');
+      let sections2 = document.querySelectorAll('[data-target="panel-1"]');
+
+      let btn1 = document.querySelectorAll('[aria-controls="panel-0"]')[0];
+      let btn2 = document.querySelectorAll('[aria-controls="panel-1"]')[0];
+      let tab1 = document.getElementById("panel-0");
+      let tab2 = document.getElementById("panel-1");
+
+      let classesInactive = "invisible opacity-0 scale-90".split(" ");
+      let classesActive = "visible opacity-100 scale-100".split(" ");
+
+      let classesInactiveImg = "translate-y-[100%] opacity-50 scale-75".split(
+        " "
+      );
+      let classesActiveImg = "translate-y-0 opacity-100 scale-100".split(" ");
+
+      
+
+      btnMores.forEach((btnMore) => {
+        btnMore.addEventListener(
+          "click",
+          function (e) {
+            if (more) {
+              more.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "center",
+              });
+            }
+          },
+          false
+        );
+      });
+
+      btnStep.addEventListener(
+          "click",
+          function (e) {
+            if (steps) {
+              steps.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "center",
+              });
+            }
+          },
+          false
+        );
+
+      btn1.addEventListener(
+        "click",
+        function (e) {
+          tab1.classList.remove(...classesInactive);
+          tab1.classList.add(...classesActive);
+
+          tab2.classList.remove(...classesActive);
+          tab2.classList.add(...classesInactive);
+
+          sections1.forEach((section1) => {
+            section1.classList.remove(...classesInactiveImg);
+            section1.classList.add(...classesActiveImg);
+          });
+
+          sections2.forEach((section2) => {
+            section2.classList.remove(...classesActiveImg);
+            section2.classList.add(...classesInactiveImg);
+          });
+
+          this.classList.remove("item-active");
+          this.classList.add("item-active");
+          btn2.classList.remove("item-active");
+
+          if (tabs) {
+            tabs.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "center",
+            });
+          }
+        },
+        false
+      );
+
+      btn2.addEventListener(
+        "click",
+        function (e) {
+          tab2.classList.remove(...classesInactive);
+          tab2.classList.add(...classesActive);
+
+          tab1.classList.remove(...classesActive);
+          tab1.classList.add(...classesInactive);
+
+          sections2.forEach((section2) => {
+            section2.classList.remove(...classesInactiveImg);
+            section2.classList.add(...classesActiveImg);
+          });
+
+          sections1.forEach((section1) => {
+            section1.classList.remove(...classesActiveImg);
+            section1.classList.add(...classesInactiveImg);
+          });
+
+          this.classList.remove("item-active");
+          this.classList.add("item-active");
+          btn1.classList.remove("item-active");
+
+          if (tabs) {
+            tabs.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "center",
+            });
+          }
+        },
+        false
+      );
+    </script></head
+  >
+
+  <!-- Alpine Plugins -->
+
+  <!-- Alpine Core -->
+
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <style is:global>
+      /* Improve Page speed */
+      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      img {
+        content-visibility: auto;
+      }
+
+      .btn-constructor.item-active {
+        background-color: #ffd700;
+        color: black;
+      }
+
+      .btn-proveedor.item-active {
+        background-color: #071c42;
+        color: white;
+      }
+    </style>
+  </body>
+</html>
