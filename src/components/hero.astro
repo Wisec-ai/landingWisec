@@ -83,7 +83,7 @@ import logoWisec from "assets/logo-wisec.svg";
       x-intersect:enter="intersect=true"
       x-intersect:leave="intersect=false">
       <div
-        class="max-w-xl flex-none lg:max-w-none" :class="intersect ? 'animate-fade-left animate-reverse animate-delay-[4000ms] animate-duration-1000 animate-ease-out':'opacity-0'">
+        class="max-w-xl flex-none" :class="intersect ? 'animate-fade-left animate-reverse animate-delay-[4000ms] animate-duration-1000 animate-ease-out':'opacity-0'">
         <Picture
           src={screenshot1}
           alt="App screenshot"
@@ -95,7 +95,7 @@ import logoWisec from "assets/logo-wisec.svg";
         />
       </div>
       <div
-        class="max-w-xl flex-none w-max absolute lg:max-w-none" :class="intersect ? 'animate-fade-left animate-delay-[5000ms] animate-duration-1000 animate-ease-out':'opacity-0'">
+        class="max-w-xl flex-none w-max absolute" :class="intersect ? 'animate-fade-left animate-delay-[5000ms] animate-duration-1000 animate-ease-out':'opacity-0'">
         <Picture
           src={screenshot2}
           alt="App screenshot"
@@ -107,7 +107,7 @@ import logoWisec from "assets/logo-wisec.svg";
         />
       </div>
       <div
-        class="max-w-xl flex-none w-max absolute lg:max-w-none" :class="intersect ? 'animate-fade-left animate-delay-[9000ms] animate-duration-2000 animate-ease-out':'opacity-0'">
+        class="max-w-xl flex-none w-max absolute" :class="intersect ? 'animate-fade-left animate-delay-[9000ms] animate-duration-2000 animate-ease-out':'opacity-0'">
         <Picture
           src={screenshot3}
           alt="App screenshot"
