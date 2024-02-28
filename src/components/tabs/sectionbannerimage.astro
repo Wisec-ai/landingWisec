@@ -11,7 +11,7 @@ const { pasos } = Astro.props;
 ---
 
 <div
-  class="gap-6 space-y-12 md:flex md:space-y-0 max-md:flex-col-reverse max-md:flex"
+  class="gap-6 lg:space-y-12 md:flex md:space-y-0 max-md:flex-col-reverse max-md:flex"
   :class="intersect ? 'animate-fade-up animate-delay-[1000ms] animate-ease-out':'opacity-0'">
   <div class="relative md:w-1/2">
     <div
@@ -19,20 +19,20 @@ const { pasos } = Astro.props;
       id="panel-0">
       <div>
         <h3
-          class="text-2xl font-bold text-black dark:text-white md:text-3xl lg:text-4xl">
+          class="text-xl font-bold text-black dark:text-white md:text-2xl">
           A ti, <span class="text-constructor">constructor...</span>
         </h3>
-        <p class="mt-6 text-black text-lg lg:text-xl font-bold">
+        <p class="mt-6 text-black lg:text-lg font-bold">
           Te brindamos las mejores ofertas de materiales y
           servicios para que tu proyecto de vida sea una realidad
         </p>
-        <p class="mt-6 text-black text-lg lg:text-xl">
+        <p class="mt-6 text-black ">
           Regístrate en nuestra lista de espera y vive la experiencia de
           conectarte con el ecosistema constructor peruano a través de un chat
           simple como si estuvieses en wtsp...¡Más fácil, imposible!
         </p>
         <div class="mt-8 space-y-6">
-          <div class="flex items-center gap-6">
+          <!-- <div class="flex items-center gap-6">
             <div
               class="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-4 dark:border-gray-600/60 dark:bg-gray-900/40">
               <img
@@ -52,7 +52,7 @@ const { pasos } = Astro.props;
                 Accusantium nemo perspiciatis delectus atque autem!
               </p>
             </div>
-          </div>
+          </div> -->
           <form action="" class="mt-12" :class="intersect ? 'animate-shake animate-delay-[5000ms] animate-ease-out':'opacity-0'">
             <div
               class="relative flex items-center rounded-full border border-primary/20 bg-white p-1 px-2 shadow-md focus-within:ring-2 focus-within:ring-primary dark:border-white/10 dark:bg-dark dark:text-white md:p-2 lg:pr-3">
@@ -74,7 +74,7 @@ const { pasos } = Astro.props;
                 aria-label="your email"
                 autocomplete="email"
                 placeholder="Correo electrónico"
-                class="w-full rounded-full border-none bg-transparent pl-4 placeholder-gray-600 outline-none focus:ring-0 dark:placeholder-white text-lg"
+                class="w-full rounded-full border-none bg-transparent pl-4 placeholder-gray-600 outline-none focus:ring-0 dark:placeholder-white"
                 type="email"
               />
               <div class="md:pr-1.5 lg:pr-0">
@@ -83,7 +83,7 @@ const { pasos } = Astro.props;
                   title="Register"
                   class="relative ml-auto h-12 w-16 before:absolute before:inset-0 before:rounded-full before:bg-constructor before:transition before:duration-300 active:duration-75 active:before:scale-95 sm:w-auto sm:px-6">
                   <span
-                    class="relative hidden w-max font-medium text-black md:block text-lg">
+                    class="relative hidden w-max font-medium text-black md:block">
                     Registrarme
                   </span>
                   <svg
@@ -107,20 +107,20 @@ const { pasos } = Astro.props;
       id="panel-1">
       <div>
         <h3
-          class="text-2xl font-bold text-gray-900 dark:text-white md:text-3xl lg:text-4xl">
+          class="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">
           A ti, <span class="text-marked">proveedor/distribuidor...</span>
         </h3>
-        <p class="mt-8 text-primary text-lg lg:text-xl font-bold">
+        <p class="mt-8 text-primary lg:text-lg font-bold">
           Te brindamos herramientas para que
           lleves la productividad de tu negocio al siguiente nivel
         </p>
-        <p class="mt-8 text-primary text-lg lg:text-xl">
+        <p class="mt-8 text-primary">
           Regístrate en nuestra lista de espera y mejora la productividad y
           eficiencia operativa de tu negocio generando más ventas con un solo
           click
         </p>
         <div class="mt-8 space-y-6">
-          <div class="flex items-center gap-6">
+          <!-- <div class="flex items-center gap-6">
             <div
               class="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-4 dark:border-gray-600/60 dark:bg-gray-900/40">
               <img
@@ -140,7 +140,7 @@ const { pasos } = Astro.props;
                 Accusantium nemo perspiciatis delectus atque autem!
               </p>
             </div>
-          </div>
+          </div> -->
           <form action="" class="mt-12" :class="intersect ? 'animate-shake animate-delay-[5000ms] animate-ease-out':'opacity-0'">
             <div
               class="relative flex items-center rounded-full border border-primary/20 bg-white p-1 px-2 shadow-md focus-within:ring-2 focus-within:ring-primary dark:border-white/10 dark:bg-dark dark:text-white md:p-2 lg:pr-3">
@@ -162,7 +162,7 @@ const { pasos } = Astro.props;
                 aria-label="your email"
                 autocomplete="email"
                 placeholder="Correo electrónico"
-                class="w-full rounded-full border-none bg-transparent pl-4 placeholder-gray-600 outline-none focus:ring-0 dark:placeholder-white text-lg"
+                class="w-full rounded-full border-none bg-transparent pl-4 placeholder-gray-600 outline-none focus:ring-0 dark:placeholder-white"
                 type="email"
               />
               <div class="md:pr-1.5 lg:pr-0">
@@ -171,7 +171,7 @@ const { pasos } = Astro.props;
                   title="Register"
                   class="relative ml-auto h-12 w-16 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight sm:w-auto sm:px-6">
                   <span
-                    class="relative hidden w-max font-medium text-white dark:text-gray-900 md:block text-lg">
+                    class="relative hidden w-max font-medium text-white dark:text-gray-900 md:block">
                     Registrarme
                   </span>
                   <svg
@@ -192,18 +192,18 @@ const { pasos } = Astro.props;
     </div>
   </div>
   <div
-    class="-m-4 overflow-hidden sm:-mx-12 sm:px-12 md:mx-0 md:w-1/2 md:overflow-visible md:px-0">
+    class="overflow-hidden sm:px-12 md:mx-0 md:w-1/2 md:overflow-visible md:px-0">
     <div
       class="relative before:absolute before:inset-0 before:scale-x-110 after:absolute after:inset-0">
-      <div class="relative h-[25rem] overflow-clip py-10 sm:h-[32rem] lg:p-20">
+      <div class="relative h-[25rem] overflow-clip py-10 sm:h-[25rem] lg:p-20">
         <div
           data-target="panel-0"
           class="justify-center panel-preview absolute inset-0 z-10 flex translate-y-0 scale-100 items-center overflow-hidden px-6 opacity-100 transition duration-500 sm:px-10">
           <Picture
             src={construction}
             alt="Inteligencia Artificial"
-            widths={[200, 400, 1200]}
-            sizes="(max-width: 800px) 100vw, 620px"
+            widths={[200, 400, 800]}
+            sizes="(max-width: 800px) 100vw, 400px"
             loading="eager"
             format="svg"
           />
@@ -215,8 +215,8 @@ const { pasos } = Astro.props;
           <Picture
             src={heroImage}
             alt="Inteligencia Artificial"
-            widths={[200, 400, 1200]}
-            sizes="(max-width: 800px) 100vw, 620px"
+            widths={[200, 400, 800]}
+            sizes="(max-width: 800px) 100vw, 400px"
             loading="eager"
             format="svg"
           />

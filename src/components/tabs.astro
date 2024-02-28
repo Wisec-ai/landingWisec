@@ -12,22 +12,22 @@ import iconArrowBottom from "assets/icon-arrow-downward.svg";
     x-data="{intersect:false}"
     x-intersect:enter="intersect=true"
     x-intersect:leave="intersect=false"
-    class="mx-auto xl:px-0 lg:pb-initial">
-    <div class="text-center lg:pt-28 pb-10 pt-10">
+    class="mx-auto xl:px-20 lg:pb-initial ">
+    <div class="text-center pb-10 pt-10">
       <h2
-        class="text-3xl font-bold text-primary dark:text-white xl:text-4xl"
+        class="text-3xl font-bold text-gray-800 md:text-4xl xl:text-5xl"
         :class="intersect ? 'animate-fade-up animate-duration-[500ms] animate-ease-out':'opacity-0'">
         ¿A qué sector perteneces?
       </h2>
-      <!-- <p
+      <p
           class="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">
-          Elige uno de los dos
-        </p> -->
+          Elige uno de los sectores para brindarte información
+        </p>
 
       <div
         role="tablist"
         aria-label="tabs"
-        class="relative mx-auto mt-10 lg:mt-20 grid w-auto grid-cols-2 items-center gap-x-1 rounded-full px-[3px] text-primary sm:w-max">
+        class="relative mx-auto mt-10 grid w-auto grid-cols-2 items-center gap-x-1 rounded-full px-[3px] text-primary sm:w-max">
         <button
           role="tab"
           aria-selected="true"
@@ -37,7 +37,7 @@ import iconArrowBottom from "assets/icon-arrow-downward.svg";
           class="btn-constructor tab relative block rounded-full py-2.5 px-5 lg:py-5 lg:px-10 hover:text-primary item-active opacity-0"
           :class="intersect ? 'animate-fade-up animate-ease-out':'opacity-0'">
           <span
-            class="m-auto block w-max lg:text-xl font-semibold tracking-normal"
+            class="m-auto block w-max lg:text-lg font-semibold tracking-normal"
             >Soy Constructor</span
           >
         </button>
@@ -50,7 +50,7 @@ import iconArrowBottom from "assets/icon-arrow-downward.svg";
           class="btn-proveedor tab relative block rounded-full py-2.5 px-5 lg:py-5 lg:px-10 hover:text-primary opacity-0"
           :class="intersect ? 'animate-fade-up animate-delay-[500ms] animate-ease-out':'opacity-0'">
           <span
-            class="m-auto block w-max lg:text-xl font-semibold tracking-normal"
+            class="m-auto block w-max lg:text-lg font-semibold tracking-normal"
             >Soy Proveedor</span
           >
         </button>
@@ -58,7 +58,7 @@ import iconArrowBottom from "assets/icon-arrow-downward.svg";
     </div>
     <SectionBannerImage />
   </div>
-  <div class="-mb-5 mt-10">
+  <!-- <div class="-mb-5 mt-10">
     <a aria-label="read more" 
       class="group relative mx-auto flex h-20 w-20 items-center justify-center cursor-pointer" id='btn-steps'>
       <Picture
@@ -72,5 +72,5 @@ import iconArrowBottom from "assets/icon-arrow-downward.svg";
               class="animate-bounce animate-duration-[3000ms]"
         />
     </a>
-  </div>
+  </div> -->
 </section>

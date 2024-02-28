@@ -125,7 +125,8 @@ const makeTitle = title
         );
       });
 
-      btnStep.addEventListener(
+      if (btnStep) {
+        btnStep.addEventListener(
           "click",
           function (e) {
             if (steps) {
@@ -138,6 +139,7 @@ const makeTitle = title
           },
           false
         );
+      }
 
       btn1.addEventListener(
         "click",
@@ -230,8 +232,8 @@ const makeTitle = title
       }
 
       .btn-proveedor.item-active {
-        background-color: #071c42;
-        color: white;
+        background-color: #3dcab1;
+        color:#071c42;
       }
     </style>
   </body>

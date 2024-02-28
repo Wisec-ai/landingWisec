@@ -20,10 +20,10 @@ import PricingCard from "@components/pricing.astro";
 import Ecosistema from "@components/ecosistema.astro";
 import Maintance from "@components/mantenimiento.astro";
 import Tabs from "@components/tabs.astro";
-import SectionPasos from "@components/tabs/sectionpasos.astro"
-import SectionMas from "@components/tabs/sectionmas.astro"
-import Faqs from "@components/faq.astro"
-import SectionSlogan from "@components/slogan.astro"
+import SectionPasos from "@components/tabs/sectionpasos.astro";
+import SectionMas from "@components/tabs/sectionmas.astro";
+import Faqs from "@components/faq.astro";
+import SectionSlogan from "@components/slogan.astro";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -135,14 +135,13 @@ const pricing = [
   </div>
 </Layout> -->
 <Layout title="">
-
   <Hero />
   <Container class="mb-0 mb-0">
     <Tabs />
   </Container>
-  <ContainerBanner>
+  <Container class="mb-0 mb-0">
     <SectionPasos />
-  </ContainerBanner>
+  </Container>
   <ContainerBanner>
     <SectionMas />
   </ContainerBanner>
@@ -158,16 +157,16 @@ const pricing = [
   <Container>
     <Features />
   </Container>  -->
-  <Container>
+  <Container class="bg-primary border rounded-3xl pt-20 mx-10 lg:mx-auto">
     <Logos />
   </Container>
-  <ContainerBanner>
-    <Faqs/>
-  </ContainerBanner>
+  <Container class="mb-0 mb-0">
+    <Faqs />
+  </Container>
   <ContainerSlogan>
-    <SectionSlogan/>
+    <SectionSlogan />
   </ContainerSlogan>
-  
+
   <!-- <Container id="pricing">
     <Sectionhead>
       <Fragment slot="title">Nuestros <span class="text-secondary">planes</span></Fragment>

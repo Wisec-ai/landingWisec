@@ -3,72 +3,147 @@ import { Picture } from "@astrojs/image/components";
 import iconArrowBottom from "assets/icon-arrow-downward.svg";
 
 const pasosConstructor = [
-{
+  {
     id: "paso-1",
     title: "PASO I",
-    description: "Escanea el código QR que estará en nuestras ferreterías afiliadas y redes sociales, y loguéate en nuestra plataforma con tu cuenta Gmail como constructor o proveedor",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png"
-},
-{
+    description:
+      "Escanea el código QR que estará en nuestras ferreterías afiliadas y redes sociales, y loguéate en nuestra plataforma con tu cuenta Gmail como constructor o proveedor",
+    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+  },
+  {
     id: "paso-2",
     title: "PASO II",
-    description: "En la barra lateral, entra a 'Conectándome' y ¡listo! Ya puedes pedir los materiales para tu obra o realizar consultas sobre construcción",
-    img_url: "https://cdn-icons-png.flaticon.com/512/6106/6106288.png"
-},
-{
+    description:
+      "En la barra lateral, entra a 'Conectándome' y ¡listo! Ya puedes pedir los materiales para tu obra o realizar consultas sobre construcción",
+    img_url: "https://cdn-icons-png.flaticon.com/512/6106/6106288.png",
+  },
+  {
     id: "paso-3",
     title: "PASO III",
-    description: "Te llegarán cotizaciones de proveedores/distribuidores en cuestión de segundos, ¡tú eliges la mejor oferta!",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png"
-},
-{
+    description:
+      "Te llegarán cotizaciones de proveedores/distribuidores en cuestión de segundos, ¡tú eliges la mejor oferta!",
+    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+  },
+  {
     id: "paso-4",
     title: "PASO IV",
-    description: "Coordina con el proveedor/distribuidor el pago y envío de tus materiales con las mejores oportunidades de financimiento",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png"
-}
-]
+    description:
+      "Coordina con el proveedor/distribuidor el pago y envío de tus materiales con las mejores oportunidades de financimiento",
+    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+  },
+];
 
 const pasosProveedor = [
-{
+  {
     id: "paso-1",
     title: "PASO I",
-    description: "Te daremos el on-boarding para que puedas loguearte en nuestra plataforma y gestionar tu inventario de productos",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png"
-},
-{
+    description:
+      "Te daremos el on-boarding para que puedas loguearte en nuestra plataforma y gestionar tu inventario de productos",
+    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+  },
+  {
     id: "paso-2",
     title: "PASO II",
-    description: "En la barra lateral, entra a 'Conectándome' y ¡listo! Ya puedes enviar cotizaciones a tus clientes",
-    img_url: "https://cdn-icons-png.flaticon.com/512/6106/6106288.png"
-},
-{
+    description:
+      "En la barra lateral, entra a 'Conectándome' y ¡listo! Ya puedes enviar cotizaciones a tus clientes",
+    img_url: "https://cdn-icons-png.flaticon.com/512/6106/6106288.png",
+  },
+  {
     id: "paso-3",
     title: "PASO III",
-    description: "Pero no tan rápido, campeón, puedes automatizar el envío de cotizaciones con nuestro sistema y enfocarte solo en las que representen un potencial de lead.",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png"
-},
-{
+    description:
+      "Pero no tan rápido, campeón, puedes automatizar el envío de cotizaciones con nuestro sistema y enfocarte solo en las que representen un potencial de lead.",
+    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+  },
+  {
     id: "paso-4",
     title: "PASO IV",
-    description: "Cierra la venta y envía los materiales a obra dando la mejor atención a tus clientes",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png"
-}
-]
+    description:
+      "Cierra la venta y envía los materiales a obra dando la mejor atención a tus clientes",
+    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+  },
+];
 ---
 
 <div
   x-data="{intersect:false}"
   x-intersect:enter="intersect=true"
-  x-intersect:leave="intersect=false" id="steps">
-  <section class="relative overflow-hidden md:overflow-visible md:px-0" :class="intersect ? 'animate-fade-up animate-ease-out':'opacity-0'">
-    <div
-      class="relative before:absolute before:scale-x-110 after:absolute">
-      <div
-        class="relative overflow-clip ">
+  x-intersect:leave="intersect=false"
+  id="steps">
+  <section
+    class="relative overflow-hidden md:overflow-visible md:px-0"
+    :class="intersect ? 'animate-fade-up animate-ease-out':'opacity-0'">
+    <div class="relative before:absolute before:scale-x-110 after:absolute">
+      <div class="relative overflow-clip">
         <div
           data-target="panel-0"
-          class="justify-center panel-preview inset-0 z-10 flex items-start overflow-hidden px-6 py-20 lg:py-32 transition duration-500 sm:px-10 translate-y-0 opacity-100 scale-100 bg-constructor" style="background-image: url(...)">
+          class="justify-center panel-preview inset-0 z-10 flex items-start overflow-hidden px-6 pt-20 lg:py-20 transition duration-500 sm:px-10 translate-y-0 opacity-100 scale-100"
+          style="background-image: url(...)">
+          <!-- <div aria-hidden="true" class="absolute inset-0 top-60 grid grid-cols-2 -space-x-52 opacity-50 dark:opacity-30">
+                        <div class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
+                        <div class="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
+                    </div> -->
+          <div class="relative mx-auto px-4 sm:px-12 xl:max-w-7xl xl:px-0">
+            <div class="text-center">
+              <h2
+                class="text-3xl font-bold text-gray-800 dark:text-white md:text-4xl">
+                ¿Cómo <span class="text-constructor">funciona?</span>
+              </h2>
+              <p
+                class="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">
+                Estos son los pasos a seguir, de forma rápida y sencilla. 
+              </p>
+            </div>
+        
+            <div
+              class="mt-12 grid divide-x divide-y divide-gray-100 overflow-hidden rounded-3xl border border-gray-100 dark:divide-gray-700 dark:border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0">
+              {
+                pasosConstructor.map((paso) => (
+              <div
+                class="group relative bg-white transition-shadow hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:bg-gray-800">
+                <div class="space-y-8 p-8 py-12">
+                  <img
+                    src={paso.img_url}
+                    loading="lazy"
+                    class="w-12"
+                    width="512"
+                    height="512"
+                    alt="burger illustration"
+                  />
+                  <div class="space-y-2 pb-10">
+                    <h3
+                      class="text-2xl font-semibold text-gray-700 transition group-hover:text-primary dark:text-white dark:group-hover:text-primaryLight">
+                      {paso.title}
+                    </h3>
+                    <p class="text-gray-600">
+                      {paso.description}
+                    </p>
+                  </div>
+                  <a
+                    href="#"
+                    class="flex items-center justify-between text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primaryLight absolute bottom-10">
+                    <span class="text-sm">Leer más</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="h-5 w-5 -translate-x-4 text-2xl opacity-0 transition duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              ))
+            }
+            </div>
+          </div>
+        </div>
+        <div
+          data-target="panel-1"
+          class="justify-center panel-preview absolute inset-0 z-0 flex items-start overflow-hidden px-6 transition duration-500 pt-20 lg:py-32 sm:px-10 translate-y-[100%] opacity-50 scale-75">
           <!-- <div aria-hidden="true" class="absolute inset-0 top-60 grid grid-cols-2 -space-x-52 opacity-50 dark:opacity-30">
                         <div class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
                         <div class="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
@@ -76,11 +151,85 @@ const pasosProveedor = [
           <div class="relative mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
             <div class="text-center">
               <h2
-                class="font-bold text-black text-3xl xl:text-4xl">
-                ¿Cómo funciona?
+                class="text-3xl font-bold text-gray-800 dark:text-white md:text-4xl">
+                ¿Cómo <span class="text-marked">funciona?</span>
               </h2>
               <p
-                class="mx-auto mt-6 text-black text-lg md:w-3/4 lg:w-3/5">
+                class="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">
+                Estos son los pasos a seguir, de forma rápida y sencilla. 
+              </p>
+            </div>
+        
+            <div
+              class="mt-12 grid divide-x divide-y divide-gray-100 overflow-hidden rounded-3xl border border-gray-100 dark:divide-gray-700 dark:border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0">
+              {
+                pasosProveedor.map((paso) => (
+              <div
+                class="group relative bg-white transition-shadow hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
+                <div class="space-y-8 p-8 py-12">
+                  <img
+                    src={paso.img_url}
+                    loading="lazy"
+                    class="w-12"
+                    width="512"
+                    height="512"
+                    alt="burger illustration"
+                  />
+                  <div class="space-y-2 pb-10">
+                    <h3
+                      class="text-2xl font-semibold text-gray-700 transition group-hover:text-primary dark:text-white dark:group-hover:text-primaryLight">
+                      {paso.title}
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      {paso.description}
+                    </p>
+                  </div>
+                  <a
+                    href="#"
+                    class="flex items-center justify-between text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primaryLight absolute bottom-10">
+                    <span class="text-sm">Leer más</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="h-5 w-5 -translate-x-4 text-2xl opacity-0 transition duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              ))
+            }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- <div
+  x-data="{intersect:false}"
+  x-intersect:enter="intersect=true"
+  x-intersect:leave="intersect=false"
+  id="steps">
+  <section
+    class="relative overflow-hidden md:overflow-visible md:px-0"
+    :class="intersect ? 'animate-fade-up animate-ease-out':'opacity-0'">
+    <div class="relative before:absolute before:scale-x-110 after:absolute">
+      <div class="relative overflow-clip">
+        <div
+          data-target="panel-0"
+          class="justify-center panel-preview inset-0 z-10 flex items-start overflow-hidden px-6 py-20 lg:py-32 transition duration-500 sm:px-10 translate-y-0 opacity-100 scale-100 bg-constructor"
+          style="background-image: url(...)">
+          <div class="relative mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
+            <div class="text-center">
+              <h2 class="font-bold text-black text-3xl xl:text-4xl">
+                ¿Cómo funciona?
+              </h2>
+              <p class="mx-auto mt-6 text-black text-lg md:w-3/4 lg:w-3/5">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Pellentesque pharetra tristique nibh vel iaculis.
               </p>
@@ -89,69 +238,65 @@ const pasosProveedor = [
               class="mt-16 mb-20 grid gap-8 sm:mx-auto md:w-full md:grid-cols-2 lg:grid-cols-2">
               {
                 pasosConstructor.map((paso) => (
-              <div
-                class="rounded-3xl border border-gray-100 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
-                <div class="space-y-12 text-center">
-                  <img
-                    src={paso.img_url}
-                    class="mx-auto h-14 w-auto"
-                    width="512"
-                    height="512"
-                    alt="burger illustration"
-                  />
-                  <div class="space-y-6">
-                    <h3
-                      class="text-2xl font-semibold text-primary transition dark:text-white">
-                      {paso.title}
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                      {paso.description}
-                    </p>
-                    <a
-                      aria-label="read more"
-                      href="#"
-                      class="group relative mx-auto flex h-12 w-12 items-center justify-center before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="relative h-5 w-5 text-gray-600 transition duration-300 group-hover:translate-x-1 dark:text-white">
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                          clip-rule="evenodd"></path>
-                      </svg>
-                    </a>
+                  <div class="rounded-3xl border border-gray-100 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
+                    <div class="space-y-12 text-center">
+                      <img
+                        src={paso.img_url}
+                        class="mx-auto h-14 w-auto"
+                        width="512"
+                        height="512"
+                        alt="burger illustration"
+                      />
+                      <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-primary transition dark:text-white">
+                          {paso.title}
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                          {paso.description}
+                        </p>
+                        <a
+                          aria-label="read more"
+                          href="#"
+                          class="group relative mx-auto flex h-12 w-12 items-center justify-center before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="relative h-5 w-5 text-gray-600 transition duration-300 group-hover:translate-x-1 dark:text-white">
+                            <path
+                              fill-rule="evenodd"
+                              d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div>   
-              </div>
-              ))
-            }
+                ))
+              }
             </div>
           </div>
           <div class="-m-5 absolute bottom-5 lg:bottom-10">
-            <a aria-label="read more" 
+            <a
+              aria-label="read more"
               class="group relative mx-auto flex h-20 w-20 items-center justify-center cursor-pointer btn-more">
               <Picture
-                      src={iconArrowBottom}
-                      alt="arrow bottom"
-                      widths={[80, 30, 30]}
-                      aspectRatio="1:1"
-                      sizes="(max-width: 1024px) 30px,50px"
-                      loading="eager"
-                      format="svg"
-                      class="animate-bounce animate-duration-[3000ms]"
-                />
+                src={iconArrowBottom}
+                alt="arrow bottom"
+                widths={[80, 30, 30]}
+                aspectRatio="1:1"
+                sizes="(max-width: 1024px) 30px,50px"
+                loading="eager"
+                format="svg"
+                class="animate-bounce animate-duration-[3000ms]"
+              />
             </a>
           </div>
         </div>
         <div
           data-target="panel-1"
           class="justify-center panel-preview absolute inset-0 z-0 flex items-start overflow-hidden px-6 transition duration-500 py-20 lg:py-32 sm:px-10 translate-y-[100%] opacity-50 scale-75 bg-primary">
-          <!-- <div aria-hidden="true" class="absolute inset-0 top-60 grid grid-cols-2 -space-x-52 opacity-50 dark:opacity-30">
-                        <div class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
-                        <div class="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
-                    </div> -->
           <div class="relative mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
             <div class="text-center">
               <h2
@@ -166,66 +311,65 @@ const pasosProveedor = [
             </div>
             <div
               class="mt-16 mb-20 grid gap-8 sm:mx-auto md:w-full md:grid-cols-2 lg:grid-cols-2">
-              
               {
                 pasosConstructor.map((paso) => (
-              <div
-                class="rounded-3xl border border-gray-100 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
-                <div class="space-y-12 text-center">
-                  <img
-                    src={paso.img_url}
-                    class="mx-auto h-14 w-auto"
-                    width="512"
-                    height="512"
-                    alt="burger illustration"
-                  />
-                  <div class="space-y-6">
-                    <h3
-                      class="text-2xl font-semibold text-primary transition dark:text-white">
-                      {paso.title}
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                      {paso.description}
-                    </p>
-                    <a
-                      aria-label="read more"
-                      href="#"
-                      class="group relative mx-auto flex h-12 w-12 items-center justify-center before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="relative h-5 w-5 text-gray-600 transition duration-300 group-hover:translate-x-1 dark:text-white">
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
-                          clip-rule="evenodd"></path>
-                      </svg>
-                    </a>
+                  <div class="rounded-3xl border border-gray-100 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
+                    <div class="space-y-12 text-center">
+                      <img
+                        src={paso.img_url}
+                        class="mx-auto h-14 w-auto"
+                        width="512"
+                        height="512"
+                        alt="burger illustration"
+                      />
+                      <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-primary transition dark:text-white">
+                          {paso.title}
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                          {paso.description}
+                        </p>
+                        <a
+                          aria-label="read more"
+                          href="#"
+                          class="group relative mx-auto flex h-12 w-12 items-center justify-center before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="relative h-5 w-5 text-gray-600 transition duration-300 group-hover:translate-x-1 dark:text-white">
+                            <path
+                              fill-rule="evenodd"
+                              d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div>   
-              </div>
-              ))
-            }
+                ))
+              }
             </div>
           </div>
           <div class="-m-5 absolute bottom-5 lg:bottom-10">
-            <a aria-label="read more" 
+            <a
+              aria-label="read more"
               class="group relative mx-auto flex h-20 w-20 items-center justify-center cursor-pointer btn-more fill-white">
               <Picture
-                      src={iconArrowBottom}
-                      alt="arrow bottom"
-                      widths={[80, 30, 30]}
-                      aspectRatio="1:1"
-                      sizes="(max-width: 1024px) 30px,50px"
-                      loading="eager"
-                      format="svg"
-                      class="animate-bounce animate-duration-[3000ms] invert"
-                />
+                src={iconArrowBottom}
+                alt="arrow bottom"
+                widths={[80, 30, 30]}
+                aspectRatio="1:1"
+                sizes="(max-width: 1024px) 30px,50px"
+                loading="eager"
+                format="svg"
+                class="animate-bounce animate-duration-[3000ms] invert"
+              />
             </a>
           </div>
         </div>
       </div>
     </div>
   </section>
-</div>
+</div> -->
