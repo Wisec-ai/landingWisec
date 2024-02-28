@@ -15,7 +15,7 @@ import iconArrowBottom from "assets/icon-arrow-downward.svg";
     class="mx-auto xl:px-20 lg:pb-initial ">
     <div class="text-center pb-10 pt-10">
       <h2
-        class="text-3xl font-bold text-gray-800 md:text-4xl xl:text-5xl"
+        class="text-3xl font-bold text-gray-800 md:text-4xl"
         :class="intersect ? 'animate-fade-up animate-duration-[500ms] animate-ease-out':'opacity-0'">
         ¿A qué sector perteneces?
       </h2>
@@ -37,7 +37,7 @@ import iconArrowBottom from "assets/icon-arrow-downward.svg";
           class="btn-constructor tab relative block rounded-full py-2.5 px-5 lg:py-5 lg:px-10 hover:text-primary item-active opacity-0"
           :class="intersect ? 'animate-fade-up animate-ease-out':'opacity-0'">
           <span
-            class="m-auto block w-max lg:text-lg font-semibold tracking-normal"
+            class="w-full m-auto block lg:text-lg font-semibold tracking-normal"
             >Soy Constructor</span
           >
         </button>
@@ -50,7 +50,7 @@ import iconArrowBottom from "assets/icon-arrow-downward.svg";
           class="btn-proveedor tab relative block rounded-full py-2.5 px-5 lg:py-5 lg:px-10 hover:text-primary opacity-0"
           :class="intersect ? 'animate-fade-up animate-delay-[500ms] animate-ease-out':'opacity-0'">
           <span
-            class="m-auto block w-max lg:text-lg font-semibold tracking-normal"
+            class="w-full m-auto block lg:text-lg font-semibold tracking-normal"
             >Soy Proveedor</span
           >
         </button>
