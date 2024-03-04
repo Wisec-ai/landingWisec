@@ -1,16 +1,24 @@
 ---
+import { Picture } from "@astrojs/image/components";
+import pasoConstructor01 from "assets/hay-mas/mas-constructor-01.svg";
+import pasoConstructor02 from "assets/hay-mas/mas-constructor-02.svg";
+import pasoProveedor01 from "assets/hay-mas/mas-proveedor-01.svg";
+import pasoProveedor02 from "assets/hay-mas/mas-proveedor-02.svg";
+
+
+
 const pasosConstructor = [
 {
     id: "paso-1",
     title: "Resuelve tus consultas sobre normas de construcción",
     description: "Todas tus dudas sobre normas, leyes, procesos constructivos y estándares internacionales resueltas en un solo lugar",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png"
+    img_url: pasoConstructor01
 },
 {
     id: "paso-2",
     title: "Calcula los materiales para tu obra",
     description: "Desde los procesos constructivos más básicos hasta los más avanzados, nuestra calculadora no es una herramienta cualquiera, calcula cantidades precisas y estima presupuestos completos",
-    img_url: "https://cdn-icons-png.flaticon.com/512/6106/6106288.png"
+    img_url: pasoConstructor02
 },
 ]
 
@@ -19,13 +27,13 @@ const pasosProveedor = [
     id: "paso-1",
     title: "Resuelve tus consultas en base a tu propia información",
     description: "Resuelve tus consultas en base a tu información en cuestión de segundos. Desde documentos hasta imágenes, lo procesamos todo de manera rápida y precisa.",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png"
+    img_url: pasoProveedor01
 },
 {
     id: "paso-2",
     title: "Soporte de asistente de venta y post-venta con IA",
     description: "¿Ocupado con las ventas? No te preocupes, te brindamos un asistente que resuelve las consultas de tus clientes sobre tus productos antes y después de la venta",
-    img_url: "https://cdn-icons-png.flaticon.com/512/6106/6106288.png"
+    img_url: pasoProveedor02
 },
 ]
 ---
@@ -65,12 +73,14 @@ const pasosProveedor = [
               <div
                 class="rounded-3xl border border-gray-100 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
                 <div class="space-y-12 text-center">
-                  <img
+                  <Picture
+                    class="m-auto"
                     src={paso.img_url}
-                    class="mx-auto h-14 w-auto"
-                    width="512"
-                    height="512"
-                    alt="burger illustration"
+                    alt="Resuelve tus consultas"
+                    widths={[400]} 
+                    sizes="(max-width: 800px) 120px, 120px"
+                    loading="eager"
+                    format="svg"
                   />
                   <div class="space-y-6">
                     <h3
@@ -110,16 +120,18 @@ const pasosProveedor = [
               class="mt-16 grid gap-8 sm:mx-auto md:w-full md:grid-cols-2 lg:grid-cols-2">
               
               {
-                pasosConstructor.map((paso) => (
+                pasosProveedor.map((paso) => (
               <div
                 class="rounded-3xl border border-gray-100 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
                 <div class="space-y-12 text-center">
-                  <img
+                  <Picture
+                    class="m-auto"
                     src={paso.img_url}
-                    class="mx-auto h-14 w-auto"
-                    width="512"
-                    height="512"
-                    alt="burger illustration"
+                    alt="Resuelve tus consultas"
+                    widths={[400]} 
+                    sizes="(max-width: 800px) 120px, 120px"
+                    loading="eager"
+                    format="svg"
                   />
                   <div class="space-y-6">
                     <h3
