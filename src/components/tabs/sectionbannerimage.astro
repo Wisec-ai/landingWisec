@@ -6,8 +6,8 @@ import heroImage from "assets/infografia2.svg";
 
 import construction from "assets/infografiaConstruction.png";
 
-
 const { pasos } = Astro.props;
+
 ---
 
 <div
@@ -17,16 +17,15 @@ const { pasos } = Astro.props;
     <div
       class="panel inset-0 flex flex-col justify-center transition duration-500 md:absolute visible opacity-100 scale-100"
       id="panel-0">
-      <div>
-        <h3
-          class="text-xl font-bold text-black dark:text-white md:text-2xl">
+      <div id="panel-0-form">
+        <h3 class="text-xl font-bold text-black dark:text-white md:text-2xl">
           A ti, <span class="text-constructor">constructor...</span>
         </h3>
         <p class="mt-6 text-black lg:text-lg font-bold">
-          Te brindamos las mejores ofertas de materiales y
-          servicios para que tu proyecto de vida sea una realidad
+          Te brindamos las mejores ofertas de materiales y servicios para que tu
+          proyecto de vida sea una realidad
         </p>
-        <p class="mt-6 text-black ">
+        <p class="mt-6 text-black">
           Regístrate en nuestra lista de espera y vive la experiencia de
           conectarte con el ecosistema constructor peruano a través de un chat
           simple como si estuvieses en wtsp...¡Más fácil, imposible!
@@ -53,8 +52,16 @@ const { pasos } = Astro.props;
               </p>
             </div>
           </div> -->
-          <form action="" class="mt-12" :class="intersect ? 'animate-shake animate-delay-[5000ms] animate-ease-out':'opacity-0'">
+          <!-- <form
+            action="https://wisecai.us11.list-manage.com/subscribe/post?u=a947bf997eeb7569bca8b53c6&id=c69d5cc754&f_id=0012ade0f0"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate mt-12"
+            target="_blank"
+            :class="intersect ? 'animate-shake animate-delay-[5000ms] animate-ease-out':'opacity-0'">
             <div
+              id="mc_embed_signup_scroll"
               class="relative flex items-center rounded-full border border-primary/20 bg-white p-1 px-2 shadow-md focus-within:ring-2 focus-within:ring-primary dark:border-white/10 dark:bg-dark dark:text-white md:p-2 lg:pr-3">
               <div class="py-3 pl-4 lg:pl-5">
                 <svg
@@ -70,15 +77,21 @@ const { pasos } = Astro.props;
                   ></path>
                 </svg>
               </div>
+
               <input
+                id="mce-EMAIL"
+                name="EMAIL"
                 aria-label="your email"
                 autocomplete="email"
                 placeholder="Correo electrónico"
-                class="w-full rounded-full border-none bg-transparent pl-4 placeholder-gray-600 outline-none focus:ring-0 dark:placeholder-white"
+                class="required email w-full rounded-full border-none bg-transparent pl-4 placeholder-gray-600 outline-none focus:ring-0 dark:placeholder-white"
                 type="email"
+                required
               />
               <div class="md:pr-1.5 lg:pr-0">
                 <button
+                  name="subscribe"
+                  id="mc-embedded-subscribe"
                   type="submit"
                   title="Register"
                   class="relative ml-auto h-12 w-16 before:absolute before:inset-0 before:rounded-full before:bg-constructor before:transition before:duration-300 active:duration-75 active:before:scale-95 sm:w-auto sm:px-6">
@@ -98,21 +111,54 @@ const { pasos } = Astro.props;
                 </button>
               </div>
             </div>
-          </form>
+            <div class="hidden">
+              <ul>
+                <li>
+                  <input
+                    type="radio"
+                    name="MMERGE6"
+                    id="mce-MMERGE60"
+                    value="Constructor"
+                    checked
+                  /><label for="mce-MMERGE60">Constructor</label>
+                </li>
+                <li>
+                  <input
+                    type="radio"
+                    name="MMERGE6"
+                    id="mce-MMERGE61"
+                    value="Proveedor"
+                  /><label for="mce-MMERGE61">Proveedor</label>
+                </li>
+              </ul>
+            </div>
+            <div id="mce-responses" class="clear foot">
+              <div
+                class="response mt-5 border-l-4 border-red-600 px-4 py-3"
+                id="mce-error-response"
+                style="display: none;">
+              </div>
+              <div
+                role="alert"
+                class="response mt-5 border-l-4 border-constructor px-4 py-3"
+                id="mce-success-response"
+                style="display: none;">
+              </div>
+            </div>
+          </form> -->
         </div>
       </div>
     </div>
     <div
       class="panel absolute inset-0 flex flex-col justify-center transition duration-500 invisible opacity-0 scale-90"
       id="panel-1">
-      <div>
-        <h3
-          class="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">
+      <div id="panel-1-form">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">
           A ti, <span class="text-marked">proveedor/distribuidor...</span>
         </h3>
         <p class="mt-8 text-primary lg:text-lg font-bold">
-          Te brindamos herramientas para que
-          lleves la productividad de tu negocio al siguiente nivel
+          Te brindamos herramientas para que lleves la productividad de tu
+          negocio al siguiente nivel
         </p>
         <p class="mt-8 text-primary">
           Regístrate en nuestra lista de espera y mejora la productividad y
@@ -141,7 +187,14 @@ const { pasos } = Astro.props;
               </p>
             </div>
           </div> -->
-          <form action="" class="mt-12" :class="intersect ? 'animate-shake animate-delay-[5000ms] animate-ease-out':'opacity-0'">
+          <!-- <form
+            action="https://wisecai.us11.list-manage.com/subscribe/post?u=a947bf997eeb7569bca8b53c6&id=c69d5cc754&f_id=0012ade0f0"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate mt-12"
+            target="_blank"
+            :class="intersect ? 'animate-shake animate-delay-[5000ms] animate-ease-out':'opacity-0'">
             <div
               class="relative flex items-center rounded-full border border-primary/20 bg-white p-1 px-2 shadow-md focus-within:ring-2 focus-within:ring-primary dark:border-white/10 dark:bg-dark dark:text-white md:p-2 lg:pr-3">
               <div class="py-3 pl-4 lg:pl-5">
@@ -159,14 +212,19 @@ const { pasos } = Astro.props;
                 </svg>
               </div>
               <input
+                id="mce-EMAIL"
+                name="EMAIL"
                 aria-label="your email"
                 autocomplete="email"
                 placeholder="Correo electrónico"
-                class="w-full rounded-full border-none bg-transparent pl-4 placeholder-gray-600 outline-none focus:ring-0 dark:placeholder-white"
+                class="required email w-full rounded-full border-none bg-transparent pl-4 placeholder-gray-600 outline-none focus:ring-0 dark:placeholder-white"
                 type="email"
+                required
               />
               <div class="md:pr-1.5 lg:pr-0">
                 <button
+                  name="subscribe"
+                  id="mc-embedded-subscribe"
                   type="submit"
                   title="Register"
                   class="relative ml-auto h-12 w-16 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight sm:w-auto sm:px-6">
@@ -186,16 +244,49 @@ const { pasos } = Astro.props;
                 </button>
               </div>
             </div>
-          </form>
+            <div class="hidden">
+                <ul>
+                  <li>
+                    <input
+                      type="radio"
+                      name="MMERGE6"
+                      id="mce-MMERGE60"
+                      value="Constructor"
+                    /><label for="mce-MMERGE60">Constructor</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      name="MMERGE6"
+                      id="mce-MMERGE61"
+                      value="Proveedor" checked
+                    /><label for="mce-MMERGE61">Proveedor</label>
+                  </li>
+                </ul>
+              </div>
+            <div id="mce-responses" class="clear foot">
+              <div
+                class="response mt-5 border-l-4 border-red-600 px-4 py-3"
+                id="mce-error-response"
+                style="display: none;">
+              </div>
+              <div
+                role="alert"
+                class="response mt-5 border-l-4 border-pimary px-4 py-3"
+                id="mce-success-response"
+                style="display: none;">
+              </div>
+            </div>
+          </form> -->
         </div>
       </div>
     </div>
   </div>
   <div
-    class="overflow-hidden sm:px-12 md:mx-0 md:w-1/2 md:overflow-visible md:px-0">
+    class="overflow-hidden sm:px-12 md:mx-0 md:w-1/2 md:overflow-visible md:px-0" style="margin-top: 0px;">
     <div
       class="relative before:absolute before:inset-0 before:scale-x-110 after:absolute after:inset-0">
-      <div class="relative h-[25rem] overflow-clip py-10 sm:h-[25rem] lg:p-20">
+      <div class="relative h-[18rem] overflow-clip py-10 sm:h-[20rem] lg:p-20">
         <div
           data-target="panel-0"
           class="justify-center panel-preview absolute inset-0 z-10 flex translate-y-0 scale-100 items-center overflow-hidden px-6 opacity-100 transition duration-500 sm:px-10">
@@ -203,7 +294,7 @@ const { pasos } = Astro.props;
             src={construction}
             alt="Inteligencia Artificial"
             widths={[200, 400, 800]}
-            sizes="(max-width: 800px) 100vw, 400px"
+            sizes="(max-width: 800px) 300px, 300px"
             loading="eager"
             format="svg"
           />
@@ -216,7 +307,7 @@ const { pasos } = Astro.props;
             src={heroImage}
             alt="Inteligencia Artificial"
             widths={[200, 400, 800]}
-            sizes="(max-width: 800px) 100vw, 400px"
+            sizes="(max-width: 800px) 300px, 300px"
             loading="eager"
             format="svg"
           />
@@ -225,4 +316,3 @@ const { pasos } = Astro.props;
     </div>
   </div>
 </div>
-

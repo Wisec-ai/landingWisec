@@ -23,6 +23,7 @@ import Tabs from "@components/tabs.astro";
 import SectionPasos from "@components/tabs/sectionpasos.astro";
 import SectionMas from "@components/tabs/sectionmas.astro";
 import Faqs from "@components/faq.astro";
+import Form from "@components/form.astro";
 import SectionSlogan from "@components/slogan.astro";
 
 // Filter team entries with 'draft: false' & date before current date
@@ -139,6 +140,9 @@ const pricing = [
   <Container class="mb-0 mb-0">
     <Tabs />
   </Container>
+  <Container class="mb-0 mb-0">
+    <Form />
+  </Container> 
   <Container class="mb-0 mb-0">
     <SectionPasos />
   </Container>
