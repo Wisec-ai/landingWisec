@@ -1,66 +1,75 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import iconArrowBottom from "assets/icon-arrow-downward.svg";
+import pasoContructor01 from "assets/pasos/pasos-constructor-01.svg";
+import pasoContructor02 from "assets/pasos/pasos-constructor-02.svg";
+import pasoContructor03 from "assets/pasos/pasos-constructor-03.svg";
+import pasoContructor04 from "assets/pasos/pasos-constructor-04.svg";
+import pasoProveedor01 from "assets/pasos/pasos-proveedor-01.svg";
+import pasoProveedor02 from "assets/pasos/pasos-proveedor-02.svg";
+import pasoProveedor03 from "assets/pasos/pasos-proveedor-03.svg";
+import pasoProveedor04 from "assets/pasos/pasos-proveedor-04.svg";
+
 
 const pasosConstructor = [
   {
     id: "paso-1",
-    title: "PASO I",
+    title: "Paso 1",
     description:
       "Escanea el código QR que estará en nuestras ferreterías afiliadas y redes sociales, y loguéate.",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+    img_url: pasoContructor01,
   },
   {
     id: "paso-2",
-    title: "PASO II",
+    title: "Paso 2",
     description:
       "Pide los materiales para tu obra o realiza consultas sobre construcción a través de nuestra plataforma.",
-    img_url: "https://cdn-icons-png.flaticon.com/512/6106/6106288.png",
+    img_url: pasoContructor02,
   },
   {
     id: "paso-3",
-    title: "PASO III",
+    title: "Paso 3",
     description:
       "Te llegarán cotizaciones de proveedores/distribuidores en cuestión de segundos, ¡tú eliges la mejor oferta!",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+    img_url: pasoContructor03,
   },
   {
     id: "paso-4",
-    title: "PASO IV",
+    title: "Paso 4",
     description:
       "Coordina con el proveedor/distribuidor el pago y envío de tus materiales con las mejores oportunidades de financiamiento.",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+    img_url: pasoContructor04,
   },
 ];
 
 const pasosProveedor = [
   {
     id: "paso-1",
-    title: "PASO I",
+    title: "Paso 1",
     description:
       "Te daremos el on-boarding para que puedas loguearte en nuestra plataforma y gestionar tu inventario de productos",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+    img_url: pasoProveedor01,
   },
   {
     id: "paso-2",
-    title: "PASO II",
+    title: "Paso 2",
     description:
       "En la barra lateral, entra a 'Conectándome' y ¡listo! Ya puedes enviar cotizaciones a tus clientes",
-    img_url: "https://cdn-icons-png.flaticon.com/512/6106/6106288.png",
+    img_url: pasoProveedor02,
   },
   {
     id: "paso-3",
-    title: "PASO III",
+    title: "Paso 3",
     description:
       "Pero no tan rápido, campeón, puedes automatizar el envío de cotizaciones con nuestro sistema y enfocarte solo en las que representen un potencial de lead.",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+    img_url: pasoProveedor03,
   },
   {
     id: "paso-4",
-    title: "PASO IV",
+    title: "Paso 4",
     description:
       "Cierra la venta y envía los materiales a obra dando la mejor atención a tus clientes",
-    img_url: "https://cdn-icons-png.flaticon.com/512/584/584796.png",
+    img_url: pasoProveedor04,
   },
 ];
 ---
@@ -96,19 +105,19 @@ const pasosProveedor = [
             </div>
         
             <div
-              class="mt-12 grid divide-x divide-y divide-gray-100 overflow-hidden rounded-3xl border border-gray-100 dark:divide-gray-700 dark:border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0">
+              class="mt-12 grid divide-x div\ide-y divide-gray-100 overflow-hidden rounded-3xl border border-gray-100 dark:divide-gray-700 dark:border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0">
               {
                 pasosConstructor.map((paso) => (
               <div
                 class="group relative bg-white transition-shadow hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 dark:bg-gray-800">
                 <div class="space-y-8 p-8 py-12">
-                  <img
+                  <Picture
                     src={paso.img_url}
-                    loading="lazy"
-                    class="w-12"
-                    width="512"
-                    height="512"
-                    alt="burger illustration"
+                    alt="Paso 01"
+                    widths={[200]} 
+                    sizes="(max-width: 800px) 150px, 150px"
+                    loading="eager"
+                    format="svg"
                   />
                   <div class="space-y-2 pb-10">
                     <h3
@@ -167,13 +176,13 @@ const pasosProveedor = [
               <div
                 class="group relative bg-white transition-shadow hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
                 <div class="space-y-8 p-8 py-12">
-                  <img
+                  <Picture
                     src={paso.img_url}
-                    loading="lazy"
-                    class="w-12"
-                    width="512"
-                    height="512"
-                    alt="burger illustration"
+                    alt="Paso 01"
+                    widths={[200]} 
+                    sizes="(max-width: 800px) 150px, 150px"
+                    loading="eager"
+                    format="svg"
                   />
                   <div class="space-y-2 pb-10">
                     <h3
