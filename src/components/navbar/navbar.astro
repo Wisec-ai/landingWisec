@@ -42,8 +42,8 @@ const menuitems = [
 ];
 ---
 
-<ContainerHeader>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+<ContainerHeader class="absolute z-20 w-full">
+  <header class="max-w-screen-xl w-full flex flex-col lg:flex-row justify-between items-center my-5 mx-auto px-5 lg:px-0">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-xl inline-flex">
@@ -52,14 +52,14 @@ const menuitems = [
             alt="Logo Wisec"
             widths={[30, 30, 30]}
             aspectRatio="1:1"
-            sizes="30px"
+            sizes="35px"
             loading="eager"
             format="svg"
           />
-          <span class="font-bold text-slate-800 self-end ml-1">Wisec</span>
+          <span class="font-bold text-white self-end ml-1 text-3xl">WisecAI</span>
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <MenuIcon class="w-6 h-6 text-white" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
@@ -94,15 +94,15 @@ const menuitems = [
           } -->
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Ingresar</Link>
-          <Link href="#" size="md" block>Registrarme</Link>
+          <!-- <Link href="#" style="muted" block size="md">Ingresar</Link> -->
+          <Link style="inverted" href="#tabs" size="md" block >Registrarme</Link>
         </div>
       </MenuItems>
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Ingresar</a>
-        <Link href="#" size="md">Registrarme</Link>
+        <!-- <a href="#">Ingresar</a> -->
+        <Link class="text-md" style="inverted" href="#tabs" size="md">Registrarme</Link>
       </div>
     </div>
   </header>

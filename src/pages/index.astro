@@ -1,6 +1,9 @@
 ---
 import Container from "@components/container.astro";
+import ContainerBanner from "@components/containerbanner.astro";
+
 import ContainerHeader from "@components/containerheader.astro";
+import ContainerSlogan from "@components/containerslogan.astro";
 import Cta from "@components/cta.astro";
 import Features from "@components/features.astro";
 import Platforms from "@components/plataformas.astro";
@@ -16,6 +19,12 @@ import { Picture } from "@astrojs/image/components";
 import PricingCard from "@components/pricing.astro";
 import Ecosistema from "@components/ecosistema.astro";
 import Maintance from "@components/mantenimiento.astro";
+import Tabs from "@components/tabs.astro";
+import SectionPasos from "@components/tabs/sectionpasos.astro";
+import SectionMas from "@components/tabs/sectionmas.astro";
+import Faqs from "@components/faq.astro";
+import Form from "@components/form.astro";
+import SectionSlogan from "@components/slogan.astro";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -121,17 +130,26 @@ const pricing = [
 ];
 ---
 
-<Layout title="">
+<!-- <Layout title="">
   <div class="h-screen">
     <Maintance />
   </div>
-</Layout>
-
-<!-- <Layout title="">
-  <ContainerHeader>
-    <Hero />
-  </ContainerHeader> 
-  <Container>
+</Layout> -->
+<Layout title="">
+  <Hero />
+  <Container class="mb-0 mb-0">
+    <Tabs />
+  </Container>
+  <Container class="mb-0 mb-0">
+    <Form />
+  </Container>
+  <Container class="mb-0 mb-0">
+    <SectionPasos />
+  </Container>
+  <ContainerBanner>
+    <SectionMas />
+  </ContainerBanner>
+  <!-- <Container>
     <Ecosistema />
   </Container> 
   <Container>
@@ -142,11 +160,66 @@ const pricing = [
   </Container> 
   <Container>
     <Features />
-  </Container> 
-  <Container>
+  </Container>  -->
+  <Container class="">
     <Logos />
-  </Container> 
-  <Container id="pricing">
+  </Container>
+  <Container>
+    <div class="pt-32 pb-20 lg:pb-0">
+      <div class="text-center">
+        <h2
+          class="text-3xl font-bold text-gray-800 dark:text-white md:text-4xl">
+          Nuestro <span class="text-secondary">Dream Team</span>
+        </h2>
+        <blockquote
+          class="mx-auto mt-6 italic text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">
+          "Los grandes logros de cualquier persona generalmente dependen de
+          muchas manos, corazones y mentes" <span class="font-semibold">
+            --- Walt Disney</span
+          >
+        </blockquote>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+        {
+          publishedTeamMembers.map((teamMemberEntry) => (
+            <div class="group">
+              <div class="w-full aspect-square">
+                <Picture
+                  src={teamMemberEntry.data.avatar.src}
+                  alt={teamMemberEntry.data.avatar.alt}
+                  sizes="(max-width: 800px) 100vw, 400px"
+                  widths={[200, 400]}
+                  aspectRatio="1:1"
+                  background="#ffffff"
+                  fit="cover"
+                  position="center"
+                  class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+                />
+              </div>
+
+              <div class="mt-4 text-center">
+                <h2 class="text-lg text-primary">
+                  {teamMemberEntry.data.name}
+                </h2>
+                <h3 class="text-sm text-slate-500">
+                  {teamMemberEntry.data.title}
+                </h3>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Container>
+  <Container class="mb-0 mb-0">
+    <Faqs />
+  </Container>
+  <ContainerSlogan>
+    <SectionSlogan />
+  </ContainerSlogan>
+
+  <!-- <Container id="pricing">
     <Sectionhead>
       <Fragment slot="title">Nuestros <span class="text-secondary">planes</span></Fragment>
       <Fragment slot="desc">
@@ -156,53 +229,9 @@ const pricing = [
     <div class="grid md:grid-cols-4 gap-2 mx-auto mt-12">
       {pricing.map((item) => <PricingCard plan={item} />)}
     </div>
-  </Container>
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Nuestro <span class="text-secondary">Dream Team</span></Fragment>
-      <Fragment slot="desc"></Fragment>
-    </Sectionhead>
-  
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-8">
-      <blockquote class="font-700 italic md:text-lg text-primary text-center lg:tracking-tight xl:tracking-tighter">
-        "Los grandes logros de cualquier persona generalmente dependen de muchas manos, corazones y mentes"
-      </blockquote>
-      <p class="text-lg italic leading-relaxed text-primary text-right">
-         -- Walt Disney
-      </p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                widths={[200, 400]}
-                aspectRatio="1:1"
-                background="#ffffff"
-                fit="cover"
-                position="center"
-                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
-              />
-            </div>
-  
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">
-                {teamMemberEntry.data.name}
-              </h2>
-              <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
-              </h3>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-  </Container>
-  <Container id="contactanos">
+  </Container> -->
+
+  <!-- <Container id="contactanos">
     <Sectionhead>
       <Fragment slot="title">Contáctanos</Fragment>
       <Fragment slot="desc">¡Estamos aquí para apoyarte!</Fragment>
@@ -212,15 +241,14 @@ const pricing = [
       <div>
         <h2 class="font-medium text-2xl text-secondary">Contacta a Wisec</h2>
         <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          ¿Tienes algo qué decir? Estamos aquí para ayudar. Rellena el formulario o envía
-          correo electrónico o llamar al teléfono.
+          ¿Tienes algo qué decir? Estamos aquí para ayudar. Rellena el
+          formulario o envía correo electrónico o llamar al teléfono.
         </p>
         <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-primary">
-          </div><div class="flex items-center mt-2 space-x-2 text-primary">
+          <div class="flex items-center mt-2 space-x-2 text-primary"></div><div
+            class="flex items-center mt-2 space-x-2 text-primary">
             <Icon class="text-primary w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >cgomezl@uni.pe</a
+              href="mailto:hello@astroshipstarter.com">cgomezl@uni.pe</a
             >
           </div><div class="flex items-center mt-2 space-x-2 text-primary">
             <Icon class="text-primary w-4 h-4" name="uil:phone" /><a
@@ -234,12 +262,15 @@ const pricing = [
         <div class="mt-1">
           <div class="flex items-center mt-2 space-x-2 text-primary">
             <Icon class="text-primary w-5 h-5" name="mdi:instagram" /><a
-              href="https://www.instagram.com/wisec.ai/" target="_blank" rel="nofollow"
-              >Wisec.ia</a
+              href="https://www.instagram.com/wisec.ai/"
+              target="_blank"
+              rel="nofollow">Wisec.ia</a
             >
           </div><div class="flex items-center mt-2 space-x-2 text-primary">
             <Icon class="text-primary w-5 h-5" name="mdi:linkedin" /><a
-              href="https://www.linkedin.com/company/wisecai" target="_blank" rel="nofollow">Wisec.ia</a
+              href="https://www.linkedin.com/company/wisecai"
+              target="_blank"
+              rel="nofollow">Wisec.ia</a
             >
           </div>
         </div>
@@ -248,5 +279,43 @@ const pricing = [
         <Contactform />
       </div>
     </div>
-  </Container>
-</Layout> -->
+  </Container> -->
+
+  <!-- WHATSAPP BUTTON -->
+  <!-- load font awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  />
+
+  <!-- add your custom CSS -->
+  <style>
+    /* Add WA floating button CSS */
+    .floating {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+
+    .fab-icon {
+      margin-top: 16px;
+    }
+  </style>
+
+  <!-- render the button and direct it to wa.me -->
+  <a
+    href="https://api.whatsapp.com/send?phone=51973580896&text=Hola,%20cuentame%20que%20puedes%C2%A0hacer"
+    class="floating"
+    target="_blank">
+    <i class="fab fa-whatsapp fab-icon"></i>
+  </a>
+</Layout>

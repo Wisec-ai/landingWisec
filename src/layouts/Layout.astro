@@ -52,17 +52,223 @@ const makeTitle = title
         },
       }}
     />
-  </head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"
+    ></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+    ></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script><script>
+      // const tabs = document.querySelectorAll('.tab')
+      // const tabContents = document.querySelectorAll('.tabcontent')
+      // const activateTab = tabnum => {
+
+      //     tabs.forEach( tab => {
+      //       tab.classList.remove('active');
+      //     })
+
+      //     tabContents.forEach( tabContent => {
+      //         tabContent.classList.remove('active');
+      //     })
+
+      //     document.querySelector('#panel-' + tabnum).classList.add('active');
+      //     // document.querySelector('#panel-' + tabnum).classList.add('active');
+
+      // }
+
+      // tabs.forEach(tab => {
+      //     tab.addEventListener('click', () => {
+      //         activateTab(tab.dataset.tab)
+      //     })
+      // })
+      // activateTab(1)
+      let steps = document.getElementById("steps");
+      let btnStep = document.getElementById("btn-steps");
+      let btnMores = document.querySelectorAll(".btn-more");
+
+      let tabs = document.getElementById("tabs");
+      let more = document.getElementById("more");
+      let form = document.getElementById("section-form");
+      let btnform = document.getElementById("mc-embedded-subscribe");
+      let message1 = document.getElementById("mce-error-response");
+      let message2 = document.getElementById("mce-success-response");
+      let radio1 = document.getElementById("mce-MMERGE60");
+      let radio2 = document.getElementById("mce-MMERGE61");
+    
+
+      let sections1 = document.querySelectorAll('[data-target="panel-0"]');
+      let sections2 = document.querySelectorAll('[data-target="panel-1"]');
+
+      let btn1 = document.querySelectorAll('[aria-controls="panel-0"]')[0];
+      let btn2 = document.querySelectorAll('[aria-controls="panel-1"]')[0];
+      let tab1 = document.getElementById("panel-0");
+      let tab2 = document.getElementById("panel-1");
+
+      let classesInactive = "invisible opacity-0 scale-90".split(" ");
+      let classesActive = "visible opacity-100 scale-100".split(" ");
+
+      let classesInactiveImg = "translate-y-[100%] opacity-50 scale-75".split(
+        " "
+      );
+      let classesActiveImg = "translate-y-0 opacity-100 scale-100".split(" ");
+
+      btnMores.forEach((btnMore) => {
+        btnMore.addEventListener(
+          "click",
+          function (e) {
+            if (more) {
+              more.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "center",
+              });
+            }
+          },
+          false
+        );
+      });
+
+      if (btnStep) {
+        btnStep.addEventListener(
+          "click",
+          function (e) {
+            if (steps) {
+              steps.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "center",
+              });
+            }
+          },
+          false
+        );
+      }
+
+      btn1.addEventListener(
+        "click",
+        function (e) {
+          tab1?.classList.remove(...classesInactive);
+          tab1?.classList.add(...classesActive);
+
+          tab2?.classList.remove(...classesActive);
+          tab2?.classList.add(...classesInactive);
+
+          sections1.forEach((section1) => {
+            section1.classList.remove(...classesInactiveImg);
+            section1.classList.add(...classesActiveImg);
+          });
+
+          sections2.forEach((section2) => {
+            section2.classList.remove(...classesActiveImg);
+            section2.classList.add(...classesInactiveImg);
+          });
+
+          this.classList.remove("item-active");
+          this.classList.add("item-active");
+          btn2.classList.remove("item-active");
+
+          tabs?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "center",
+          });
+
+          form?.classList.remove("bg-marked");
+          form?.classList.add("bg-constructor");
+
+          message1.innerHTML = "";
+          message1.style.display = "none";
+          message2.innerHTML = "";
+          message2.style.display = "none";
+          radio1.checked = true;
+          radio2.checked = false;
+        },
+        false
+      );
+
+      btn2.addEventListener(
+        "click",
+        function (e) {
+          tab2?.classList.remove(...classesInactive);
+          tab2?.classList.add(...classesActive);
+
+          tab1?.classList.remove(...classesActive);
+          tab1?.classList.add(...classesInactive);
+
+          sections2.forEach((section2) => {
+            section2.classList.remove(...classesInactiveImg);
+            section2.classList.add(...classesActiveImg);
+          });
+
+          sections1.forEach((section1) => {
+            section1.classList.remove(...classesActiveImg);
+            section1.classList.add(...classesInactiveImg);
+          });
+
+          this.classList.remove("item-active");
+          this.classList.add("item-active");
+          btn1.classList.remove("item-active");
+
+          form?.classList.remove("bg-constructor");
+          form?.classList.add("bg-marked");
+
+          tabs?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "center",
+          });
+          message1.innerHTML = "";
+          message1.style.display = "none";
+          message2.innerHTML = "";
+          message2.style.display = "none";
+          radio1.checked = false;
+          radio2.checked = true;
+        },
+        false
+      );
+    </script></head
+  >
+
+  <!-- Alpine Plugins -->
+
+  <!-- Alpine Core -->
+
   <body>
-    <!-- <Navbar /> -->
+    <Navbar />
     <slot />
-    <!-- <Footer /> -->
+    <Footer />
+    <script
+      type="text/javascript"
+      src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+    ></script>
+    <script type="text/javascript">
+      (function ($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = "EMAIL";
+        ftypes[0] = "email";
+        fnames[6] = "MMERGE6";
+        ftypes[6] = "radio";
+      })(jQuery);
+      var $mcj = jQuery.noConflict(true);
+    </script>
     <style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
       img {
         content-visibility: auto;
+      }
+
+      .btn-constructor.item-active {
+        background-color: #ffd700;
+        color: black;
+      }
+
+      .btn-proveedor.item-active {
+        background-color: #3dcab1;
+        color: #071c42;
       }
     </style>
   </body>

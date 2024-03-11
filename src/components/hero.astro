@@ -3,55 +3,121 @@ import { Picture } from "@astrojs/image/components";
 import heroImage from "assets/infografia2.svg";
 import Link from "@components/ui/link.astro";
 import { Icon } from "astro-icon";
+import screenshot1 from "assets/plataforma-consultor1.png";
+import screenshot2 from "assets/plataforma-consultor2.png";
+import screenshot3 from "assets/plataforma-consultor3.png";
+
+import logoWisec from "assets/logo-wisec.svg";
 ---
 
-<main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 pt-0 md:pt-12 md:pb-24">
-  <div class="pb-10 md:py-6 md:order-1 md:block mt-5 lg:mt-0">
-    <Picture
-      src={heroImage}
-      alt="Inteligencia Artificial"
-      widths={[200, 400, 1200]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="svg"
-    />
+<div class="relative isolate overflow-hidden bg-gray-900 lg:pt-20 pt-40 px-5">
+  <svg
+    class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+    aria-hidden="true">
+    <defs>
+      <pattern
+        id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
+        width="200"
+        height="200"
+        x="50%"
+        y="-1"
+        patternUnits="userSpaceOnUse">
+        <path d="M.5 200V.5H200" fill="none"></path>
+      </pattern>
+    </defs>
+    <svg x="50%" y="-1" class="overflow-visible fill-gray-800/20">
+      <path
+        d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+        stroke-width="0"></path>
+    </svg>
+    <rect
+      width="100%"
+      height="100%"
+      stroke-width="0"
+      fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"></rect>
+  </svg>
+  <div
+    class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
+    aria-hidden="true">
+    <div
+      class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
+      style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)">
+    </div>
   </div>
-  <div>
-    <h1
-      class="text-primary text-4xl lg:text-6xl xl:text-7xl lg:tracking-tight xl:tracking-tighter">
-      <span class="font-light">Somos </span><span class="font-bold"
-        >Wisec<span class="text-secondary">.ai</span></span
-      >
-    </h1>
-    <h3 class="text-primary text-2xl lg:text-3xl xl:text-4xl mt-2">
-      <span class="font-light">¡el ChatGPT de la </span><span class="font-bold"
-        >Ingeniería y Construcción!</span
-      >
-    </h3>
-    <p class="text-md md:text-lg mt-4 text-primary max-w-xl">
-      Mejoramos la productividad de tu empresa mediante el aprovechamiento de tu información con IA.
-    </p>
-    <!-- <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-        Descargar Demo
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="#"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-primary w-4 h-4" name="bx:bxl-github" />
-        GitHub Repo
-      </Link>
-    </div> -->
+  <div
+    class="mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 sm:pt-32 lg:flex items-center">
+    <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pb-10">
+      <h1
+        class="text-white text-5xl lg:text-6xl xl:text-7xl lg:tracking-tight xl:tracking-tighter animate-fade-down animate-duration-1000">
+        <!-- <span class="font-bold lg:text-8xl lg:block">Somos</span> -->
+        <div class="flex items-center">
+          <Picture
+            src={logoWisec}
+            alt="Logo Wisec"
+            widths={[150, 30, 30]}
+            aspectRatio="1:1"
+            sizes="(max-width: 1024px) 50px,70px"
+            loading="eager"
+            format="svg"
+            class="animate-spin animate-duration-[3000ms]"
+          />
+          <span class="font-bold">Wisec</span><span
+            class="text-secondary font-bold">AI</span
+          >
+        </div>
+      </h1>
+      <h3
+        class="text-white text-3xl lg:text-3xl xl:text-4xl mt-1 lg:mt-5 animate-fade-down animate-delay-[200ms] animate-duration-1000">
+        <span class="font-light">¡somos el ChatGPT de la</span><span class="font-bold"
+          > Construcción!</span
+        >
+      </h3>
+      <p
+        class="text-xl font-light lg:text-2xl mt-5 lg:mt-10 text-primary max-w-xl text-white animate-fade-down animate-delay-[400ms]">
+        Conectamos al ecosistema constructor en base a la demanda y oferta de materiales y servicios.
+      </p>
+    </div>
+    <div
+      class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32 relative"
+      x-data="{intersect:false}"
+      x-intersect:enter="intersect=true"
+      x-intersect:leave="intersect=false">
+      <div
+        class="lg:max-w-xl flex-none" :class="intersect ? 'animate-fade-left animate-reverse animate-delay-[4000ms] animate-duration-1000 animate-ease-out':'opacity-0'">
+        <Picture
+          src={screenshot1}
+          alt="App screenshot"
+          widths={[2500,1000,500]}
+          aspectRatio="1:1"
+          class="h-full rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
+          loading="lazy"
+          format="png"
+        />
+      </div>
+      <div
+        class="lg:max-w-xl flex-none w-max absolute" :class="intersect ? 'animate-fade-left animate-delay-[5000ms] animate-duration-1000 animate-ease-out':'opacity-0'">
+        <Picture
+          src={screenshot2}
+          alt="App screenshot"
+          widths={[2500,1000,500]}
+          aspectRatio="1:1"
+          class="h-full rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10" :class="intersect ? 'animate-fade-left animate-reverse animate-delay-[8000ms] animate-duration-1000 animate-ease-out':'opacity-0'" 
+          loading="lazy"
+          format="png"
+        />
+      </div>
+      <div
+        class="lg:max-w-xl flex-none w-max absolute" :class="intersect ? 'animate-fade-left animate-delay-[9000ms] animate-duration-2000 animate-ease-out':'opacity-0'">
+        <Picture
+          src={screenshot3}
+          alt="App screenshot"
+          widths={[2500,1000,500]}
+          aspectRatio="1:1"
+          class="h-full rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
+          loading="lazy"
+          format="png"
+        />
+      </div>
+    </div>
   </div>
-</main>
+</div>

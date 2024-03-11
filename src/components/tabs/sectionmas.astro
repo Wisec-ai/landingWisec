@@ -1,0 +1,155 @@
+---
+import { Picture } from "@astrojs/image/components";
+import pasoConstructor01 from "assets/hay-mas/mas-constructor-01.svg";
+import pasoConstructor02 from "assets/hay-mas/mas-constructor-02.svg";
+import pasoProveedor01 from "assets/hay-mas/mas-proveedor-01s.svg";
+import pasoProveedor02 from "assets/hay-mas/mas-proveedor-02s.svg";
+
+
+
+const pasosConstructor = [
+{
+    id: "paso-1",
+    title: "Resuelve tus consultas sobre normas de construcción",
+    description: "Todas tus dudas sobre normas, leyes, procesos constructivos y estándares internacionales resueltas en un solo lugar",
+    img_url: pasoConstructor02
+},
+{
+    id: "paso-2",
+    title: "Calcula los materiales para tu obra",
+    description: "Desde los procesos constructivos más básicos hasta los más avanzados, nuestra calculadora no es una herramienta cualquiera, calcula cantidades precisas y estima presupuestos completos",
+    img_url: pasoConstructor01
+},
+]
+
+const pasosProveedor = [
+{
+    id: "paso-1",
+    title: "Resuelve tus consultas en base a tu propia información",
+    description: "Resuelve tus consultas en base a tu información en cuestión de segundos. Desde documentos hasta imágenes, lo procesamos todo de manera rápida y precisa.",
+    img_url: pasoProveedor01
+},
+{
+    id: "paso-2",
+    title: "Soporte de asistente de venta y post-venta con IA",
+    description: "¿Ocupado con las ventas? No te preocupes, te brindamos un asistente que resuelve las consultas de tus clientes sobre tus productos antes y después de la venta",
+    img_url: pasoProveedor02
+},
+]
+---
+
+<div
+  class="mt-8 pt-10"
+  x-data="{intersect:false}"
+  x-intersect:enter="intersect=true"
+  x-intersect:leave="intersect=false" id="more">
+  <section class="relative overflow-hidden md:overflow-visible md:px-0" :class="intersect ? 'animate-fade-up animate-ease-out':'opacity-0'">
+    <div
+      class="relative before:absolute before:scale-x-110 after:absolute">
+      <div
+        class="relative overflow-clip">
+        <div
+          data-target="panel-0"
+          class="justify-center panel-preview inset-0 z-10 flex items-start overflow-hidden px-6 transition duration-500 sm:px-10 translate-y-0 opacity-100 scale-100" style="background-image: url(...)">
+          <!-- <div aria-hidden="true" class="absolute inset-0 top-60 grid grid-cols-2 -space-x-52 opacity-50 dark:opacity-30">
+                        <div class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
+                        <div class="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
+                    </div> -->
+          <div class="relative mx-auto sm:px-12 xl:max-w-6xl xl:px-0">
+            <div class="text-center">
+              <h2
+                class="text-3xl font-bold text-gray-800 md:text-4xl">
+                Espera <span class="text-constructor">¿hay más?</span>
+              </h2>
+              <p
+                class="mx-auto mt-6 text-black md:w-3/4 lg:w-3/5">
+                Sí, así es estimado constructor. Descubre lo demás que ofrecemos.
+              </p>
+            </div>
+            <div
+              class="mt-16 mb-16 grid gap-8 sm:mx-auto md:w-full md:grid-cols-2 lg:grid-cols-2">
+              {
+                pasosConstructor.map((paso) => (
+              <div
+                class="rounded-3xl border border-gray-100 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
+                <div class="space-y-12 text-center">
+                  <Picture
+                    class="m-auto"
+                    src={paso.img_url}
+                    alt="Resuelve tus consultas"
+                    widths={[400]} 
+                    sizes="(max-width: 800px) 120px, 120px"
+                    loading="eager"
+                    format="svg"
+                  />
+                  <div class="space-y-6">
+                    <h3
+                      class="text-2xl font-semibold text-primary transition dark:text-white">
+                      {paso.title}
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      {paso.description}
+                    </p>
+                  </div>
+                </div>   
+              </div>
+              ))
+            }
+            </div>
+          </div>
+        </div>
+        <div
+          data-target="panel-1"
+          class="justify-center panel-preview absolute inset-0 z-0 flex items-start overflow-hidden px-6 transition duration-500 sm:px-10 translate-y-[100%] opacity-50 scale-75">
+          <!-- <div aria-hidden="true" class="absolute inset-0 top-60 grid grid-cols-2 -space-x-52 opacity-50 dark:opacity-30">
+                        <div class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
+                        <div class="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
+                    </div> -->
+          <div class="relative mx-auto sm:px-12 xl:max-w-6xl xl:px-0">
+            <div class="text-center">
+              <h2
+                class="text-3xl font-bold text-gray-800 md:text-4xl">
+                Espera <span class="text-marked">¿hay más?</span>
+              </h2>
+              <p
+                class="mx-auto mt-6 text-primary md:w-3/4 lg:w-3/5">
+                Sí, así es estimado proveedor. Descubre lo demás que ofrecemos.
+              </p>
+            </div>
+            <div
+              class="mt-16 grid gap-8 sm:mx-auto md:w-full md:grid-cols-2 lg:grid-cols-2">
+              
+              {
+                pasosProveedor.map((paso) => (
+              <div
+                class="rounded-3xl border border-gray-100 bg-white p-8 py-12 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
+                <div class="space-y-12 text-center">
+                  <Picture
+                    class="m-auto"
+                    src={paso.img_url}
+                    alt="Resuelve tus consultas"
+                    widths={[400]} 
+                    sizes="(max-width: 800px) 120px, 120px"
+                    loading="eager"
+                    format="svg"
+                  />
+                  <div class="space-y-6">
+                    <h3
+                      class="text-2xl font-semibold text-primary transition dark:text-white">
+                      {paso.title}
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                      {paso.description}
+                    </p>
+                  </div>
+                </div>   
+              </div>
+              ))
+            }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
