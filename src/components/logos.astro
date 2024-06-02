@@ -9,6 +9,7 @@ import habitat2 from "assets/respaldos/respaldoHabitatVivienda.png";
 import startup from "assets/respaldos/respaldoStartup.png";
 
 import digicem from "assets/clientes/clienteDigicem.svg";
+import apec from "assets/clientes/clienteAPEC.svg";
 import master from "assets/clientes/clienteMasterBuilders.png";
 import progresol from "assets/clientes/clienteProgresol.svg";
 import sika from "assets/clientes/clienteSika.svg";
@@ -66,9 +67,9 @@ import unacem from "assets/clientes/clienteUnacem.svg";
     x-intersect:leave="intersect=false">
     <h2 class="text-center text-lg text-white">Quienes confían en nosotros</h2>
     <div
-      class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-6 invert brightness-0 my-10 md:my-16 lg:gap-12 items-center"
+      class="flex flex-col justify-center lg:flex-row gap-10 lg:gap-6 invert brightness-0 my-10 md:my-16 lg:gap-12 items-center"
       :class="intersect ? 'animate-fade-up animate-duration-[1000ms] grayscale animate-delay-[200ms] animate-ease-out':'opacity-0'">
-      <Picture
+      <!-- <Picture
         src={digicem}
         alt="Logo de Digicem"
         widths={[200]}
@@ -83,12 +84,20 @@ import unacem from "assets/clientes/clienteUnacem.svg";
         sizes="(max-width: 120px) 100vw, 150px"
         loading="eager"
         format="png"
-      />
-      <Picture
+      /> -->
+      <!-- <Picture
         src={progresol}
         alt="Logo de Progresol"
         widths={[200]}
         sizes="(max-width: 120px) 100vw, 200px"
+        loading="eager"
+        format="png"
+      /> -->
+      <Picture
+        src={apec}
+        alt="Logo de APEC"
+        widths={[200]}
+        sizes="(max-width: 80px) 100vw, 100px"
         loading="eager"
         format="png"
       />
