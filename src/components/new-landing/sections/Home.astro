@@ -1,0 +1,118 @@
+---
+import clienteUnacem from "@assets/clients/clienteUnacem.svg";
+import clientHabitat from "@assets/clients/clientHabitat.webp";
+import clientGoingo from "@assets/clients/clientGoingo.png";
+import clientServicon from "@assets/clients/clientServicon.png";
+import clientSika from "@assets/clients/clientSika.webp";
+---
+
+<section
+id="home"
+  class="flex flex-col gap-10 text-center justify-center items-center"
+>
+  <span class="text-6xl text-[#ffd602] font-bold"
+    >Gestiona mejor y vende más</span
+  >
+  <p class="text-5xl text-center text-white font-bold">
+    con el ChatGPT Inmobiliario y de Construcción
+  </p>
+
+  <p class="text-3xl text-center">
+    Brindamos soluciones digitales para mejorar la gestión de la información y
+    prospectos de <br /> venta explotando el potencial de los <strong
+      >datos</strong
+    > y la <strong>IA</strong>
+  </p>
+  <form class="flex items-center bg-white rounded-xl">
+    <input
+      placeholder="Enter your email"
+      type="text"
+      class="w-[30rem] text-xl p-4 text-black rounded-md"
+    />
+    <button class="bg-[#05898b] text-2xl rounded-xl w-[30rem] p-4 font-bold"
+      >Agenda tu demo</button
+    >
+  </form>
+  <div class="spc">
+    <div class="circle">
+      <div class="triangle"></div>
+    </div>
+    <span class="txt">Ver un video</span>
+  </div>
+
+  <h3 class="text-5xl font-bold text-[#ffd602]">Quienes confían en nosotros</h3>
+  <ul
+    class="flex items-center justify-cemter w-[70vw] justify-between text-black"
+  >
+    <li
+      class="bg-white flex items-center justify-center w-[9rem] rounded-xl h-[11rem]"
+    >
+      <img src={clientSika.src} alt="sika" />
+    </li>
+    <li
+      class="bg-white flex items-center justify-center w-[9rem] h-[11rem] rounded-xl"
+    >
+      <img src={clienteUnacem.src} alt="unacem" />
+    </li>
+
+    <li
+      class="flex items-center justify-center w-[15rem] h-[6rem] bg-white rounded-xl"
+    >
+      <img src={clientHabitat.src} alt="habitat" class="scale-10" />
+    </li>
+    <li
+      class="flex items-center justify-center w-[17rem] h-[6rem] bg-white rounded-xl"
+    >
+      <img src={clientGoingo.src} alt="go" class="scale-10" />
+    </li>
+    <li
+      class="flex items-center justify-center w-[17rem] h-[6rem] bg-white rounded-xl overflow-hidden"
+    >
+      <img src={clientServicon.src} alt="servicon" class="scale-10" />
+    </li>
+  </ul>
+</section>
+
+<style>
+  .spc {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .circle {
+    width: 3rem;
+    height: 3rem;
+    border: 4px solid #ffd602;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .circle:hover {
+    border-color: #ffcc00;
+    transform: scale(1.1);
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 8px solid #ffd602;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+  }
+
+  .txt {
+    /* color: #ffcc00; */
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .spcx:hover .txt {
+    font-weight: 800;
+    color: #ffffff;
+  }
+</style>

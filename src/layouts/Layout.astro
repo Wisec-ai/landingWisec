@@ -254,6 +254,26 @@ const makeTitle = title
       })(jQuery);
       var $mcj = jQuery.noConflict(true);
     </script>
+    <script type="text/javascript">
+      window.addEventListener("scroll", () => {
+          const navbar = document.getElementById("navbar");
+          if (navbar) {
+              const scrollY = window.scrollY;
+              console.log(scrollY)
+              const maxScroll =
+                  document.body.scrollHeight - window.innerHeight;
+              const opacity = 1 - scrollY / maxScroll;
+              console.log(opacity)
+              if (scrollY > 200) {
+                  navbar.style.opacity = '15%'
+                  
+              } else {
+                  navbar.style.opacity = '1'
+              }
+              
+          }
+      });
+  </script>
     <style is:global>
       /* Improve Page speed */
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */

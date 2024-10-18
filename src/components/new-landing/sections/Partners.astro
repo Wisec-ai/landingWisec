@@ -1,0 +1,128 @@
+---
+import microsoftStartUps from "@assets/partners/microsoftStartUps.webp";
+import googleStartUp from "@assets/partners/googleStartUp.webp";
+import startUp from "@assets/partners/startUp.webp";
+import apec from "@assets/partners/apec.webp";
+import mezcladora from "@assets/partners/mezcladora.webp";
+import scale from "@assets/partners/scale.webp";
+import ia from "@assets/img/ia.webp";
+import iatwo from "@assets/img/iatwo.jpg";
+---
+
+<section id="partners" class="flex flex-col text-white">
+  <div
+    class="px-4 md:px-[10rem] h-1/3 w-full flex flex-col items-center justify-center gap-6 md:gap-10 div-bg"
+  >
+    <span class="text-center w-full">
+      <h1 class="text-yellow-400 text-3xl md:text-5xl font-bold">
+        Nuestros partners
+      </h1>
+    </span>
+    <ul class="flex flex-wrap gap-6 md:gap-10 items-center justify-center">
+      <li
+        class="bg-white w-[10rem] h-[4rem] md:w-[16rem] md:h-[6rem] rounded-xl flex items-center justify-center gap-4 md:gap-10"
+      >
+        <img src={microsoftStartUps.src} alt="descarga" />
+      </li>
+      <li
+        class="bg-white w-[10rem] h-[4rem] md:w-[16rem] md:h-[6rem] rounded-xl flex items-center justify-center gap-4 md:gap-10"
+      >
+        <img src={googleStartUp.src} alt="descarga" />
+      </li>
+      <li
+        class="bg-white w-[10rem] h-[4rem] md:w-[16rem] md:h-[6rem] rounded-xl flex items-center justify-center gap-4 md:gap-10"
+      >
+        <img src={startUp.src} alt="descarga" />
+      </li>
+      <li
+        class="bg-white w-[10rem] h-[4rem] md:w-[16rem] md:h-[6rem] rounded-xl flex items-center justify-center gap-4 md:gap-10"
+      >
+        <img src={apec.src} alt="descarga" class="scale-50" />
+      </li>
+      <li
+        class="bg-white w-[10rem] h-[4rem] md:w-[16rem] md:h-[6rem] rounded-xl flex items-center justify-center gap-4 md:gap-10"
+      >
+        <img src={mezcladora.src} alt="descarga" class="scale-150" />
+      </li>
+      <li
+        class="bg-white w-[10rem] h-[4rem] md:w-[16rem] md:h-[6rem] rounded-xl flex items-center justify-center gap-4 md:gap-10"
+      >
+        <img src={scale.src} alt="descarga" />
+      </li>
+    </ul>
+  </div>
+
+  <div
+    class="flex bg-white flex-col h-2/3 w-full justify-center items-center gap-8"
+  >
+    <div
+      class="px-4 md:px-[20rem] h-[15rem] bg-[#e7facf] w-full flex flex-col md:flex-row items-center text-black justify-center gap-4"
+    >
+      <div class="text-[#071c42] text-center text-3xl md:text-5xl w-full">
+        <h1 class="font-bold">
+          Sobre <span class="text-[#80e704]">Nosotros</span>
+        </h1>
+        <span class="text-sm md:text-3xl px-4 md:px-10">
+          Somos pioneros en la aplicación de Ciencia de Datos e Inteligencia <br
+            class="hidden md:block"
+          /> Artificial en los sectores Inmobiliario y de Construcción en Latinoamérica
+        </span>
+      </div>
+      <img
+        class="h-[27vh] border-2 border-black"
+        src={ia.src}
+        alt="asd"
+      />
+    </div>
+    <div
+      class="px-4 md:px-[20rem] h-[15rem] bg-[#e6f3f3] w-full flex flex-col md:flex-row items-center justify-center text-black gap-4"
+    >
+      <img
+        class="h-[27vh] border-2 border-black"
+        src={iatwo.src}
+        alt=""
+      />
+      <span
+        class="flex flex-col gap-2 md:gap-4 text-center text-[#071c42] text-3xl md:text-5xl w-full"
+      >
+        <h1 class="font-bold">
+          Nuestra <span class="text-[#80e704]">Misión</span>
+        </h1>
+        <p class="text-xl md:text-3xl px-4 md:px-10">
+          Potenciar a tus equipos técnico y comercial con tecnología para <br
+            class="hidden md:block"
+          /> incrementar tus ventas
+        </p>
+      </span>
+    </div>
+  </div>
+
+  <style>
+    .div-bg {
+      position: relative;
+      width: 100%;
+      height: 50%;
+      background-image: url("../../../assets/bgIa.webp");
+      background-size: cover;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    .div-bg::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(2, 21, 54, 0.676);
+      z-index: 0;
+    }
+
+    .div-bg > * {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</section>

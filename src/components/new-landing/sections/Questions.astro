@@ -1,0 +1,48 @@
+---
+import CheckIcon from "@assets/icons/CheckIcon.astro";
+import DiscoverButton from "../buttons/DiscoverButton.astro";
+import mesa from "@assets/icons/mesa.png";
+---
+
+<section id="questions" class="flex flex-row w-full items-center">
+    <div
+        class="ml-[5rem] h-[80vh] flex w-[40rem] flex-col items-center justify-between"
+    >
+        
+        <img src={mesa.src} width="550px" alt="title">
+        <p class="text-3xl">
+            Gestiona de manera más eficiente y convierte tu data en tu principal
+            activo
+        </p>
+        <ul class="flex flex-col gap-8 text-2xl font-medium px-4">
+            <li class="flex items-center justify-start gap-4 font-bold">
+                <CheckIcon />
+                <p>
+                    Modelo de IA brand-signature experto <br> en Construcción &
+                    Inmobiliario
+                </p>
+            </li>
+            <li class="flex items-center gap-4 font-bold">
+                <CheckIcon />
+                <p>Gestión del conocimiento (proyectos y productos)</p>
+            </li>
+            <li class="flex items-center gap-4 font-bold">
+                <CheckIcon />
+                <p>Gestión de leads calificados de tus asistentes digitales</p>
+            </li>
+            <li class="flex items-center gap-4 font-bold">
+                <CheckIcon />
+                <p>Predicción de hábitos de consumo de tus clientes</p>
+            </li>
+        </ul>
+        <DiscoverButton />
+    </div>
+    <div class="flex-1 h-[65vh] min-w-[40rem] flex justify-center">
+        <div
+            class="w-[50rem] h-[35rem] bg-gray-200 rounded-[20px] overflow-hidden"
+        >
+            <div class="bg-white w-full h-[85%] border-[25px] border-black">
+            </div>
+        </div>
+    </div>
+</section>

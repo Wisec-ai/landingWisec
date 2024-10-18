@@ -1,0 +1,70 @@
+---
+import  email from "@assets/icons/email.png"
+import Logowisec from "assets/icons/Logowisec.astro"
+import phone from "@assets/icons/phone.png";
+import web from "@assets/icons/web.png";
+---
+
+<section
+    id="contacts"
+    class="relative w-full flex flex-col justify-between items-center text-white gap-6 bg-gray-900"
+>
+    <div
+        class="flex items-center justify-center absolute -right-40 md:-right-[23rem] -top-[10rem] md:-top-[20rem] rounded-full h-[30rem] w-[30rem] md:h-[50rem] md:w-[50rem] bg-[#3dcab1]"
+    >
+        <Logowisec
+            class="relative right-20 top-14 md:right-[8rem] md:top-[7rem]"
+            height="300"
+            md:height="250"
+            color="#071c42"
+        />
+    </div>
+
+    <div class="h-1/2 justify-end flex flex-col gap-6 md:gap-10  text-center px-4 md:px-0">
+        <h1
+            class="flex items-center justify-center bg-black text-[#3dcab1] h-24 md:h-[8rem] rounded-3xl w-full md:w-[55rem] text-4xl md:text-8xl font-black"
+        >
+            ¡Contáctanos!
+        </h1>
+        <span class="text-2xl md:text-3xl italic max-w-3xl mx-auto">
+            En WisecAI queremos trabajar juntos y elevar el nivel de atención de tus proyectos y ventas.
+        </span>
+    </div>
+
+    <div class="w-full flex flex-col items-center justify-center banner px-4 md:px-0">
+        <ul
+            class="flex flex-col md:flex-row min-w-full md:min-w-[60rem] h-auto md:h-[6rem] font-semibold text-lg md:text-2xl items-center justify-between px-2 md:px-10 gap-4 md:gap-0"
+        >
+            <li class="flex items-center gap-2">
+                <img src={email.src} width="40px" alt="email">
+                <span>hello@wisec.com</span>
+            </li>
+            <li class="flex items-center gap-2">
+                <img src={phone.src} width="40px" alt="phone">
+                <span>051-99 999999</span>
+            </li>
+            <li class="flex items-center gap-2">
+                <img src={web.src} width="40px" alt="web">
+                <span>www.wisec.com</span>
+            </li>
+        </ul>
+
+        <ul
+            class="flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-16 text-lg md:text-xl font-semibold mt-4 md:mt-0 py-4"
+        >
+            <li>Proyectos</li>
+            <li>Soluciones</li>
+            <li>Funcionalidades</li>
+            <li>Clientes</li>
+            <li>DreamTeam</li>
+        </ul>
+    </div>
+
+    <span class="text-base md:text-lg mb-8">© 2024 WisecAI. Todos los Derechos Reservados</span>
+</section>
+
+<style>
+    .banner {
+        background-color: rgba(0, 0, 0, 0.254);
+    }
+</style>

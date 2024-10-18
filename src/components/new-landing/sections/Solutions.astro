@@ -1,0 +1,68 @@
+---
+import mesa from "@assets/icons/mesa.png"
+import logo from "@assets/icons/logo.png"
+import ButtonShow from "../buttons/ButtonShow.astro"
+---
+<section
+    id="solutions"
+    class="flex flex-col text-white gap-8 justify-center items-center overflow-y-hidden"
+>
+    <span class="flex flex-col gap-4 justify-center items-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-yellow-400">Nuestras soluciones</h1>
+        <span class="text-center mb-4">
+            <h2 class="text-2xl md:text-3xl">
+                "La innovación distingue a los líderes de los seguidores."
+            </h2>
+            <h3 class="text-xl md:text-2xl font-bold">--- Steve Jobs</h3>
+        </span>
+    </span>
+    <div class="flex flex-col md:flex-row gap-8 md:gap-[5rem]">
+        <div
+            class="h-[65vh] w-full max-w-md md:max-w-lg lg:max-w-xl div-bg2 rounded-xl flex justify-end flex-col text-black overflow-hidden relative"
+        >
+            <div
+                class="bg-white h-[40%] flex flex-col justify-start items-center gap-2 opacity-75 pt-4"
+            >
+                <img src={mesa.src} width="300px" alt="">
+                <span class="w-4/5 text-center text-base md:text-xl">
+                    Nuestro <strong>software que optimiza la gestión del conocimiento</strong> con búsquedas avanzadas y automatización de tareas operativas.
+                </span>
+            </div>
+            <div class="absolute w-full flex bottom-4 justify-center">
+                <ButtonShow/>
+            </div>
+        </div>
+
+        <div
+            class="h-[65vh] w-full max-w-md md:max-w-lg lg:max-w-xl div-bg rounded-xl flex justify-end flex-col text-black overflow-hidden relative"
+        >
+            <div
+                class="bg-white h-[40%] flex flex-col justify-start items-center gap-2 opacity-75 pt-4"
+            >
+                <img src={logo.src} width="400px" alt="">
+
+                <span class="w-4/5 text-center text-base md:text-lg">
+                    Nuestros <strong>asistentes digitales expertos en Construcción & Inmobiliario</strong> que automatizan la interacción con tus clientes y aumentan tus leads.
+                </span>
+            </div>
+            <div class="absolute w-full flex bottom-4 justify-center">
+                <ButtonShow/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .div-bg {
+        background-image: url("../../../assets/img/width_1024.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .div-bg2 {
+        background-image: url("../../../assets/img/construiamos.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>

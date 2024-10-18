@@ -1,0 +1,114 @@
+---
+
+
+import Layout from "@layouts/Layout.astro";
+import Principal from "@components/new-landing/principal.astro";
+
+---
+
+<Layout title="">
+  <div class="h-screen">
+    <Principal />
+  </div>
+</Layout>
+
+<style is:global>
+  nav {
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      /*opacity: 1;  Sin opacidad */
+      padding: 1rem;
+      transition: 0.3s ease; /* Transición suave */
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.7); /* Color de fondo inicial */
+  }
+
+nav:hover {
+  opacity: 100% !important; 
+}
+
+  nav.transparent {
+      background-color: rgba(
+          255,
+          255,
+          255,
+          0.5
+      ); /* Color transparente al llegar a la sección 4 */
+  }
+
+  nav ul {
+      list-style: none;
+  display: flex;
+  justify-content: center;
+  }
+
+  nav ul li {
+      display: flex;
+  align-items: center;
+  color: white;
+  }
+
+  html {
+  scroll-behavior: smooth;
+}
+
+  section {
+      display: flex;
+      height: 100vh;
+      width: auto;
+      overflow-x: hidden;
+  }
+
+  #home {
+      position: relative;
+      color: white;
+      background-image: url("../assets/bgIa.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+  }
+
+  #home::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(2, 21, 54, 0.676);
+      z-index: 1;
+  }
+
+  #home > * {
+      position: relative;
+      z-index: 2;
+  }
+
+  #partners {
+      padding: 0 !important;
+  }
+
+  #solutions {
+      background-color: #273b62;
+  }
+  #price {
+      background-color: #e6f3f3;
+  }
+  #questions {
+      background-color: #d3faf3;
+  }
+  #sectionSix {
+      background-color: #d3faf3;
+  }
+  #contacts {
+  background-color: #071c42;
+}
+#sectionEight {
+  background-color: #071c42;
+}
+</style>

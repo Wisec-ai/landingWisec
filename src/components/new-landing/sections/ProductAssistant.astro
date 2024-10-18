@@ -1,0 +1,59 @@
+---
+import CheckIcon from "@assets/icons/CheckIcon.astro"
+import DiscoverButton from "../buttons/DiscoverButton.astro";
+import maita from "@assets/video/maita.mp4";
+---
+
+<section id="product-assistant" class="flex flex-row w-full items-center">
+  <div class="flex-1 h-[80vh] min-w-[40rem] flex justify-center">
+    <div
+      class="flex flex-col items-center justify-end w-[25rem] h-[45rem] bg-black rounded-[50px] overflow-hidden p-4 shadow-xl"
+    >
+      <div
+        class="flex items-center justify-center bg-white w-full h-[100%] rounded-[34px] overflow-hidden relative"
+      >
+        <video  height="100%" class="scale-105" controls>
+          <source src={maita} type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
+        <div
+                    class="bg-black w-[11rem] h-[1.5rem] flex items-center justify-center gap-4 rounded-b-2xl absolute top-0"
+                >
+                    <div
+                        class="h-[0.5rem] w-[6rem] rounded-full bg-gray-700 mb-2"
+                    >
+                    </div>
+                    <div
+                        class="h-[0.5rem] w-[0.5rem] rounded-full bg-gray-700 mb-2"
+                    >
+                    </div>
+                </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mr-[5rem] h-[75vh] w-[50rem] flex flex-col items-center justify-start gap-20"
+  >
+    <h1 class="text-5xl font-bold">Asistentes Digitales</h1>
+    <p class="text-3xl text-end">
+      Conecta con tus clientes, resuelve sus consultas, bríndales
+      recomendaciones e incrementa tus ventas
+    </p>
+    <ul class="flex flex-col gap-8 text-2xl font-bold px-4">
+      <li class="flex items-center gap-4">
+        <CheckIcon />
+        Asistente de venta y post-venta <br />
+        (con información de tus productos/servicios)
+      </li>
+      <li class="flex items-center gap-4">
+        <CheckIcon />
+        Integración con tu embudo de ventas
+      </li>
+      <li class="flex items-center gap-4">
+        <CheckIcon />
+        Cotizaciones automáticas
+      </li>
+    </ul>
+    <DiscoverButton />
+  </div>
+</section>
