@@ -4,10 +4,13 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}","./node_modules/flowbite/**/*.js"],
   theme: {
     colors: {
-      primary: '#071c42',
-      secondary: '#80e704',
+      primary: '#111827',
+      secondary: '#80E704',
+      text_primary: '#111827',
+      text_secondary: '#374151',
       marked: '#3dcab1',
-      constructor: '#ffd700'
+      constructor: '#ffd700',
+      form:'#F6FBF9'
     },
     extend: {
       fontFamily: {

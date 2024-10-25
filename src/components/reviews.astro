@@ -1,0 +1,167 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import scale from "assets/respaldos/respaldoScale.png";
+
+import mezcladora from "assets/clientes/clienteMezcladora.png";
+import sika from "assets/clientes/clienteSika.png";
+import unacem from "assets/clientes/clienteUnacem.png";
+import habitat from "assets/clientes/clienteHabitat.png";
+import comillas from "assets/wisec-comillas.png";
+import comillasBackground from "assets/wisec-bg-comillas.png";
+---
+
+<div
+  class="lg:mx-auto py-10 mt-0"
+  x-data="{intersect:false}"
+  x-intersect:enter="intersect=true"
+  x-intersect:leave="intersect=false">
+  <div
+    class="md:px-0"
+    :class="intersect ? 'animate-fade-up animate-duration-[1000ms] animate-ease-out':'opacity-0'">
+    <div
+      class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-6 mt-10 lg:gap-12 items-center"
+      :class="intersect ? 'animate-fade-up animate-ease-out':'opacity-0'">
+      <div
+        class="py-[60px] grid rounded-3xl sm:grid-cols-2 lg:grid-cols-2 lg:divide-y-0 gap-2 lg:gap-[35px] w-full relative">
+        <div class="col">
+          <Picture
+            src={comillasBackground}
+            alt="Fondo Comillas"
+            widths={[142]}
+            sizes="(max-width: 800px) 142px, 142px"
+            loading="eager"
+            format="png"
+            class="absolute top-0 left-0 -z-50"
+          />
+          <div class="pl-10 lg:pl-28">
+            <h2
+              class="text-left text-4xl lg:text-5xl text-primary font-semibold tracking-tight sm:max-w-md ml-0 mb-2">
+              Historias reales de clientes reales
+            </h2>
+            <p class="font-xs font-light text-primary">
+              Inspírate con estas historias.
+            </p>
+          </div>
+          <div class="card-review sm:max-w-sm mx-auto lg:mr-0">
+            <div class="text-right">
+              <Picture
+                src={unacem}
+                alt="Review Unacem"
+                widths={[124]}
+                sizes="(max-width: 800px) 124px, 124px"
+                loading="eager"
+                format="png"
+                class="inline-block mb-2"
+              />
+            </div>
+            <div class="bg-[#071C42] rounded-xl text-white p-8">
+              <Picture
+                src={comillas}
+                alt="Comillas"
+                widths={[16]}
+                sizes="(max-width: 800px) 16px, 16px"
+                loading="eager"
+                format="png"
+                class="inline-block"
+              />
+              <div class="card-review--box">
+                <div class="card-review--box-texto">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  erat nibh tristique ipsum. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit. Sed erat nibh tristique ipsum.
+                  Lorem ipsum dolor sit amet.
+                </div>
+                <div
+                  class="card-review--box-nombre text-secondary font-semibold mt-5">
+                  Nombre
+                </div>
+                <div class="card-review--cargo font-light text-sm">
+                  Vice President, Empresas
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card-review sm:max-w-md mx-auto lg:ml-0 mb-10">
+            <div class="text-right">
+              <Picture
+                src={sika}
+                alt="Review Sika"
+                widths={[150]}
+                sizes="(max-width: 800px) 150px, 150px"
+                loading="eager"
+                format="png"
+                class="inline-block mb-2"
+              />
+            </div>
+            <div class="bg-[#071C42] rounded-xl text-white p-8">
+              <Picture
+                src={comillas}
+                alt="Comillas"
+                widths={[16]}
+                sizes="(max-width: 800px) 16px, 16px"
+                loading="eager"
+                format="png"
+                class="inline-block"
+              />
+              <div class="card-review--box">
+                <div class="card-review--box-texto">
+                  I Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  erat nibh tristique ipsumLorem ipsum dolor sit amet,
+                  consectetur adipiscing elit.
+                </div>
+                <div
+                  class="card-review--box-nombre text-secondary font-semibold mt-5">
+                  Nombre
+                </div>
+                <div class="card-review--cargo font-light text-sm">
+                  CEO, Empresas
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-review sm:max-w-sm mx-auto lg:ml-0">
+            <div class="text-right">
+              <Picture
+                src={mezcladora}
+                alt="Review Mezcladora"
+                widths={[150]}
+                sizes="(max-width: 800px) 150px, 150px"
+                loading="eager"
+                format="png"
+                class="inline-block mb-2"
+              />
+            </div>
+            <div class="bg-[#071C42] rounded-xl text-white p-8">
+              <Picture
+                src={comillas}
+                alt="Comillas"
+                widths={[16]}
+                sizes="(max-width: 800px) 16px, 16px"
+                loading="eager"
+                format="png"
+                class="inline-block"
+              />
+              <div class="card-review--box">
+                <div class="card-review--box-texto">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  erat nibh tristique ipsum.
+                </div>
+                <div
+                  class="card-review--box-nombre text-secondary font-semibold mt-5">
+                  Nombre
+                </div>
+                <div class="card-review--cargo font-light text-sm">
+                  Co-Founder, Empresas
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

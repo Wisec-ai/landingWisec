@@ -6,12 +6,27 @@ import { Icon } from "astro-icon";
 import screenshot1 from "assets/plataforma-consultor1.png";
 import screenshot2 from "assets/plataforma-consultor2.png";
 import screenshot3 from "assets/plataforma-consultor3.png";
+import Form from "@components/form.astro";
+
+import bgWisecBanner from "assets/bg-wisec.png";
+import bgWisecBannerMob from "assets/bg-wisec.png";
 
 import logoWisec from "assets/logo-wisec.svg";
+
 ---
 
-<div class="relative isolate overflow-hidden bg-gray-900 lg:pt-20 pt-40 px-5">
-  <svg
+<div class="relative isolate lg:max-w-screen-2xl m-auto ">
+  <Picture
+    src={bgWisecBanner}
+    alt="Wisec Banner"
+    widths={[1536]}
+    sizes="(max-width: 768px) 1536px,1536px"
+    loading="lazy"
+    format="png"
+    decoding="async"
+    class="absolute inset-0 -z-10 max-lg:min-w-[1536px]"
+  />
+  <!-- <svg
     class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
     aria-hidden="true">
     <defs>
@@ -35,22 +50,36 @@ import logoWisec from "assets/logo-wisec.svg";
       height="100%"
       stroke-width="0"
       fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"></rect>
-  </svg>
-  <div
+  </svg> -->
+  <!-- <div
     class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
     aria-hidden="true">
     <div
       class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
       style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)">
     </div>
-  </div>
+  </div> -->
   <div
-    class="mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 sm:pt-32 lg:flex items-center">
-    <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pb-10">
+    class="mx-auto max-w-screen-xl pb-24 pt-32 px-5 lg:pb-32 lg:pt-56 lg:px-0 lg:flex items-start justify-center">
+    <div class="mx-auto max-w-xl flex-shrink-0 lg:mx-0 lg:max-w-xl xl:max-w-3xl 2xl:max-w-4xl" x-data="{intersect:false}"
+    x-intersect:enter="intersect=true"
+    x-intersect:leave="intersect=false">
       <h1
-        class="text-white text-5xl lg:text-6xl xl:text-7xl lg:tracking-tight xl:tracking-tighter animate-fade-down animate-duration-1000">
-        <!-- <span class="font-bold lg:text-8xl lg:block">Somos</span> -->
-        <div class="flex items-center">
+        class="text-white">
+        <span 
+        :class="intersect ? 'animate-fade-right animate-delay-[1000ms] animate-ease-out':'opacity-0'"
+        class="font-500 text-3xl lg:text-3xl xl:text-4xl 2xl:text-[48px] lg:block mb-5"
+          >Somos <span class="text-secondary font-bold">WisecAI,</span> una StartUp
+          B2B2C</span
+        >
+        <span 
+        :class="intersect ? 'animate-fade-right animate-delay-[1500ms] animate-ease-out':'opacity-0'"
+        class="leading-normal font-semibold text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl lg:block"
+          >Soluciones Contech y Proptech para un Futuro <span
+            class="text-secondary font-bold">IA</span
+          ></span
+        >
+        <!-- <div class="flex items-center">
           <Picture
             src={logoWisec}
             alt="Logo Wisec"
@@ -64,25 +93,32 @@ import logoWisec from "assets/logo-wisec.svg";
           <span class="font-bold">Wisec</span><span
             class="text-secondary font-bold">AI</span
           >
-        </div>
+        </div> -->
       </h1>
-      <h3
-        class="text-white text-3xl lg:text-3xl xl:text-4xl mt-1 lg:mt-5 animate-fade-down animate-delay-[200ms] animate-duration-1000">
-        <span class="font-light">¡somos el ChatGPT de la</span><span class="font-bold"
-          > Construcción!</span
-        >
-      </h3>
       <p
-        class="text-xl font-light lg:text-2xl mt-5 lg:mt-10 text-primary max-w-xl text-white animate-fade-down animate-delay-[400ms]">
-        Conectamos al ecosistema constructor en base a la demanda y oferta de materiales y servicios.
+        :class="intersect ? 'animate-fade-up animate-delay-[1000ms] animate-ease-out':'opacity-0'"
+        class="text-xl font-light lg:text-2xl mt-5 lg:mt-5 text-primary max-w-3xl text-white animate-fade-down animate-delay-[2000ms]">
+        Impulsa la eficiencia y la innovación en tus proyectos de construcción
+        con nuestras avanzadas soluciones de inteligencia artificial
       </p>
+      <div
+        :class="intersect ? 'animate-fade-up animate-delay-[2500ms] animate-ease-out':'opacity-0'">
+        <Link
+          class="mt-8 text-md lg:text-lg cursor-pointer inline-block"
+          style="inverted"
+          href="#tabs"
+          size="lg">
+          Empezar
+        </Link>
+      </div>
     </div>
     <div
-      class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32 relative"
+      class="max-w-xl mx-auto mt-8 flex lg:mr-0 lg:mt-0 lg:max-w-sm lg:flex-none relative"
       x-data="{intersect:false}"
       x-intersect:enter="intersect=true"
       x-intersect:leave="intersect=false">
-      <div
+      <Form />
+      <!-- <div
         class="lg:max-w-xl flex-none" :class="intersect ? 'animate-fade-left animate-reverse animate-delay-[4000ms] animate-duration-1000 animate-ease-out':'opacity-0'">
         <Picture
           src={screenshot1}
@@ -117,7 +153,7 @@ import logoWisec from "assets/logo-wisec.svg";
           loading="lazy"
           format="png"
         />
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

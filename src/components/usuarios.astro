@@ -1,0 +1,91 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import solucionWisec01 from "assets/soluciones/wisec-solution-01.png";
+import solucionWisec02 from "assets/soluciones/wisec-solution-02.png";
+import solucionWisec03 from "assets/soluciones/wisec-solution-03.png";
+import solucionWisec04 from "assets/soluciones/wisec-solution-04.png";
+import solucionWisec05 from "assets/soluciones/wisec-solution-05.png";
+import solucionWisec06 from "assets/soluciones/wisec-solution-06.png";
+
+import mezcladora from "assets/clientes/clienteMezcladora.png";
+import sika from "assets/clientes/clienteSika.png";
+import unacem from "assets/clientes/clienteUnacem.png";
+import habitat from "assets/clientes/clienteHabitat.png";
+
+const users = [
+  {
+    id: "solucion-1",
+    title: "Constructores",
+    description: "Dueños de obras",
+    img_url: solucionWisec01,
+  },
+  {
+    id: "solucion-2",
+    title: "Contratistas",
+    description: "Maestros de obra",
+    img_url: solucionWisec02,
+  },
+  {
+    id: "solucion-3",
+    title: "Proveedores",
+    description: "Ferreterías y tiendas",
+    img_url: solucionWisec03,
+  },
+  {
+    id: "solucion-4",
+    title: "Distribuidores",
+    description: "Almacenes y centros de distribución",
+    img_url: solucionWisec04,
+  },
+];
+---
+
+<div class="lg:mx-auto py-20">
+  <div
+    class="mt-0 max-w-screen-xl mx-auto"
+    x-data="{intersect:false}"
+    x-intersect:enter="intersect=true"
+    x-intersect:leave="intersect=false">
+    <div
+      class="flex lg:divide-y-0 gap-4 lg:gap-10 items-center flex-col lg:flex-row-reverse max-lg:px-10"
+      :class="intersect ? 'animate-fade-up animate-duration-[1000ms] animate-ease-out':'opacity-0'">
+      <div class="text-left w-4/5 lg:w-1/2">
+        <h2
+          class="text-3xl lg:text-5xl text-primary font-semibold tracking-tight mb-4">
+          Nuestros usuarios para Contech y Proptech
+        </h2>
+        <p class="font-xs font-light text-primary">
+          Responsables de la coordinación y supervisión de proyectos de Construcción e Inmobiliarios
+        </p>
+      </div>
+      <div
+        class="grid rounded-3xl dark:divide-gray-700 dark:border-gray-700 sm:grid-cols-2 lg:grid-cols-2 lg:divide-y-0 w-4/5 lg:w-1/2">
+        {
+          users.map((user) => (
+            <div class="group relative">
+              <div class="p-3 py-3 text-center flex items-center gap-5">
+                <Picture
+                  src={user.img_url}
+                  alt="Logo"
+                  widths={[100]}
+                  sizes="(max-width: 800px) 32px, 32px"
+                  loading="eager"
+                  format="svg"
+                  class="inline-block min-w-[32px]"
+                />
+                <div class="space-y-2 text-left">
+                  <h3 class="text-[25px] lg:text-3xl font-bold text-primary transition group-hover:text-primary dark:text-white dark:group-hover:text-primaryLight tracking-tight">
+                    {user.title}
+                  </h3>
+                  <p class="text-sm lg:text-md text-gray-600">{user.description}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

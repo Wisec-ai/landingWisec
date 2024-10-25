@@ -1,0 +1,30 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import scale from "assets/respaldos/respaldoScale.png";
+
+import mezcladora from "assets/clientes/clienteMezcladora.png";
+import sika from "assets/clientes/clienteSika.png";
+import unacem from "assets/clientes/clienteUnacem.png";
+import habitat from "assets/clientes/clienteHabitat.png";
+---
+
+<div class="lg:mx-auto py-20">
+  <div
+    class="mt-0 max-w-3xl mx-auto"
+    x-data="{intersect:false}"
+    x-intersect:enter="intersect=true"
+    x-intersect:leave="intersect=false">
+    <div class="max-sm:px-10">
+      <h2
+        class="text-center text-3xl lg:text-5xl text-primary font-semibold tracking-tight mb-4">
+        Nuestra <span class="text-secondary">Misión</span>
+      </h2>
+      <p class="font-xs font-light text-primary text-center">
+        CONECTAR al ecosistema constructor e inmobiliario para mejorar el acceso
+        y la calidad de vivienda de miles de millones de familias
+      </p>
+    </div>
+  </div>
+</div>

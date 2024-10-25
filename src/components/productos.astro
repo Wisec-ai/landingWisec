@@ -1,0 +1,70 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import scale from "assets/respaldos/respaldoScale.png";
+
+import logoConstruiamos from "assets/wisec-logo-construiamos.png";
+import logoAmaia from "assets/wisec-logo-amaia.png";
+
+
+---
+
+<div class="lg:mx-auto py-20">
+  <div
+    class="mt-0 max-w-3xl mx-auto"
+    x-data="{intersect:false}"
+    x-intersect:enter="intersect=true"
+    x-intersect:leave="intersect=false">
+    <h2
+      class="text-center text-3xl lg:text-5xl text-primary font-semibold tracking-tight mb-4">
+      Nuestros <span class="text-secondary">Productos</span>
+    </h2>
+    <p class="font-xs font-light text-primary text-center">
+      "La innovación distingue a los líderes de los seguidores." <br />
+      <b>--- Steve Jobs</b>
+    </p>
+    <div
+      class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-6 mt-10 lg:gap-12 items-center"
+      :class="intersect ? 'animate-fade-up animate-ease-out':'opacity-0'">
+      <div
+        class="grid rounded-3xl sm:grid-cols-2 lg:grid-cols-2 lg:divide-y-0 gap-2 lg:gap-[35px] w-full relative">
+        <div class="card text-center bg-secondary/30 p-10 rounded-3xl">
+          <Picture
+            src={logoConstruiamos}
+            alt="Logo ConstruIAmos"
+            widths={[321]}
+            sizes="(max-width: 800px) 321px, 321px"
+            loading="eager"
+            format="png"
+            class="inline-block"
+          />
+          <h3 class="font-semibold mb-2 text-primary text-lg">
+            Gestión del Conocimiento
+          </h3>
+          <p class="font-xs font-light text-primary text-center">
+            Optimiza la gestión del conocimiento con análisis inteligente y
+            búsquedas avanzadas en documentos
+          </p>
+        </div>
+        <div class="card text-center bg-[#05898B]/10 p-10 rounded-3xl">
+          <Picture
+            src={logoAmaia}
+            alt="Logo Amaia"
+            widths={[241]}
+            sizes="(max-width: 800px) 241px, 241px"
+            loading="eager"
+            format="png"
+            class="inline-block"
+          />
+          <h3 class="font-semibold mb-2 text-primary text-lg">
+            Asistente Virtual
+          </h3>
+          <p class="font-xs font-light text-primary text-center">
+            Especializado en el sector de la construcción, e inmobiliaria diseñado con respuestas rápidas y precisas a consultas técnicas y operativas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

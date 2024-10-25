@@ -3,40 +3,43 @@
 import { Icon } from "astro-icon";
 import { Picture } from "@astrojs/image/components";
 import scale from "assets/respaldos/respaldoScale.png";
-import mezcladora from "assets/respaldos/respaldoMezcladora.svg";
-import habitat from "assets/respaldos/respaldoHabitat.svg";
-import habitat2 from "assets/respaldos/respaldoHabitatVivienda.png";
-import startup from "assets/respaldos/respaldoStartup.png";
 
-import digicem from "assets/clientes/clienteDigicem.svg";
-import apec from "assets/clientes/clienteAPEC.svg";
-import master from "assets/clientes/clienteMasterBuilders.png";
-import progresol from "assets/clientes/clienteProgresol.svg";
-import sika from "assets/clientes/clienteSika.svg";
-import unacem from "assets/clientes/clienteUnacem.svg";
+import mezcladora from "assets/clientes/clienteMezcladora.png";
+import sika from "assets/clientes/clienteSika.png";
+import unacem from "assets/clientes/clienteUnacem.png";
+import habitat from "assets/clientes/clienteHabitat.png";
+
 ---
 
-<div class="lg:mx-auto bg-primary border rounded-3xl pt-20">
+<div class="lg:mx-auto pt-10">
   <div
     class="mt-0 max-w-3xl mx-auto"
     x-data="{intersect:false}"
     x-intersect:enter="intersect=true"
     x-intersect:leave="intersect=false">
-    <h2 class="text-center text-lg text-white">Respaldados por</h2>
+    <h2 class="text-center text-3xl lg:text-5xl text-primary font-semibold tracking-tight"><span class="text-secondary">Trabajamos</span> con...</h2>
     <div
-      class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-6 invert brightness-0 my-10 md:my-16 lg:gap-12 items-center"
-      :class="intersect ? 'animate-fade-up animate-duration-[1000ms] grayscale animate-ease-out':'opacity-0'">
+      class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-6 mt-10 lg:gap-12 items-center"
+      :class="intersect ? 'animate-fade-up animate-duration-[1000ms] animate-ease-out':'opacity-0'">
       <Picture
-        src={startup}
+        src={sika}
         alt="Logo de Start Up"
-        widths={[200]}
-        sizes="(max-width: 120px) 100vw, 150px"
+        widths={[250]}
+        sizes="(max-width: 120px) 100vw, 170px"
         loading="eager"
         format="png"
       />
       <Picture
-        src={scale}
-        alt="Logo de Scale"
+        src={unacem}
+        alt="Logo de Unacem"
+        widths={[250]}
+        sizes="(max-width: 120px) 100vw, 180px"
+        loading="eager"
+        format="png"
+      />
+      <Picture
+        src={habitat}
+        alt="Logo de Habitat"
         widths={[200]}
         sizes="(max-width: 120px) 100vw, 150px"
         loading="eager"
@@ -48,76 +51,17 @@ import unacem from "assets/clientes/clienteUnacem.svg";
         widths={[200]}
         sizes="(max-width: 120px) 100vw, 200px"
         loading="eager"
-        format="svg"
+        format="png"
       />
       <Picture
-        src={habitat2}
-        alt="Logo de Habitat"
+        src={scale}
+        alt="Logo de Scale"
         widths={[200]}
         sizes="(max-width: 120px) 100vw, 150px"
         loading="eager"
         format="png"
       />
-      <Picture
-        src={apec}
-        alt="Logo de APEC"
-        widths={[200]}
-        sizes="(max-width: 80px) 100vw, 100px"
-        loading="eager"
-        format="png"
-      />
-    </div>
-  </div>
-  <div
-    class="pt-20 max-w-5xl mx-auto"
-    x-data="{intersect:false}"
-    x-intersect:enter="intersect=true"
-    x-intersect:leave="intersect=false">
-    <h2 class="text-center text-lg text-white">Quienes confían en nosotros</h2>
-    <div
-      class="flex flex-col justify-center lg:flex-row gap-10 lg:gap-6 invert brightness-0 my-10 md:my-16 lg:gap-12 items-center"
-      :class="intersect ? 'animate-fade-up animate-duration-[1000ms] grayscale animate-delay-[200ms] animate-ease-out':'opacity-0'">
-      <!-- <Picture
-        src={digicem}
-        alt="Logo de Digicem"
-        widths={[200]}
-        sizes="(max-width: 120px) 100vw, 150px"
-        loading="eager"
-        format="png"
-      />
-      <Picture
-        src={master}
-        alt="Logo de Master"
-        widths={[200]}
-        sizes="(max-width: 120px) 100vw, 150px"
-        loading="eager"
-        format="png"
-      /> -->
-      <!-- <Picture
-        src={progresol}
-        alt="Logo de Progresol"
-        widths={[200]}
-        sizes="(max-width: 120px) 100vw, 200px"
-        loading="eager"
-        format="png"
-      /> -->
       
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="100" height="100" viewBox="0 0 3000.000000 3000.000000" preserveAspectRatio="xMidYMid meet" class="bg-red">
-        <g transform="translate(0.000000,3000.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
-        <path fill="currentColor" d="M8769 15337 l-6156 -10662 6160 -3 c3388 -1 8927 -1 12309 0 l6149 3 -6148 10663 c-3381 5864 -6150 10662 -6153 10662 -3 0 -2775 -4798 -6161 -10663z m4590 3013 c337 -41 381 -49 424 -72 49 -27 87 -92 87 -148 0 -19 -36 -243 -79 -497 -58 -337 -85 -475 -101 -509 -25 -51 -86 -97 -155 -115 -62 -17 -205 -4 -335 31 -262 70 -408 92 -605 91 -222 0 -391 -43 -539 -135 -69 -44 -170 -136 -222 -206 -42 -56 -121 -228 -144 -315 -16 -62 -105 -939 -390 -3870 -225 -2313 -377 -3833 -390 -3900 -75 -388 -208 -741 -376 -998 -271 -414 -642 -675 -1134 -796 -184 -45 -312 -61 -535 -68 -304 -9 -510 12 -910 92 -131 26 -232 41 -250 38 -16 -4 -51 -22 -77 -40 -63 -46 -151 -87 -217 -103 -65 -15 -148 -11 -434 24 -227 27 -280 43 -318 97 -43 61 -44 18 26 704 59 576 77 645 179 695 111 53 234 33 519 -86 828 -345 1440 -375 1842 -89 79 56 205 189 259 273 151 235 226 500 270 957 465 4834 718 7400 740 7490 136 556 532 977 1124 1194 143 52 272 86 409 106 92 14 137 14 289 5 311 -18 450 -23 476 -17 14 4 53 32 87 62 74 66 142 102 213 114 79 13 86 13 267 -9z m3402 -13 c31 -16 51 -37 69 -69 l24 -46 -223 -1233 c-420 -2326 -1081 -5964 -1152 -6342 -65 -346 -70 -382 -59 -422 54 -191 390 -257 735 -144 186 62 359 172 521 334 138 138 237 277 330 468 77 157 130 222 218 267 l69 35 388 3 c449 4 482 0 529 -56 64 -78 65 -211 1 -402 -103 -309 -288 -594 -576 -889 -147 -151 -252 -244 -506 -448 -176 -141 -219 -183 -219 -211 0 -53 144 -272 462 -703 128 -174 256 -350 285 -392 38 -56 62 -80 95 -96 173 -83 429 -15 535 142 39 58 53 121 53 240 0 51 7 140 15 198 85 642 430 1035 1101 1255 230 75 311 87 574 87 364 0 847 -73 1285 -194 164 -46 241 -33 287 47 17 31 68 333 68 406 -1 120 -130 217 -338 253 -173 30 -536 10 -1245 -70 -252 -29 -331 -31 -485 -10 -120 16 -177 37 -211 81 -39 50 -37 80 23 348 32 138 62 263 67 277 15 38 67 85 124 111 l50 23 1115 3 c1158 3 1258 1 1420 -38 92 -23 238 -87 325 -146 220 -146 340 -358 365 -650 15 -166 3 -277 -155 -1494 -119 -909 -115 -880 -115 -925 0 -105 59 -203 147 -246 66 -32 196 -32 306 -1 42 12 87 22 98 22 32 0 89 -62 89 -97 0 -47 -110 -604 -125 -632 -17 -33 -61 -74 -100 -94 -53 -26 -154 -39 -310 -40 -185 0 -287 17 -496 83 -331 103 -608 170 -703 170 -28 -1 -118 -19 -201 -40 -361 -96 -508 -132 -632 -155 -598 -111 -1062 -77 -1423 105 -36 18 -119 64 -185 103 -66 39 -141 79 -168 89 -91 35 -115 29 -411 -98 -298 -128 -506 -201 -666 -235 -140 -30 -362 -32 -464 -5 -214 57 -391 176 -556 374 -142 169 -233 314 -475 751 -272 492 -408 662 -610 763 -77 39 -149 51 -271 46 -130 -6 -190 -27 -252 -91 -87 -89 -88 -92 -232 -887 -72 -398 -138 -738 -146 -757 -9 -18 -38 -53 -65 -77 -85 -76 -83 -76 -591 -76 -354 0 -455 3 -481 14 -42 17 -93 76 -107 123 -10 34 94 616 999 5573 556 3044 1018 5553 1026 5575 18 48 84 116 140 144 38 19 61 20 506 21 l466 0 44 -23z m-2958 -4647 c21 -14 47 -44 58 -68 l21 -43 -70 -420 c-61 -360 -75 -427 -97 -465 -31 -52 -103 -108 -160 -124 -27 -7 -186 -10 -501 -8 l-461 3 -37 29 c-45 34 -75 95 -76 152 0 56 137 771 157 817 21 49 81 109 136 136 41 21 51 21 518 19 l475 -3 37 -25z m-468 -2526 c47 -24 85 -89 85 -144 0 -51 -688 -3867 -706 -3917 -26 -70 -77 -128 -145 -162 l-62 -31 -456 0 c-454 0 -457 0 -501 23 -50 25 -84 69 -94 121 -8 43 686 3911 713 3972 34 76 110 137 194 154 23 4 242 8 487 7 428 -2 447 -3 485 -23z"/>
-        <path fill="currentColor" d="M20270 8995 c-312 -53 -555 -193 -645 -371 -27 -53 -30 -68 -30 -154 0 -87 3 -100 32 -155 17 -33 47 -78 66 -101 114 -132 343 -242 602 -290 140 -26 421 -26 560 0 483 91 744 378 608 668 -93 197 -364 352 -706 402 -126 19 -380 19 -487 1z"/>
-        <path fill="currentColor" d="M26060 11179 c-161 -16 -351 -85 -492 -180 -93 -62 -244 -221 -301 -316 -149 -250 -190 -537 -117 -822 95 -372 379 -658 758 -763 65 -18 105 -22 262 -22 202 -1 250 7 400 66 164 65 334 194 447 340 95 124 170 297 198 457 21 118 19 305 -4 416 -107 521 -606 879 -1151 824z m335 -179 c326 -84 561 -338 631 -681 23 -112 15 -321 -16 -434 -86 -314 -302 -539 -607 -631 -77 -24 -105 -27 -228 -27 -111 0 -157 5 -220 21 -108 29 -246 99 -326 166 -131 108 -244 287 -290 461 -27 102 -37 323 -19 431 60 375 341 655 715 714 91 14 268 4 360 -20z"/>
-        <path fill="currentColor" d="M25760 10135 l0 -615 95 0 95 0 0 260 0 260 103 0 104 0 173 -260 173 -260 94 0 95 0 -23 38 c-13 20 -90 140 -171 265 -82 126 -148 230 -148 231 0 2 22 6 49 10 63 8 163 58 197 99 55 64 78 133 78 232 1 149 -45 240 -153 298 -88 48 -157 57 -473 57 l-288 0 0 -615z m613 439 c82 -28 125 -107 112 -205 -19 -136 -121 -178 -432 -179 l-103 0 0 200 0 200 188 0 c146 0 199 -4 235 -16z"/>
-        </g>
-      </svg>
-      <Picture
-        src={unacem}
-        alt="Logo de Unacem"
-        widths={[200]}
-        sizes="(max-width: 120px) 100vw, 80px"
-        loading="eager"
-        format="png"
-      />
     </div>
   </div>
 </div>

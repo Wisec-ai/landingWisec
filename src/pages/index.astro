@@ -25,6 +25,12 @@ import SectionMas from "@components/tabs/sectionmas.astro";
 import Faqs from "@components/faq.astro";
 import Form from "@components/form.astro";
 import SectionSlogan from "@components/slogan.astro";
+import Soluciones from "@components/soluciones.astro";
+import Reviews from "@components/reviews.astro";
+import Mision from "@components/mision.astro";
+import Productos from "@components/productos.astro";
+import Recorrido from "@components/recorrido.astro";
+import Usuarios from "@components/usuarios.astro";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -136,36 +142,29 @@ const pricing = [
   </div>
 </Layout> -->
 <Layout title="">
-  <Hero />
-  <Container class="mb-0 mb-0">
-    <Tabs />
-  </Container>
-  <Container class="mb-0 mb-0">
-    <Form />
-  </Container>
-  <Container class="mb-0 mb-0">
-    <SectionPasos />
-  </Container>
-  <ContainerBanner>
-    <SectionMas />
+  <ContainerBanner class="mb-0 mb-0">
+    <Hero />
   </ContainerBanner>
-  <!-- <Container>
-    <Ecosistema />
-  </Container> 
-  <Container>
-    <Proposito />
-  </Container> 
-  <Container>
-    <Platforms />
-  </Container> 
-  <Container>
-    <Features />
-  </Container>  -->
   <Container class="">
     <Logos />
   </Container>
+  <ContainerBanner class="bg-[#05898B]/10">
+    <Soluciones />
+  </ContainerBanner>
+  <Container class="mb-0 mb-0">
+    <Reviews />
+  </Container>
+  <ContainerBanner class="bg-[#05898B]/10 pb-0">
+    <Mision />
+  </ContainerBanner>
+  <Container class="mb-0 mb-0">
+    <Productos />
+  </Container>
+  <ContainerBanner class="bg-secondary/30 pb-0">
+    <Recorrido />
+  </ContainerBanner>
   <Container>
-    <div class="pt-32 pb-20 lg:pb-0">
+    <div class="py-20 ">
       <div class="text-center">
         <h2
           class="text-3xl font-bold text-gray-800 dark:text-white md:text-4xl">
@@ -194,12 +193,12 @@ const pricing = [
                   background="#ffffff"
                   fit="cover"
                   position="center"
-                  class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+                  class="w-full rounded-full rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
                 />
               </div>
 
               <div class="mt-4 text-center">
-                <h2 class="text-lg text-primary">
+                <h2 class="text-lg text-primary font-semibold">
                   {teamMemberEntry.data.name}
                 </h2>
                 <h3 class="text-sm text-slate-500">
@@ -212,12 +211,41 @@ const pricing = [
       </div>
     </div>
   </Container>
+  <ContainerBanner class="bg-[#FFD602]/30 pb-0">
+    <Usuarios />
+  </ContainerBanner>
+
+  <!-- <Container class="mb-0 mb-0">
+    <Tabs />
+  </Container>
+  <Container class="mb-0 mb-0">
+    <Form />
+  </Container>
+  <Container class="mb-0 mb-0">
+    <SectionPasos />
+  </Container>
+  <ContainerBanner>
+    <SectionMas />
+  </ContainerBanner> -->
+  <!-- <Container>
+    <Ecosistema />
+  </Container> 
+  <Container>
+    <Proposito />
+  </Container> 
+  <Container>
+    <Platforms />
+  </Container> 
+  <Container>
+    <Features />
+  </Container>  -->
+
   <!-- <Container class="mb-0 mb-0">
     <Faqs />
   </Container> -->
-  <ContainerSlogan>
+  <!-- <ContainerSlogan>
     <SectionSlogan />
-  </ContainerSlogan>
+  </ContainerSlogan> -->
 
   <!-- <Container id="pricing">
     <Sectionhead>

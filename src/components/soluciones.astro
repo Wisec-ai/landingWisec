@@ -1,0 +1,152 @@
+---
+import { Picture } from "@astrojs/image/components";
+import iconArrowBottom from "assets/icon-arrow-downward.svg";
+import solucionWisec01 from "assets/soluciones/wisec-solution-01.png";
+import solucionWisec02 from "assets/soluciones/wisec-solution-02.png";
+import solucionWisec03 from "assets/soluciones/wisec-solution-03.png";
+import solucionWisec04 from "assets/soluciones/wisec-solution-04.png";
+import solucionWisec05 from "assets/soluciones/wisec-solution-05.png";
+import solucionWisec06 from "assets/soluciones/wisec-solution-06.png";
+
+import imageFirstsetp from "assets/wisec-first-step.png";
+
+
+const pasosConstructor = [
+  {
+    id: "solucion-1",
+    title: "Gestión del conocimiento",
+    description:
+      "Gestiona y comparte el conocimiento de tu empresa de manera eficiente con nuestra IA.",
+    img_url: solucionWisec01,
+  },
+  {
+    id: "solucion-2",
+    title: "Leads calificados",
+    description:
+      "Genera y gestiona leads altamente calificados para aumentar tus oportunidades de ventas.",
+    img_url: solucionWisec02,
+  },
+  {
+    id: "solucion-3",
+    title: "Gestión de Inventario",
+    description:
+      "Controla y optimiza tu inventario con precisión y eficiencia mediante inteligencia artificial.",
+    img_url: solucionWisec03,
+  },
+  {
+    id: "solucion-4",
+    title: "Asistente de Venta y Post Venta con IA",
+    description:
+      "Mejora la experiencia de venta y postventa con nuestro asistente inteligente.",
+    img_url: solucionWisec04,
+  },
+  {
+    id: "solucion-5",
+    title: "Cotizaciones automáticas con IA",
+    description:
+      "Automatiza y agiliza el proceso de cotización con tecnología de inteligencia artificial.",
+    img_url: solucionWisec05,
+  },
+  {
+    id: "solucion-6",
+    title: "Data de hábitos de consumo",
+    description:
+      "Analiza y entiende los hábitos de consumo de tus clientes con datos precisos.",
+    img_url: solucionWisec06,
+  }
+];
+
+---
+
+<div class='max-w-screen-xl mx-auto px-5 pb-10'
+  x-data="{intersect:false}"
+  x-intersect:enter="intersect=true"
+  x-intersect:leave="intersect=false"
+  id="steps">
+  <section
+    class="md:px-0"
+    :class="intersect ? 'animate-fade-up animate-ease-out':'opacity-0'">
+    <div class="relative before:scale-x-110">
+      <div class="relative overflow-clip">
+        <div
+          data-target="panel-0"
+          class="justify-center panel-preview inset-0 z-10 flex items-start pt-20 lg:pt-20 transition duration-500 sm:px-10 translate-y-0 opacity-100 scale-100"
+          style="background-image: url(...)">
+          <!-- <div aria-hidden="true" class="absolute inset-0 top-60 grid grid-cols-2 -space-x-52 opacity-50 dark:opacity-30">
+                        <div class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
+                        <div class="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
+                    </div> -->
+          <div class="relative mx-auto sm:px-12 xl:max-w-7xl xl:px-0">
+            <div class="text-center">
+              <h2
+                class="text-3xl font-semibold text-primary dark:text-white md:text-5xl max-w-[850px] m-auto">
+                Soluciones hechas para la industria de la Construcción e Inmobiliaria
+              </h2>
+              <p
+                class="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">
+                Tecnología diseñada con Inteligencia Artificial específicamente para mejorar la industria de la construcción y el sector inmobiliario
+              </p>
+            </div>
+        
+            <div
+              class="mt-12 grid overflow-hidden rounded-3xl  sm:grid-cols-2 lg:grid-cols-3 lg:divide-y-0">
+              {
+                pasosConstructor.map((paso) => (
+              <div
+                class="group relative">
+                <div class="space-y-8 p-3 py-3 text-center">
+                  <Picture
+                    src={paso.img_url}
+                    alt="Paso 01"
+                    widths={[100]} 
+                    sizes="(max-width: 800px) 32px, 32px"
+                    loading="eager"
+                    format="svg"
+                    class = "inline-block"
+                  />
+                  <div class="space-y-2 pb-10 text-center">
+                    <h3
+                      class="text-[30px] font-bold text-primary transition group-hover:text-primary dark:text-white dark:group-hover:text-primaryLight tracking-tight">
+                      {paso.title}
+                    </h3>
+                    <p class="text-gray-600">
+                      {paso.description}
+                    </p>
+                  </div>
+                  {/* <a
+                    href="#"
+                    class="flex items-center justify-between text-gray-500 group-hover:text-primary dark:text-gray-400 dark:group-hover:text-primaryLight absolute bottom-10">
+                    <span class="text-sm">Leer más</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="h-5 w-5 -translate-x-4 text-2xl opacity-0 transition duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.97 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06l6.22-6.22H3a.75.75 0 010-1.5h16.19l-6.22-6.22a.75.75 0 010-1.06z"
+                        clip-rule="evenodd"></path>
+                    </svg>
+                  </a> */}
+                </div>
+              </div>
+              ))
+            }
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+            <Picture
+            src={imageFirstsetp}
+            alt="First Step"
+            widths={[1180]} 
+            sizes="(max-width: 800px) 900px, 1180px"
+            loading="eager"
+            format="png"
+            class = "inline-block"
+            />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
