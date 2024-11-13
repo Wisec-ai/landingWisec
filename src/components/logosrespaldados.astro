@@ -1,0 +1,71 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import scale from "assets/respaldos/respaldoScale.png";
+import mezcladora from "assets/respaldos/respaldoMezcladora.svg";
+import habitat from "assets/respaldos/respaldoHabitat.svg";
+import habitat2 from "assets/respaldos/respaldoHabitatVivienda.png";
+import startup from "assets/respaldos/respaldoStartup.png";
+
+import digicem from "assets/clientes/clienteDigicem.svg";
+import apec from "assets/clientes/clienteAPEC.svg";
+import master from "assets/clientes/clienteMasterBuilders.png";
+import progresol from "assets/clientes/clienteProgresol.svg";
+import sika from "assets/clientes/clienteSika.svg";
+import unacem from "assets/clientes/clienteUnacem.svg";
+---
+
+<div class="lg:mx-auto py-16">
+  <div
+    class="max-w-5xl mx-auto"
+    x-data="{intersect:false}"
+    x-intersect:enter="intersect=true"
+    x-intersect:leave="intersect=false">
+    <h2 class="text-center text-3xl font-bold mb-10 tracking-tight text-white">Quienes confían en nosotros</h2>
+    <div
+      class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-6 invert brightness-0 lg:gap-12 items-center"
+      :class="intersect ? 'animate-fade-up animate-duration-[1000ms] grayscale animate-ease-out':'opacity-0'">
+      <Picture
+        src={startup}
+        alt="Logo de Start Up"
+        widths={[200]}
+        sizes="(max-width: 120px) 100vw, 150px"
+        loading="eager"
+        format="png"
+      />
+      <Picture
+        src={scale}
+        alt="Logo de Scale"
+        widths={[200]}
+        sizes="(max-width: 120px) 100vw, 150px"
+        loading="eager"
+        format="png"
+      />
+      <Picture
+        src={mezcladora}
+        alt="Logo de Mezcladora"
+        widths={[200]}
+        sizes="(max-width: 120px) 100vw, 200px"
+        loading="eager"
+        format="svg"
+      />
+      <!-- <Picture
+        src={habitat2}
+        alt="Logo de Habitat"
+        widths={[200]}
+        sizes="(max-width: 120px) 100vw, 150px"
+        loading="eager"
+        format="png"
+      /> -->
+      <Picture
+        src={apec}
+        alt="Logo de APEC"
+        widths={[200]}
+        sizes="(max-width: 80px) 100vw, 100px"
+        loading="eager"
+        format="png"
+      />
+    </div>
+  </div>
+</div>

@@ -1,13 +1,93 @@
-<footer class="my-20">
-  <p class="text-center text-sm text-slate-500">
-    Copyright © {new Date().getFullYear()} Wisec. Todos los derechos reservados.
+---
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import { Icon } from "astro-icon";
+import { Picture } from "@astrojs/image/components";
+import Dropdown from "./navbar/dropdown.astro";
+import Link from "@components/ui/link.astro";
+import logoAicon from "assets/navbar/aicon-logo-footer.png"
+
+const menuitems = [
+  {
+    title: "Sobre Nosotros",
+    path: "/#about-us",
+  },
+  {
+    title: "Soluciones",
+    path: "/#tabs",
+  },
+  {
+    title: "¿Por qué Aicon?",
+    path: "/#porque-aicon",
+  },
+  {
+    title: "Clientes",
+    path: "/#clientes",
+  },
+  // {
+  //   title: "Dream Team",
+  //   path: "/#",
+  // },
+];
+
+
+---
+<footer class="pb-20 max-w-5xl mx-auto px-5 lg:px-0">
+  <MenuItems class="lg:w-auto mt-2 mb-5 lg:flex lg:mt-0">
+    <ul class="flex flex-col lg:flex-row lg:gap-3">
+      {
+        menuitems.map((item, index) => (
+          <>
+              <li>
+                <a
+                  href={item.path}
+                  class="flex lg:px-3 py-2 items-center hover:text-primary font-bold text-xl tracking-tight">
+                  <span> {item.title}</span>
+                </a>
+              </li>
+          </>
+        ))
+      }
+    </ul>
+  </MenuItems>
+  <div class="flex flex-col items-start lg:items-center lg:flex-row gap-5 lg:gap-10 mb-10">
+    <div class="md:w-3/6 bg-secondary px-7 py-5 rounded-xl md:mr-10">
+      <Picture
+        src={logoAicon}
+        alt="Logo Aicon"
+        widths={[120, 120, 120]}
+        sizes="90px"
+        loading="eager"
+        format="png"
+      />
+      <p class="text-lg text-left tracking-tight leading-tight pt-5">En AIcon queremos trabajar juntos y elevar el nivel de atención de tus proyectos y ventas.</p>
+    </div>
+    <div class="md:w-1/4">
+      <h3 class="text-xl font-bold tracking-tight pb-4">Contáctanos</h3>
+      <ul>
+        <li class="pb-2 hover:underline underline-offset-2"><a href="#" target="_blank">hello@wisec.com</a></li>
+        <li class="pb-2 hover:underline underline-offset-2"><a href="#" target="_blank">1234-6789</a></li>
+        <li class="pb-2 hover:underline underline-offset-2"><a href="#" target="_blank">www.aicon.com</a></li>
+      </ul>
+    </div>
+    <div class="md:w-1/4">
+      <h3 class="text-xl font-bold tracking-tight pb-4">Síguenos en</h3>
+      <ul>
+        <li class="pb-2 hover:underline underline-offset-2"><a href="#" target="_blank">Facebook</a></li>
+        <li class="pb-2 hover:underline underline-offset-2"><a href="#" target="_blank">Instagram</a></li>
+        <li class="pb-2 hover:underline underline-offset-2"><a href="#" target="_blank">Linkedin</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <p class="text-left text-sm text-slate-500 border-t border-black pt-1">
+    © {new Date().getFullYear()} AIcon. Todos los derechos reservados.
   </p>
   <!--
     Can we ask you a favor 🙏
     Please keep this backlink on your website if possible.
     or Purchase a commercial license from https://web3templates.com
   -->
-  <p class="text-center text-xs text-slate-500 mt-1">
+  <!-- <p class="text-center text-xs text-slate-500 mt-1">
     <a
     href="/privacy-policy"
     target="_blank"
@@ -24,5 +104,5 @@
       class="hover:underline">
       KG
     </a>
-  </p>
+  </p> -->
 </footer>

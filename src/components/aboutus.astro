@@ -1,0 +1,105 @@
+---
+import { Picture } from "@astrojs/image/components";
+import arrowUp from "assets/aicon-icon-arrow-up.svg";
+
+---
+
+<div
+  x-data="{intersect:false}"
+  x-intersect:enter="intersect=true"
+  x-intersect:leave="intersect=false">
+  <section
+    class="relative md:px-0 max-w-6xl mx-auto">
+    <div class="relative before:absolute before:scale-x-110 after:absolute">
+      <div class="relative">
+        <div
+          class="py-10">
+          <div class="relative mx-auto w-full sm:px-12">
+            <div
+              class="grid overflow-hidden rounded-3xl sm:grid-cols-2 lg:grid-cols-3 lg:divide-y-0">
+              <div
+                class="group relative transition-shadow hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10" :class="intersect ? 'animate-fade-up animate-delay-[500ms] animate-ease-out':'opacity-0'">
+                <div class="space-y-8 p-10">
+                  <div class="space-y-2">
+                    <div class="flex items-start justify-between border-b border-black pb-5 mb-5">
+                        <h3
+                            class="text-3xl font-bold text-gray-700 transition group-hover:text-primary leading-100 pr-10 md:pr-20 tracking-tight">
+                            Sobre nosotros
+                        </h3>
+                        <div class="min-w-[20px]">
+                            <Picture
+                                src={arrowUp}
+                                alt="Arrow"
+                                widths={[25]} 
+                                sizes="(max-width: 800px) 20px, 25px"
+                                loading="eager"
+                                format="svg"
+                            /> 
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        Somos pioneros en la aplicación de Ciencia de Datos e Inteligencia Artificial en los sectores Inmobiliario y de Construcción en Latinoamérica
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative transition-shadow hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10" :class="intersect ? 'animate-fade-up animate-delay-[800ms] animate-ease-out':'opacity-0'">
+                <div class="space-y-8 p-10">
+                  <div class="space-y-2">
+                    <div class="flex items-start justify-between border-b border-black pb-5 mb-5">
+                        <h3
+                            class="text-3xl font-bold text-gray-700 transition group-hover:text-primary pr-10 md:pr-20 tracking-tight leading-100">
+                            Nuestra misión
+                        </h3>
+                        <div class="min-w-[20px]">
+                            <Picture
+                                src={arrowUp}
+                                alt="Arrow"
+                                widths={[25]} 
+                                sizes="(max-width: 800px) 20px, 25px"
+                                loading="eager"
+                                format="svg"
+                            /> 
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        Potenciar a tus equipos técnico y comercial con tecnología para optimizar sus procesos de ventas
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative transition-shadow hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10" :class="intersect ? 'animate-fade-up animate-delay-[1100ms] animate-ease-out':'opacity-0'">
+                <div class="space-y-8 p-10">
+                  
+                  <div class="space-y-2">
+                    <div class="flex items-start justify-between border-b border-black pb-5 mb-5">
+                        <h3
+                            class="text-3xl font-bold text-gray-700 transition group-hover:text-primary pr-10 md:pr-20 tracking-tight leading-100">
+                            Nuestra visión
+                        </h3>
+                        <div class="min-w-[20px]">
+                            <Picture
+                                src={arrowUp}
+                                alt="Arrow"
+                                widths={[25]} 
+                                sizes="(max-width: 800px) 20px, 25px"
+                                loading="eager"
+                                format="svg"
+                            /> 
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        Impulsar el crecimiento responsable en el sector Construcción & Inmobiliario mejorando el acceso a vivienda en Latinoamérica.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

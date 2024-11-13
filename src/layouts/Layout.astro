@@ -2,7 +2,9 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
-import "@fontsource-variable/inter/index.css";
+// import "@fontsource-variable/inter/index.css";
+import "@fontsource-variable/dm-sans/index.css";
+
 
 export interface Props {
   title: string;
@@ -18,8 +20,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Wisec.ia"
-  : "Wisec - ChatGPT de la Construcción";
+  ? title + " | " + "Aicon"
+  : "Aicon - ChatGPT Inmobiliario y de Construcción";
 ---
 
 <!DOCTYPE html>
@@ -33,22 +35,22 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Impulsamos el diseño y construcción con IA"
+      description="Gestiona mejor y vende más"
       canonical={canonicalURL}
       twitter={{
-        creator: "@wisecia",
-        site: "@wisecia",
+        creator: "@aiconstruye",
+        site: "@aiconstruye",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Wisec.ai - ChatGPT de la Construcción`,
+          title: `Aicon - ChatGPT Inmobiliario y de Construcción`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Banner de Wisec.ia",
+          alt: "Banner de Aicon",
         },
       }}
     />
@@ -60,7 +62,10 @@ const makeTitle = title
     ></script><script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script><script>
+    ></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+
+    <script>
       // const tabs = document.querySelectorAll('.tab')
       // const tabContents = document.querySelectorAll('.tabcontent')
       // const activateTab = tabnum => {
@@ -178,12 +183,12 @@ const makeTitle = title
           form?.classList.remove("bg-marked");
           form?.classList.add("bg-constructor");
 
-          message1.innerHTML = "";
-          message1.style.display = "none";
-          message2.innerHTML = "";
-          message2.style.display = "none";
-          radio1.checked = true;
-          radio2.checked = false;
+          // message1.innerHTML = "";
+          // message1.style.display = "none";
+          // message2.innerHTML = "";
+          // message2.style.display = "none";
+          // radio1.checked = true;
+          // radio2.checked = false;
         },
         false
       );
@@ -219,12 +224,12 @@ const makeTitle = title
             block: "start",
             inline: "center",
           });
-          message1.innerHTML = "";
-          message1.style.display = "none";
-          message2.innerHTML = "";
-          message2.style.display = "none";
-          radio1.checked = false;
-          radio2.checked = true;
+          // message1.innerHTML = "";
+          // message1.style.display = "none";
+          // message2.innerHTML = "";
+          // message2.style.display = "none";
+          // radio1.checked = false;
+          // radio2.checked = true;
         },
         false
       );
@@ -236,7 +241,7 @@ const makeTitle = title
   <!-- Alpine Core -->
 
   <body>
-    <!--<Navbar />-->
+    <Navbar />
     <slot />
     <Footer />
     <script
@@ -281,15 +286,18 @@ const makeTitle = title
         content-visibility: auto;
       }
 
-      .btn-constructor.item-active {
-        background-color: #ffd700;
-        color: black;
+      .btn-solucion.item-active {
+        background-color: #0A1828;
       }
 
-      .btn-proveedor.item-active {
-        background-color: #3dcab1;
-        color: #071c42;
+      .btn-solucion.item-active img.img-inactive {
+        display: none;
       }
+
+      .btn-solucion:not(.item-active) img.img-active {
+        display: none;
+      }
+
     </style>
   </body>
 </html>

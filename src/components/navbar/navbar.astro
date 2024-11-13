@@ -5,6 +5,8 @@ import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import logoWisec from "assets/logo-wisec.svg";
+import logoAicon from "assets/navbar/aicon-logo.png";
+
 import { Picture } from "@astrojs/image/components";
 
 const menuitems = [
@@ -18,45 +20,43 @@ const menuitems = [
   //     { title: "404 Page", path: "/404" },
   //   ],
   // },
+  {
+    title: "Sobre nosotros",
+    path: "/#about-us",
+  },
+  {
+    title: "Soluciones",
+    path: "/#tabs",
+  },
+  {
+    title: "¿Por qué Aicon?",
+    path: "/#porque-aicon",
+  },
+  {
+    title: "Clientes",
+    path: "/#clientes",
+  },
   // {
-  //   title: "Pricing",
-  //   path: "/pricing",
-  // },
-  // {
-  //   title: "About",
-  //   path: "/about",
-  // },
-  // {
-  //   title: "Blog",
-  //   path: "/blog",
-  // },
-  // {
-  //   title: "Contact",
-  //   path: "/contact",
-  // },
-  // {
-  //   title: "Pro Version",
-  //   badge: true,
-  //   path: "https://astroship-pro.web3templates.com/",
+  //   title: "Dream Team",
+  //   path: "/#",
   // },
 ];
 ---
 
-<ContainerHeader class="absolute z-20 w-full">
+<ContainerHeader class="absolute z-20 w-full max-md:bg-[#0A1828]">
   <header class="max-w-screen-xl w-full flex flex-col lg:flex-row justify-between items-center my-5 mx-auto px-5 lg:px-0">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-xl inline-flex">
           <Picture
-            src={logoWisec}
-            alt="Logo Wisec"
-            widths={[30, 30, 30]}
-            aspectRatio="1:1"
-            sizes="35px"
+            src={logoAicon}
+            alt="Logo Aicon"
+            widths={[120, 120, 120]}
+            sizes="90px"
             loading="eager"
-            format="svg"
+            format="png"
           />
-          <span class="font-bold text-white self-end ml-1 text-3xl">WisecAI</span>
+          <!-- <span class="font-bold text-white self-end ml-1 text-3xl">AIcon</span> -->
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-6 h-6 text-white" />
@@ -64,7 +64,7 @@ const menuitems = [
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
         <ul class="flex flex-col lg:flex-row lg:gap-3">
-          <!-- {
+          {
             menuitems.map((item, index) => (
               <>
                 {item.children && (
@@ -79,7 +79,7 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-primary hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-center text-white hover:text-primary">
                       <span> {item.title}</span>
                       {item.badge && (
                         <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
@@ -91,18 +91,18 @@ const menuitems = [
                 )}
               </>
             ))
-          } -->
+          }
         </ul>
         <div class="lg:hidden flex items-center mt-3 gap-4">
           <!-- <Link href="#" style="muted" block size="md">Ingresar</Link> -->
-          <Link style="inverted" href="#tabs" size="md" block >Registrarme</Link>
+          <Link style="header" href="#form-maita" size="lg" block >Agenda tu demo</Link>
         </div>
       </MenuItems>
     </Astronav>
-    <div>
+    <div> 
       <div class="hidden lg:flex items-center gap-4">
         <!-- <a href="#">Ingresar</a> -->
-        <Link class="text-md" style="inverted" href="#tabs" size="md">Registrarme</Link>
+        <Link class="text-xs md:text-sm" style="header" href="#form-maita" size="lg">Agenda tu demo</Link>
       </div>
     </div>
   </header>

@@ -6,12 +6,23 @@ import { Icon } from "astro-icon";
 import screenshot1 from "assets/plataforma-consultor1.png";
 import screenshot2 from "assets/plataforma-consultor2.png";
 import screenshot3 from "assets/plataforma-consultor3.png";
-
+import backgroundUrl from "assets/aicon_banner_main.png";
 import logoWisec from "assets/logo-wisec.svg";
----
 
-<div class="relative isolate overflow-hidden bg-gray-900 lg:pt-20 pt-40 px-5">
-  <svg
+---
+<style
+  define:vars={{ image: `url("${backgroundUrl.src}")` }}
+>
+  .aicon-banner{
+    background-image: var(--image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+</style>
+
+<div class="relative isolate overflow-hidden bg-gray-900 lg:pt-20 pt-40 px-5 bg-hero-banner aicon-banner">
+  <!-- <svg
     class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
     aria-hidden="true">
     <defs>
@@ -35,23 +46,23 @@ import logoWisec from "assets/logo-wisec.svg";
       height="100%"
       stroke-width="0"
       fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"></rect>
-  </svg>
-  <div
+  </svg> -->
+  <!-- <div
     class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
     aria-hidden="true">
     <div
       class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
       style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)">
     </div>
-  </div>
+  </div> -->
   <div
-    class="mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 sm:pt-32 lg:flex items-center">
-    <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pb-10">
+    class="mx-auto max-w-xl pb-24 pt-10 sm:pb-32 sm:pt-32">
+    <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl pb-5 lg:pb-10">
       <h1
         class="text-white text-5xl lg:text-6xl xl:text-7xl lg:tracking-tight xl:tracking-tighter animate-fade-down animate-duration-1000">
         <!-- <span class="font-bold lg:text-8xl lg:block">Somos</span> -->
-        <div class="flex items-center">
-          <Picture
+        <div class="flex items-center justify-center tracking-tight">
+          <!-- <Picture
             src={logoWisec}
             alt="Logo Wisec"
             widths={[150, 30, 30]}
@@ -60,26 +71,31 @@ import logoWisec from "assets/logo-wisec.svg";
             loading="eager"
             format="svg"
             class="animate-spin animate-duration-[3000ms]"
-          />
-          <span class="font-bold">Wisec</span><span
-            class="text-secondary font-bold">AI</span
+          /> -->
+          <span class="font-bold">Aicon</span><span
+            class="text-secondary font-bold" id="typewriter">ecta</span
           >
         </div>
       </h1>
       <h3
-        class="text-white text-3xl lg:text-3xl xl:text-4xl mt-1 lg:mt-5 animate-fade-down animate-delay-[200ms] animate-duration-1000">
-        <span class="font-light">¡Somos el ChatGPT </span><span class="font-bold"
-          > Inmobiliario y de Construcción
+        class="text-center text-white text-3xl lg:text-3xl xl:text-4xl mt-5 animate-fade-down animate-delay-[200ms] animate-duration-1000 leading-110">
+        <span class="font-bold">Gestiona mejor y </span><span class="font-bold"
+          > vende más
           </span
         >
-        <span class="font-light">Estamos construyendo una nueva experiencia para ti! </span>
+        <!-- <span class="font-light">con el ChatGPT Inmobiliario y de Construcción</span> -->
       </h3>
       <p
-        class="text-xl font-light lg:text-2xl mt-5 lg:mt-10 text-primary max-w-xl text-white animate-fade-down animate-delay-[400ms]">
-        Conectamos al ecosistema constructor en base a la demanda y oferta de materiales y servicios.
+        class="text-center text-xl font-light lg:text-2xl mt-2 text-primary max-w-xl text-white animate-fade-down animate-delay-[400ms] leading-110">
+        con el ChatGPT Inmobiliario y de Construcción
       </p>
     </div>
-    <div
+    <div class="mx-auto w-max lg:flex items-center justify-center">
+      <Link class=" sm:text-base text-xs before:bg-secondary" style="group_icon" href="#tabs" size="md">Contáctanos por Whatsapp</Link>
+      <!-- <Link href="#" style="muted" block size="md">Ingresar</Link> -->
+      <!-- <Link style="inverted" href="#tabs" size="md" block >Contáctanos por Whatsapp</Link> -->
+    </div>
+    <!-- <div
       class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32 relative"
       x-data="{intersect:false}"
       x-intersect:enter="intersect=true"
@@ -120,6 +136,27 @@ import logoWisec from "assets/logo-wisec.svg";
           format="png"
         />
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
+<script is:inline src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+<script is:inline>
+  var app = document.getElementById('typewriter');
+
+var typewriter = new Typewriter(app, {
+  loop: true,
+  delay: 75,
+});
+
+typewriter
+  .pauseFor(2500)
+  .typeString('ecta')
+  .pauseFor(1500)
+  .deleteChars(10)
+  .typeString('struye')
+  .pauseFor(1500)
+  .deleteChars(10)
+  .typeString('tigo')
+  .pauseFor(1000)
+  .start();
+</script>

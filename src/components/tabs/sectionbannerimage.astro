@@ -1,10 +1,20 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import imgConstructor from "assets/img_constructor.png";
-import imgProveedor from "assets/img_proveedor.png";
 import heroImage from "assets/infografia2.svg";
+import logoSolucionesDigitales from "assets/soluciones/aicon_logo_asistentes-virtuales.png";
+import logoConstruiamos from "assets/soluciones/aicon_logo_construiamos.png";
+import Link from "@components/ui/link.astro";
 
-import construction from "assets/infografiaConstruction.png";
+import iconA01 from "assets/soluciones/aicon_soluciones_a_icon-01.svg";
+import iconA02 from "assets/soluciones/aicon_soluciones_a_icon-02.svg";
+import iconA03 from "assets/soluciones/aicon_soluciones_a_icon-03.svg";
+import iconA04 from "assets/soluciones/aicon_soluciones_a_icon-04.svg";
+import iconB01 from "assets/soluciones/aicon_soluciones_b_icon-01.svg";
+import iconB02 from "assets/soluciones/aicon_soluciones_b_icon-02.svg";
+import iconB03 from "assets/soluciones/aicon_soluciones_b_icon-03.svg";
+import iconB04 from "assets/soluciones/aicon_soluciones_b_icon-04.svg";
+import imgSolucionesA from "assets/soluciones/aicon_soluciones_a_img.png";
+
 
 const { pasos } = Astro.props;
 
@@ -12,25 +22,79 @@ const { pasos } = Astro.props;
 
 <div
   class="gap-6 lg:space-y-12 md:flex md:space-y-0 max-md:flex-col-reverse max-md:flex"
-  :class="intersect ? 'animate-fade-up animate-delay-[1000ms] animate-ease-out':'opacity-0'">
-  <div class="relative md:w-1/2">
+  :class="intersect ? 'animate-fade-up animate-delay-[600ms] animate-ease-out':'opacity-0'">
+  <div class="relative md:w-5/12">
     <div
-      class="panel inset-0 flex flex-col justify-center transition duration-500 md:absolute visible opacity-100 scale-100"
+      class="panel md:absolute inset-0 flex flex-col justify-center transition duration-500 visible opacity-100 scale-100"
       id="panel-0">
       <div id="panel-0-form">
-        <h3 class="text-xl font-bold text-black dark:text-white md:text-2xl">
-          A ti, <span class="text-constructor">constructor...</span>
-        </h3>
-        <p class="mt-6 text-black lg:text-lg font-bold">
-          Te brindamos las mejores ofertas de materiales y servicios para que tu
-          proyecto de vida sea una realidad
-        </p>
-        <p class="mt-6 text-black">
-          Regístrate en nuestra lista de espera y vive la experiencia de
-          conectarte con el ecosistema constructor peruano a través de un chat
-          simple como si estuvieses en wtsp...¡Más fácil, imposible!
-        </p>
-        <div class="mt-8 space-y-6">
+        <Picture
+              src={logoSolucionesDigitales}
+              alt="Icon"
+              widths={[400]}
+              sizes="(max-width: 1024px) 200px, 250px"
+              loading="eager"
+              format="svg"
+            />
+            <p class="mt-6 text-black lg:text-lg mb-5 tracking-tight leading-tight">
+              Conecta con tus clientes, resuelve sus consultas, bríndales recomendaciones e incrementa tus ventas
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2"> 
+              <div class="card border border-[#0A1828] rounded-xl p-5">
+                <Picture
+                  src={iconB01}
+                  alt="Icon"
+                  widths={[200]}
+                  sizes="(max-width: 1024px) 50px, 60px"
+                  loading="eager"
+                  format="svg"
+                />
+                <div class="card-description mt-4 tracking-tight leading-tight">
+                  <p>Mejora la interacción con tus clientes</p>
+                </div>
+              </div>
+              <div class="card border border-[#0A1828] rounded-xl p-5">
+                <Picture
+                  src={iconB02}
+                  alt="Icon"
+                  widths={[200]}
+                  sizes="(max-width: 1024px) 50px, 60px"
+                  loading="eager"
+                  format="svg"
+                />
+                <div class="card-description mt-4 tracking-tight leading-tight">
+                  <p>Integración con tu embudo de ventas</p>
+                </div>
+              </div>
+              <div class="card border border-[#0A1828] rounded-xl p-5">
+                <Picture
+                  src={iconB03}
+                  alt="Icon"
+                  widths={[200]}
+                  sizes="(max-width: 1024px) 50px, 60px"
+                  loading="eager"
+                  format="svg"
+                />
+                <div class="card-description mt-4 tracking-tight leading-tight">
+                  <p>Asistente de venta y post-venta</p>
+                </div>
+              </div>
+              <div class="card border border-[#0A1828] rounded-xl p-5">
+                <Picture
+                  src={iconB04}
+                  alt="Icon"
+                  widths={[200]}
+                  sizes="(max-width: 1024px) 50px, 60px"
+                  loading="eager"
+                  format="svg"
+                />
+                <div class="card-description mt-4 tracking-tight leading-tight">
+                  <p>Cotizaciones automáticas</p>
+                </div>
+              </div>
+            </div>
+        <Link class="max-w-max sm:text-base mt-10 text-xs ml-0 before:bg-black text-white" style="group_icon" href="#form-maita" size="md" color="dark">Ver la demo</Link>
+        <!-- <div class="mt-8 space-y-6"> -->
           <!-- <div class="flex items-center gap-6">
             <div
               class="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-4 dark:border-gray-600/60 dark:bg-gray-900/40">
@@ -146,26 +210,81 @@ const { pasos } = Astro.props;
               </div>
             </div>
           </form> -->
-        </div>
+        <!-- </div> -->
       </div>
     </div>
     <div
       class="panel absolute inset-0 flex flex-col justify-center transition duration-500 invisible opacity-0 scale-90"
       id="panel-1">
       <div id="panel-1-form">
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">
-          A ti, <span class="text-marked">proveedor/distribuidor...</span>
-        </h3>
-        <p class="mt-8 text-primary lg:text-lg font-bold">
-          Te brindamos herramientas para que lleves la productividad de tu
-          negocio al siguiente nivel
-        </p>
-        <p class="mt-8 text-primary">
-          Regístrate en nuestra lista de espera y mejora la productividad y
-          eficiencia operativa de tu negocio generando más ventas con un solo
-          click
-        </p>
-        <div class="mt-8 space-y-6">
+        <Picture
+              src={logoConstruiamos}
+              alt="Icon"
+              widths={[400]}
+              sizes="(max-width: 1024px) 250px, 300px"
+              loading="eager"
+              format="svg"
+            />
+            <p class="mt-6 text-black lg:text-lg mb-5 tracking-tight leading-tight">
+              Gestiona de manera más eficiente y convierte tu data en tu principal activo
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2"> 
+              <div class="card border border-[#0A1828] rounded-xl p-5">
+                <Picture
+                  src={iconA01}
+                  alt="Icon"
+                  widths={[200]}
+                  sizes="(max-width: 1024px) 50px, 60px"
+                  loading="eager"
+                  format="svg"
+                />
+                <div class="card-description mt-4 tracking-tight leading-tight">
+                  <p>Modelo de IA experto en Construcción & Inmobiliario</p>
+                </div>
+              </div>
+              <div class="card border border-[#0A1828] rounded-xl p-5">
+                <Picture
+                  src={iconA02}
+                  alt="Icon"
+                  widths={[200]}
+                  sizes="(max-width: 1024px) 50px, 60px"
+                  loading="eager"
+                  format="svg"
+                />
+                <div class="card-description mt-4 tracking-tight leading-tight">
+                  <p>Gestión de información (proyectos y productos)</p>
+                </div>
+              </div>
+              <div class="card border border-[#0A1828] rounded-xl p-5">
+                <Picture
+                  src={iconA03}
+                  alt="Icon"
+                  widths={[200]}
+                  sizes="(max-width: 1024px) 50px, 60px"
+                  loading="eager"
+                  format="svg"
+                />
+                <div class="card-description mt-4 tracking-tight leading-tight">
+                  <p>Gestión de leads calificados de tus asistentes digitales</p>
+                </div>
+              </div>
+              <div class="card border border-[#0A1828] rounded-xl p-5">
+                <Picture
+                  src={iconA04}
+                  alt="Icon"
+                  widths={[200]}
+                  sizes="(max-width: 1024px) 50px, 60px"
+                  loading="eager"
+                  format="svg"
+                />
+                <div class="card-description mt-4 tracking-tight leading-tight">
+                  <p>Predición de hábitos de consumo de tus clientes</p>
+                </div>
+              </div>
+            </div>
+        
+        <Link class="max-w-max sm:text-base mt-10 text-xs ml-0 before:bg-black text-white" style="group_icon" href="#form-maita" size="md" color="dark">Ver la demo</Link>
+        <!-- <div class="mt-8 space-y-6"> -->
           <!-- <div class="flex items-center gap-6">
             <div
               class="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-4 dark:border-gray-600/60 dark:bg-gray-900/40">
@@ -278,25 +397,25 @@ const { pasos } = Astro.props;
               </div>
             </div>
           </form> -->
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
   <div
-    class="overflow-hidden sm:px-12 md:mx-0 md:w-1/2 md:overflow-visible md:px-0" style="margin-top: 0px;">
+    class="overflow-hidden sm:px-12 md:mx-0 md:w-7/12 md:overflow-visible md:px-0" style="margin-top: 0px;">
     <div
       class="relative before:absolute before:inset-0 before:scale-x-110 after:absolute after:inset-0">
-      <div class="relative h-[18rem] overflow-clip py-10 sm:h-[20rem] lg:p-20">
+      <div class="relative h-[25rem] min-[500px]:h-[30rem] overflow-clip py-10 md:h-[40rem] lg:p-20">
         <div
           data-target="panel-0"
           class="justify-center panel-preview absolute inset-0 z-10 flex translate-y-0 scale-100 items-center overflow-hidden px-6 opacity-100 transition duration-500 sm:px-10">
           <Picture
-            src={construction}
-            alt="Inteligencia Artificial"
-            widths={[200, 400, 800]}
-            sizes="(max-width: 800px) 300px, 300px"
-            loading="eager"
-            format="svg"
+            src={imgSolucionesA}
+            alt="Imagen Asistentes Virtuales"
+            widths={[567, 567]}
+            sizes="500px"
+            loading="lazy"
+            format="png"
           />
           <!-- <img src="./images/screenshots/tailus-home.webp" class="mx-auto h-80 w-96 rounded-t-3xl border object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="tailus screenshot" loading="lazy" width="850" height="1780"> -->
         </div>
@@ -304,12 +423,12 @@ const { pasos } = Astro.props;
           data-target="panel-1"
           class="justify-center panel-preview absolute inset-0 z-0 flex translate-y-[100%] scale-75 items-center overflow-hidden px-6 opacity-50 transition duration-500 sm:px-10">
           <Picture
-            src={heroImage}
-            alt="Inteligencia Artificial"
-            widths={[200, 400, 800]}
-            sizes="(max-width: 800px) 300px, 300px"
+            src={imgSolucionesA}
+            alt="Imagen Asistentes Virtuales"
+            widths={[567, 567]}
+            sizes="(max-width: 768px) 400px, 550px"
             loading="eager"
-            format="svg"
+            format="png"
           />
         </div>
       </div>

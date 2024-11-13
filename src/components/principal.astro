@@ -9,7 +9,12 @@ import Features from "@components/features.astro";
 import Platforms from "@components/plataformas.astro";
 import Proposito from "@components/proposito.astro";
 import Hero from "@components/hero.astro";
-import Logos from "@components/logos.astro";
+import LogosConfian from "@components/logosconfian.astro";
+import LogosRespaldados from "@components/logosrespaldados.astro";
+import AboutUs from "@components/aboutus.astro";
+import PorqueAicon from "@components/porqueaicon.astro";
+
+
 import Layout from "@layouts/Layout.astro";
 import Contactform from "@components/contactform.astro";
 import Sectionhead from "@components/sectionhead.astro";
@@ -25,6 +30,7 @@ import SectionMas from "@components/tabs/sectionmas.astro";
 import Faqs from "@components/faq.astro";
 import Form from "@components/form.astro";
 import SectionSlogan from "@components/slogan.astro";
+import Containerbanner from "@components/containerbanner.astro";
 
 // Filter team entries with 'draft: false' & date before current date
 const publishedTeamMembers = await getCollection("team", ({ data }) => {
@@ -131,18 +137,24 @@ const pricing = [
 ---
 
 <Hero />
+  <Container class="pb-0" id="clientes">
+    <LogosConfian />
+  </Container>
+  <ContainerBanner class="bg-secondary" id="about-us">
+    <AboutUs />
+  </ContainerBanner>
+  <ContainerBanner class="bg-primary" id="porque-aicon">
+    <PorqueAicon />
+  </ContainerBanner>
   <Container class="mb-0 mb-0">
     <Tabs />
   </Container>
-  <Container class="mb-0 mb-0">
-    <Form />
-  </Container>
-  <Container class="mb-0 mb-0">
+  <!-- <Container class="mb-0 mb-0">
     <SectionPasos />
-  </Container>
-  <ContainerBanner>
+  </Container> -->
+  <!-- <ContainerBanner>
     <SectionMas />
-  </ContainerBanner>
+  </ContainerBanner> -->
   <!-- <Container>
     <Ecosistema />
   </Container> 
@@ -155,10 +167,13 @@ const pricing = [
   <Container>
     <Features />
   </Container>  -->
-  <Container class="">
-    <Logos />
+  <Containerbanner class="bg-primary">
+    <LogosRespaldados />
+  </Containerbanner>
+  <Container class="py-14" id="form-maita">
+    <Form />
   </Container>
-  <Container>
+  <!-- <Container>
     <div class="pt-32 pb-20 lg:pb-0">
       <div class="text-center">
         <h2
@@ -205,13 +220,13 @@ const pricing = [
         }
       </div>
     </div>
-  </Container>
+  </Container> -->
   <!-- <Container class="mb-0 mb-0">
     <Faqs />
   </Container> -->
-  <ContainerSlogan>
+  <!-- <ContainerSlogan>
     <SectionSlogan />
-  </ContainerSlogan>
+  </ContainerSlogan> -->
 
   <!-- <Container id="pricing">
     <Sectionhead>
@@ -277,10 +292,10 @@ const pricing = [
 
   <!-- WHATSAPP BUTTON -->
   <!-- load font awesome for icons -->
-  <link
+  <!-- <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-  />
+  /> -->
 
   <!-- add your custom CSS -->
   <style>

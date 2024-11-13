@@ -1,9 +1,15 @@
+
 ---
+import { Picture } from "@astrojs/image/components";
+import iconRight from "assets/aicon-icon-arrow-right.svg";
+import iconRightWhite from "assets/aicon-icon-arrow-right-white.svg";
+
 interface Props {
   href: string;
   size?: "md" | "lg";
   block?: boolean;
-  style?: "outline" | "primary" | "inverted" | "muted";
+  style?: "header" | "outline" | "primary" | "inverted" | "muted" | "group_icon";
+  color?: string;
   class?: string;
   [x: string]: any;
 }
@@ -13,26 +19,62 @@ const {
   block,
   size = "lg",
   style = "primary",
+  color,
   class: className,
   ...rest
 } = Astro.props;
 
 const sizes = {
-  lg: "px-5 py-2.5",
-  md: "px-4 py-2",
+  lg: "px-5 py-2.5 tracking-tight font-semibold",
+  md: "px-6 py-2.5 tracking-tight font-semibold",
 };
 
 const styles = {
-  outline: "bg-white border-2 border-indigo-950 hover:bg-gray-100 text-primary rounded-full font-semibold",
-  primary: "bg-primary text-white hover:bg-marked hover:text-primary border-2 border-transparent rounded-full font-semibold",
-  inverted: "bg-secondary text-primary border-2 border-transparent rounded-full font-semibold ",
-  muted: "bg-gray-100 hover:bg-gray-200 border-2 border-transparent rounded-full font-semibold",
+  group_icon: "flex items-center relative before:absolute before:inset-0 before:rounded-full before:transition before:duration-300 active:duration-75 active:before:scale-95 sm:w-auto",
+  header: "bg-secondary text-primary border-2 border-transparent rounded-xl",
+  outline: "bg-white border-2 border-indigo-950 hover:bg-gray-100 text-primary rounded-full",
+  primary: "bg-primary text-white hover:bg-marked hover:text-primary border-2 border-transparent rounded-full",
+  inverted: "bg-secondary text-primary border-2 border-transparent rounded-xl",
+  muted: "bg-gray-100 hover:bg-gray-200 border-2 border-transparent rounded-full",
 };
 ---
 
+{style=="group_icon" ? 
 <a
   href={href}
   {...rest}
+  class:list={[
+    "flex",
+    block && "w-full",
+    sizes[size],
+    styles[style],
+    className,
+  ]}>
+  <span class="relative w-max mr-3">
+    <slot />
+  </span>
+  {color=="dark" ? 
+  <Picture
+    src={iconRightWhite}
+    alt="Icon"
+    widths={[30]} 
+    sizes="(max-width: 800px) 20px, 20px"
+    loading="eager"
+    format="svg"
+  /> : <Picture
+    src={iconRight}
+    alt="Icon"
+    widths={[30]} 
+    sizes="(max-width: 800px) 20px, 20px"
+    loading="eager"
+    format="svg"
+  />}
+
+</a> : 
+<a
+  href={href}
+  {...rest}
+  
   class:list={[
     "rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200",
     block && "w-full",
@@ -42,3 +84,4 @@ const styles = {
   ]}
   ><slot />
 </a>
+}

@@ -1,0 +1,135 @@
+---
+import { Picture } from "@astrojs/image/components";
+import iconArrowBottom from "assets/icon-arrow-downward.svg";
+import pasoContructor01 from "assets/pasos/pasos-constructor-01.svg";
+import pasoContructor02 from "assets/pasos/pasos-constructor-02.svg";
+import pasoContructor03 from "assets/pasos/pasos-constructor-03.svg";
+import pasoContructor04 from "assets/pasos/pasos-constructor-04.svg";
+import pasoProveedor01 from "assets/pasos/pasos-proveedor-01.svg";
+import pasoProveedor02 from "assets/pasos/pasos-proveedor-02.svg";
+import pasoProveedor03 from "assets/pasos/pasos-proveedor-03.svg";
+import pasoProveedor04 from "assets/pasos/pasos-proveedor-04.svg";
+import arrowUp from "assets/aicon-icon-arrow-up.svg";
+import logoAicon from "assets/navbar/aicon-logo.png";
+import Link from "@components/ui/link.astro";
+
+
+---
+
+<div
+  x-data="{intersect:false}"
+  x-intersect:enter="intersect=true"
+  x-intersect:leave="intersect=false">
+  <section
+    class="relative md:px-0 max-w-6xl mx-auto" :class="intersect ? 'animate-fade-up animate-delay-[200ms] animate-ease-out':'opacity-0'">
+    <div class="relative before:absolute before:scale-x-110 after:absolute">
+      <div class="relative">
+        <div
+          class="py-10">
+          <div class="relative mx-auto w-full sm:px-12">
+            <div
+              class="grid sm:grid-cols-2 lg:grid-cols-2">
+              <div
+              class="p-5 md:p-10 text-left">
+              <Picture
+                src={logoAicon}
+                alt="Logo Aicon"
+                widths={[400]} 
+                sizes="(max-width: 800px) 200px, 200px"
+                loading="eager"
+                format="svg"
+              /> 
+              <h2 class="text-left text-3xl lg:text-5xl font-bold mt-12 mb-8 tracking-tight text-white">¿Por qué AICON?</h2>
+              <p class="text-white">Brindamos soluciones digitales especializadas en el  rubro de construcción e inmobiliario que agilizan el proceso de ventas, proporcionan un soporte más eficiente y mejoran la experiencia del cliente.</p>
+              <Link class="max-w-max sm:text-base mt-12 text-xs ml-0 before:bg-secondary" style="group_icon" href="#" size="md">Contáctanos</Link>
+            </div>
+            <div
+              class="grid sm:grid-cols-2 lg:grid-cols-2">
+              <div
+                class="group relative transition-shadow hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
+                <div class="space-y-8 p-5">
+                  <div class="space-y-2">
+                    <div class="min-w-[120px]">
+                      <Picture
+                          src={pasoProveedor01}
+                          alt="Arrow"
+                          widths={[400]} 
+                          sizes="(max-width: 800px) 120px, 120px"
+                          loading="eager"
+                          format="svg"
+                      /> 
+                    </div>
+                    <p class="text-medium text-white">
+                      <span class="text-secondary">Reducimos en un 30%</span> el ciclo de cierre de tus ventas
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative transition-shadow hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
+                <div class="space-y-8 p-5">
+                  <div class="space-y-2">
+                    <div class="min-w-[120px]">
+                      <Picture
+                          src={pasoProveedor01}
+                          alt="Arrow"
+                          widths={[400]} 
+                          sizes="(max-width: 800px) 120px, 120px"
+                          loading="eager"
+                          format="svg"
+                      /> 
+                    </div>
+                    <p class="text-medium text-white">
+                      Brindamos un <span class="text-secondary">soporte técnico 24/7</span> tanto para cliente como nuevos leads.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative transition-shadow hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
+                <div class="space-y-8 p-5">
+                  <div class="space-y-2">
+                    <div class="min-w-[120px]">
+                      <Picture
+                          src={pasoProveedor01}
+                          alt="Arrow"
+                          widths={[400]} 
+                          sizes="(max-width: 800px) 120px, 120px"
+                          loading="eager"
+                          format="svg"
+                      /> 
+                    </div>
+                    <p class="text-medium text-white">
+                      Estructuramos y transformamos tu información en un <span class="text-secondary">activo valioso</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative transition-shadow hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
+                <div class="space-y-8 p-5">
+                  <div class="space-y-2">
+                    <div class="min-w-[120px]">
+                      <Picture
+                          src={pasoProveedor01}
+                          alt="Arrow"
+                          widths={[400]} 
+                          sizes="(max-width: 800px) 120px, 120px"
+                          loading="eager"
+                          format="svg"
+                      /> 
+                    </div>
+                    <p class="text-medium text-white">
+                      Enfocamos la interacción comercial en los leads con <span class="text-secondary">mayor probabilidad de éxito.</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
