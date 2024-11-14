@@ -4,16 +4,15 @@ import { Icon } from "astro-icon";
 import { Picture } from "@astrojs/image/components";
 import scale from "assets/respaldos/respaldoScale.png";
 import mezcladora from "assets/respaldos/respaldoMezcladora.svg";
-import habitat from "assets/respaldos/respaldoHabitat.svg";
-import habitat2 from "assets/respaldos/respaldoHabitatVivienda.png";
 import startup from "assets/respaldos/respaldoStartup.png";
+import apec from "assets/respaldos/partnerApec.png";
+import cloud from "assets/respaldos/partnerCloudforStartups.webp";
+import microsoft from "assets/respaldos/partnerMicrosoft.png";
+import innovate from "assets/respaldos/partnerProInnovate.png";
+import utec from "assets/respaldos/partnerUTEC.png";
 
-import digicem from "assets/clientes/clienteDigicem.svg";
-import apec from "assets/clientes/clienteAPEC.svg";
-import master from "assets/clientes/clienteMasterBuilders.png";
-import progresol from "assets/clientes/clienteProgresol.svg";
-import sika from "assets/clientes/clienteSika.svg";
-import unacem from "assets/clientes/clienteUnacem.svg";
+
+
 ---
 
 <div class="lg:mx-auto py-16">
@@ -22,10 +21,11 @@ import unacem from "assets/clientes/clienteUnacem.svg";
     x-data="{intersect:false}"
     x-intersect:enter="intersect=true"
     x-intersect:leave="intersect=false">
-    <h2 class="text-center text-3xl font-bold mb-10 tracking-tight text-white">Quienes confían en nosotros</h2>
+    <h2 class="text-center text-3xl font-bold mb-10 tracking-tight text-white">Nuestros Partners</h2>
     <div
       class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-6 invert brightness-0 lg:gap-12 items-center"
       :class="intersect ? 'animate-fade-up animate-duration-[1000ms] grayscale animate-ease-out':'opacity-0'">
+      
       <Picture
         src={startup}
         alt="Logo de Start Up"
@@ -46,7 +46,7 @@ import unacem from "assets/clientes/clienteUnacem.svg";
         src={mezcladora}
         alt="Logo de Mezcladora"
         widths={[200]}
-        sizes="(max-width: 120px) 100vw, 200px"
+        sizes="(max-width: 120px) 150px, 150px"
         loading="eager"
         format="svg"
       />
@@ -65,6 +65,42 @@ import unacem from "assets/clientes/clienteUnacem.svg";
         sizes="(max-width: 80px) 100vw, 100px"
         loading="eager"
         format="png"
+      />
+    </div>
+    <div
+      class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-6 invert brightness-0 lg:gap-12 items-center"
+      :class="intersect ? 'animate-fade-up animate-duration-[1000ms] grayscale animate-ease-out':'opacity-0'">
+      <Picture
+        src={cloud}
+        alt="Logo de Cloud"
+        widths={[200]}
+        sizes="(max-width: 120px) 100vw, 150px"
+        loading="eager"
+        format="webp"
+      />
+      <Picture
+        src={microsoft}
+        alt="Logo de Microsoft"
+        widths={[200]}
+        sizes="(max-width: 120px) 100vw, 150px"
+        loading="eager"
+        format="png"
+      />
+      <Picture
+        src={innovate}
+        alt="Logo de Innovate"
+        widths={[200]}
+        sizes="(max-width: 120px) 100vw, 150px"
+        loading="eager"
+        format="png"
+      />
+      <Picture
+        src={utec}
+        alt="Logo de UTEC"
+        widths={[200]}
+        sizes="(max-width: 120px) 100vw, 150px"
+        loading="eager"
+        format="webp"
       />
     </div>
   </div>

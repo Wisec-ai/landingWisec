@@ -1,15 +1,10 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import iconArrowBottom from "assets/icon-arrow-downward.svg";
-import pasoContructor01 from "assets/pasos/pasos-constructor-01.svg";
-import pasoContructor02 from "assets/pasos/pasos-constructor-02.svg";
-import pasoContructor03 from "assets/pasos/pasos-constructor-03.svg";
-import pasoContructor04 from "assets/pasos/pasos-constructor-04.svg";
-import pasoProveedor01 from "assets/pasos/pasos-proveedor-01.svg";
-import pasoProveedor02 from "assets/pasos/pasos-proveedor-02.svg";
-import pasoProveedor03 from "assets/pasos/pasos-proveedor-03.svg";
-import pasoProveedor04 from "assets/pasos/pasos-proveedor-04.svg";
-import arrowUp from "assets/aicon-icon-arrow-up.svg";
+import icon01 from "assets/porque/aicon_porque_icon-01.svg";
+import icon02 from "assets/porque/aicon_porque_icon-02.svg";
+import icon03 from "assets/porque/aicon_porque_icon-03.svg";
+import icon04 from "assets/porque/aicon_porque_icon-04.svg";
+
 import logoAicon from "assets/navbar/aicon-logo.png";
 import Link from "@components/ui/link.astro";
 
@@ -41,7 +36,7 @@ import Link from "@components/ui/link.astro";
               /> 
               <h2 class="text-left text-3xl lg:text-5xl font-bold mt-12 mb-8 tracking-tight text-white">¿Por qué AICON?</h2>
               <p class="text-white">Brindamos soluciones digitales especializadas en el  rubro de construcción e inmobiliario que agilizan el proceso de ventas, proporcionan un soporte más eficiente y mejoran la experiencia del cliente.</p>
-              <Link class="max-w-max sm:text-base mt-12 text-xs ml-0 before:bg-secondary" style="group_icon" href="#" size="md">Contáctanos</Link>
+              <Link class="max-w-max sm:text-base mt-12 text-xs ml-0 before:bg-secondary" style="group_icon" href="https://wa.me/51990442820" size="md" target="_blank">Contáctanos</Link>
             </div>
             <div
               class="grid sm:grid-cols-2 lg:grid-cols-2">
@@ -51,16 +46,16 @@ import Link from "@components/ui/link.astro";
                   <div class="space-y-2">
                     <div class="min-w-[120px]">
                       <Picture
-                          src={pasoProveedor01}
-                          alt="Arrow"
-                          widths={[400]} 
-                          sizes="(max-width: 800px) 120px, 120px"
+                          src={icon01}
+                          alt="Icon"
+                          widths={[120]} 
+                          sizes="(max-width: 800px) 80px, 80px"
                           loading="eager"
                           format="svg"
                       /> 
                     </div>
                     <p class="text-medium text-white">
-                      <span class="text-secondary">Reducimos en un 30%</span> el ciclo de cierre de tus ventas
+                      Eleva la experiencia de tus clientes generando <span class="text-secondary">+40% de conversión</span>
                     </p>
                   </div>
                 </div>
@@ -71,16 +66,16 @@ import Link from "@components/ui/link.astro";
                   <div class="space-y-2">
                     <div class="min-w-[120px]">
                       <Picture
-                          src={pasoProveedor01}
-                          alt="Arrow"
-                          widths={[400]} 
-                          sizes="(max-width: 800px) 120px, 120px"
+                          src={icon02}
+                          alt="Icon"
+                          widths={[120]} 
+                          sizes="(max-width: 800px) 80px, 80px"
                           loading="eager"
                           format="svg"
                       /> 
                     </div>
                     <p class="text-medium text-white">
-                      Brindamos un <span class="text-secondary">soporte técnico 24/7</span> tanto para cliente como nuevos leads.
+                      <span class="text-secondary"> Atención 24/7</span> para tus clientes generando un 33% más de leads
                     </p>
                   </div>
                 </div>
@@ -91,16 +86,16 @@ import Link from "@components/ui/link.astro";
                   <div class="space-y-2">
                     <div class="min-w-[120px]">
                       <Picture
-                          src={pasoProveedor01}
-                          alt="Arrow"
-                          widths={[400]} 
-                          sizes="(max-width: 800px) 120px, 120px"
+                          src={icon03}
+                          alt="Icon"
+                          widths={[120]} 
+                          sizes="(max-width: 800px) 80px, 80px"
                           loading="eager"
                           format="svg"
                       /> 
                     </div>
                     <p class="text-medium text-white">
-                      Estructuramos y transformamos tu información en un <span class="text-secondary">activo valioso</span>
+                      Convierte tu información en tu <span class="text-secondary">principal activo</span>
                     </p>
                   </div>
                 </div>
@@ -111,16 +106,16 @@ import Link from "@components/ui/link.astro";
                   <div class="space-y-2">
                     <div class="min-w-[120px]">
                       <Picture
-                          src={pasoProveedor01}
-                          alt="Arrow"
-                          widths={[400]} 
-                          sizes="(max-width: 800px) 120px, 120px"
+                          src={icon04}
+                          alt="Icon"
+                          widths={[120]} 
+                          sizes="(max-width: 800px) 80px, 80px"
                           loading="eager"
                           format="svg"
                       /> 
                     </div>
                     <p class="text-medium text-white">
-                      Enfocamos la interacción comercial en los leads con <span class="text-secondary">mayor probabilidad de éxito.</span>
+                      Reduce tu inversión en personal de ventas y comercial en <span class="text-secondary">+$40k/año</span>
                     </p>
                   </div>
                 </div>
