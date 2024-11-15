@@ -25,7 +25,7 @@ const { pasos } = Astro.props;
 ---
 
 <div
-  class="gap-6 lg:space-y-12 md:flex md:space-y-0 max-md:flex-col-reverse max-md:flex"
+  class="gap-10 lg:space-y-12 md:flex md:space-y-0 max-md:flex-col-reverse max-md:flex"
   :class="intersect ? 'animate-fade-up animate-delay-[600ms] animate-ease-out':'opacity-0'">
   <div class="relative md:w-5/12">
     <div
@@ -408,7 +408,7 @@ const { pasos } = Astro.props;
   <div
     class="overflow-hidden sm:px-12 md:mx-0 md:w-7/12 md:overflow-visible md:px-0" style="margin-top: 0px;">
     <div
-      class="relative before:absolute before:inset-0 before:scale-x-110 after:absolute after:inset-0">
+      class="relative before:absolute before:inset-0 before:scale-x-110 after:absolute">
       <div class="relative h-[25rem] min-[500px]:h-[30rem] overflow-clip py-10 md:h-[40rem] lg:p-20">
         <div
           data-target="panel-0"
@@ -425,7 +425,7 @@ const { pasos } = Astro.props;
         </div>
         <div
           data-target="panel-1"
-          class="justify-center panel-preview relative inset-0 flex translate-y-[100%] scale-75 items-center overflow-hidden px-6 opacity-50 transition duration-500 sm:px-10">
+          class="justify-center panel-preview relative inset-0 Z-50 flex translate-y-[100%] scale-75 items-center overflow-hidden px-6 opacity-50 transition duration-500 sm:px-10">
           <Picture
             class="absolute z-0 left-[5%] top-24 md:top-36"
             src={bgVideo}
