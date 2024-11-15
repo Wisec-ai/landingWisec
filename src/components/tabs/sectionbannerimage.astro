@@ -14,6 +14,10 @@ import iconB02 from "assets/soluciones/aicon_soluciones_b_icon-02.svg";
 import iconB03 from "assets/soluciones/aicon_soluciones_b_icon-03.svg";
 import iconB04 from "assets/soluciones/aicon_soluciones_b_icon-04.svg";
 import imgSolucionesA from "assets/soluciones/aicon_soluciones_a_img.png";
+import videoMaita from "assets/video/maita.mp4";
+import imgMaita from "assets/video/aicon-don-maita-preview.png";
+import bgVideo from "assets/video/aicon-video_bg.png";
+
 
 
 const { pasos } = Astro.props;
@@ -421,15 +425,18 @@ const { pasos } = Astro.props;
         </div>
         <div
           data-target="panel-1"
-          class="justify-center panel-preview absolute inset-0 z-0 flex translate-y-[100%] scale-75 items-center overflow-hidden px-6 opacity-50 transition duration-500 sm:px-10">
+          class="justify-center panel-preview relative inset-0 flex translate-y-[100%] scale-75 items-center overflow-hidden px-6 opacity-50 transition duration-500 sm:px-10">
           <Picture
-            src={imgSolucionesA}
-            alt="Imagen Asistentes Virtuales"
-            widths={[567, 567]}
-            sizes="(max-width: 768px) 400px, 550px"
+            class="absolute z-0 left-[5%] top-24 md:top-36"
+            src={bgVideo}
+            alt="Background"
+            widths={[500]}
+            sizes="(max-width: 500px) 250px, 420px"
             loading="eager"
             format="png"
-          />
+           />
+          <video class="z-50 cursor-pointer w-[200px] min-[500px]:w-[250px] md:w-[320px]" width="320" height="240" poster={imgMaita.src} controls>
+            <source src={videoMaita} type="video/mp4">
         </div>
       </div>
     </div>
