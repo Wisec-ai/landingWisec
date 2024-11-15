@@ -412,22 +412,9 @@ const { pasos } = Astro.props;
       <div class="relative h-[25rem] min-[500px]:h-[30rem] overflow-clip py-10 md:h-[40rem] lg:p-20">
         <div
           data-target="panel-0"
-          class="justify-center panel-preview absolute inset-0 z-10 flex translate-y-0 scale-100 items-center overflow-hidden px-6 opacity-100 transition duration-500 sm:px-10">
+          class="justify-center panel-preview absolute inset-0 z-10 flex translate-y-0 scale-100 items-center overflow-hidden px-6 opacity-100 transition duration-500 sm:px-0">
           <Picture
-            src={imgSolucionesA}
-            alt="Imagen Asistentes Virtuales"
-            widths={[567, 567]}
-            sizes="500px"
-            loading="lazy"
-            format="png"
-          />
-          <!-- <img src="./images/screenshots/tailus-home.webp" class="mx-auto h-80 w-96 rounded-t-3xl border object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="tailus screenshot" loading="lazy" width="850" height="1780"> -->
-        </div>
-        <div
-          data-target="panel-1"
-          class="justify-center panel-preview relative inset-0 Z-50 flex translate-y-[100%] scale-75 items-center overflow-hidden px-6 opacity-50 transition duration-500 sm:px-10">
-          <Picture
-            class="absolute z-0 left-[5%] top-24 md:top-36"
+            class="absolute z-0 left-[15%] top-24 md:top-36"
             src={bgVideo}
             alt="Background"
             widths={[500]}
@@ -435,8 +422,22 @@ const { pasos } = Astro.props;
             loading="eager"
             format="png"
            />
-          <video class="z-50 cursor-pointer w-[200px] min-[500px]:w-[250px] md:w-[320px]" width="320" height="240" poster={imgMaita.src} controls>
+          <video class="z-50 cursor-pointer w-[200px] min-[500px]:w-[250px] md:w-[320px] rounded-lg" poster={imgMaita.src} controls>
             <source src={videoMaita} type="video/mp4">
+          <!-- <img src="./images/screenshots/tailus-home.webp" class="mx-auto h-80 w-96 rounded-t-3xl border object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="tailus screenshot" loading="lazy" width="850" height="1780"> -->
+        </div>
+        <div
+          data-target="panel-1"
+          class="justify-center panel-preview absolute inset-0 Z-50 flex translate-y-[100%] scale-100 items-center overflow-hidden px-6 opacity-50 transition duration-500 sm:px-0">
+          <Picture
+            src={imgSolucionesA}
+            alt="Imagen Asistentes Virtuales"
+            widths={[700, 700]}
+            sizes="580px"
+            loading="lazy"
+            format="png"
+          />
+          
         </div>
       </div>
     </div>
